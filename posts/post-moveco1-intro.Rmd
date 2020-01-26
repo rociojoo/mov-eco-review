@@ -30,13 +30,7 @@ a series of posts containing the following:
 
 3. <a href=post-moveco3-1-topicanalysis.html>Data analysis</a> (including figures, tables and links to R codes)
 
-4. Manuscript figures and tables (including codes in R)
-
-5. Supplementary figures and tables (including codes in R)
-
-6. Survey about the field of movement ecology applied to movement ecologists
-
-7. R session information
+4. <a href=post-moveco4-survey.html>Survey about the field of movement ecology applied to movement ecologists</a>
 
 <br />
 

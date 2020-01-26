@@ -37,7 +37,7 @@ a series of posts containing the following:
     
     3.6. **Statistical methods**  (in this page!)
     
-4. Survey about the field of movement ecology applied to movement ecologists
+4. <a href=post-moveco4-survey.html>Survey about the field of movement ecology applied to movement ecologists</a>
 
 <br />
 
