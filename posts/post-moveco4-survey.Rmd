@@ -1,0 +1,66 @@
+<br />
+
+<center>
+
+# **A decade of movement ecology**
+
+<br />
+<br />
+
+Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma Romero and Mathieu Basille
+
+</center>
+
+<br />
+<br />
+
+
+This is the companion website for the manuscript “A decade of movement ecology”,
+from Joo et al., available as a preprint here [PASTE LINK]. It is composed of
+a series of posts containing the following:
+
+1. <a href=post-moveco1-intro.html>An abstract of the manuscript</a>
+
+2. <a href=post-moveco2-processing.html>Data collection and processing</a> 
+
+3. <a href=post-moveco3-1-topicanalysis.html>Data analysis</a> 
+    
+4. **Survey about the field of movement ecology applied to movement ecologists** (in this page!)
+
+
+<br />
+
+## 4. Survey about movement ecology
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+library(ggrepel)
+library(dplyr)
+library(reshape)
+library(RColorBrewer)
+library(kableExtra)
+library(cowplot)
+source("../R/multiplot.R")
+data_dir <- "../survey/"
+data <- read.csv(paste0(data_dir,"MoveEcoSurvey.csv"),stringsAsFactors = FALSE) 
+data <- data %>% 
+  filter(Status != 1)
+cols_data <- (grep("Q3", colnames(data))[1]:grep("Q19", colnames(data)))
+answers <- dim(data)[1] - sum(sapply(1:dim(data)[1],function(x){
+  all(is.na(data[x,cols_data]))
+}))
+cols_data_real <- (grep("Q5", colnames(data))[1]:grep("Q19", colnames(data)))
+answers_real <- dim(data)[1] - sum(sapply(1:dim(data)[1],function(x){
+  all(is.na(data[x,cols_data_real]))
+}))
+```
+
+### Description of the survey
+
+As a complementary source of information for our review, we elaborated a survey to get the perspectives of movement ecologists about the field and how it is evolving. 
+
+The exact formulation of the questions in the survey can be viewed <a href=post-moveco3-1-topicanalysis.html>here</a>  here.
+
+

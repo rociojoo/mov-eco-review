@@ -1,0 +1,81 @@
+<br />
+
+<center>
+
+# **A decade of movement ecology**
+
+<br />
+<br />
+
+Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma Romero and Mathieu Basille
+
+</center>
+
+<br />
+<br />
+
+<center>
+![](moveco-images/mov-logo.png){width=40%}
+
+</center>
+<br />
+
+This is the companion website for the manuscript “A decade of movement ecology”,
+from Joo et al., available as a preprint here [PASTE LINK]. It is composed of
+a series of posts containing the following:
+
+1. **An abstract of the manuscript** (in this page!)
+
+2. <a href=post-moveco2-processing.html>Data collection and processing</a> (including links to codes in R)
+
+3. <a href=post-moveco3-1-topicanalysis.html>Data analysis</a> (including figures, tables and links to R codes)
+
+4. Manuscript figures and tables (including codes in R)
+
+5. Supplementary figures and tables (including codes in R)
+
+6. Survey about the field of movement ecology applied to movement ecologists
+
+7. R session information
+
+<br />
+
+## 1. Abstract of the manuscript
+
+Movement is fundamental to life, shaping population dynamics, biodiversity, and
+ecosystem structure. Recent advances in tracking technology have enabled
+fundamental questions about movement to be tackled, and the number of
+publications in movement ecology has increased considerably over time. A decade
+ago, a framework was proposed for the study of movement ecology, as a first step
+for an integrative theory of organism movement (Nathan et al. 2008). This
+movement ecology framework (MEF), published in a PNAS' special feature on
+movement ecology, has been recognized in the literature as a milestone in the
+field. Ten years after the publication of the MEF, we investigated the state of
+research in movement ecology. In this work, we show a snapshot of the field and
+its research topics, evaluate the impact of the MEF in the literature, and
+assess changes in the use of technological devices, software and statistical
+methods. To accomplish this task, we used a text mining approach to review
+\> 8000 movement ecology published papers. We found that, while there have been
+major technological changes in the decade (i.e. more use of GPS devices,
+accelerometers and video cameras, and a convergence towards the use of R), the
+focus remains on the same research questions, and more specifically, on the
+effect of external factors such as the environment on movement and behavior. In
+practice, the comprehensive approach from the MEF has not been integrated into
+movement ecology research. Based on these results, we discuss the future of
+movement ecology, whether if technology will continue to be the driving force in
+the field, or if the field will rather transform, embrace the MEF and face the
+challenges of interdisciplinarity.
+
+Nathan, R., Getz, W. M., Revilla, E., Holyoak, M., Kadmon, R., Saltz, D., &
+Smouse, P. E. (2008). A movement ecology framework for unifying organismal
+movement research. PNAS, 105(49), 19052–19059.
+
+
+<center>
+
+![](moveco-images/wordcloud_abstracts.png){width=50%}
+
+</center>
+
+<br />
+
