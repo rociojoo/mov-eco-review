@@ -176,7 +176,7 @@ Summary of procedure to extract Material and Methods section from each paper.
 
 <br />
 
-For some  <a href=post-moveco3-1-topicanalysis.html>analyses</a>, we needed the Material and methods
+For some analyses (\@ref(analyses)), we needed the Material and methods
 section of the manuscripts. We created codes for .xml and .pdf files [RJ: We
 should put the links here], using the *xml2* (@Rxml2) and *tm*
 (@Rtm) packages, respectively. They took account of the
