@@ -53,7 +53,7 @@ We used Web of Science (WoS) as a search engine for the papers.
   <br />
     
 The search on WoS was made over a final selection of [273
-journals](moveco-images/html/Journal_table_3col.html); made in
+journals](posts/html/Journal_table_3col.html); made in
 parallel with keyword tunning.
 
 ### Cleaning and filtering results in R
