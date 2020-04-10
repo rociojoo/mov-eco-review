@@ -1,0 +1,197 @@
+<br />
+
+<center>
+
+# **A decade of movement ecology**
+
+<br />
+<br />
+
+Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma Romero and Mathieu Basille
+
+</center>
+
+<br />
+<br />
+
+
+This is the companion website for the manuscript “A decade of movement ecology”,
+from Joo et al., available as a preprint here [PASTE LINK]. It is composed of
+a series of posts containing the following:
+
+1. <a href=post-moveco1-intro.html>An abstract of the manuscript</a>
+
+2. <a href=post-moveco2-processing.html>Data collection and processing</a>
+
+3. **Data analysis and results** 
+
+    3.1. <a href=post-moveco3-1-topicanalysis.html>Topic analysis</a> 
+    
+    3.2. <a href=post-moveco3-2-taxonomy.html>Taxonomical identification</a>  
+    
+    3.3. <a href=post-moveco3-3-framework.html>Movement ecology framework</a>  
+    
+    3.4. **Tracking devices** (in this page!)
+    
+    3.5. **Software** (in this page!)
+    
+    3.6. **Statistical methods**  (in this page!)
+    
+4. <a href=post-moveco4-survey.html>Survey about the field of movement ecology applied to movement ecologists</a>
+
+<br />
+
+## 3. Data analysis
+
+Several dimensions of the mov-eco literature were analyzed: research **topics**,
+**taxonomical** groups studied, components of the movement ecology **framework**
+studied, tracking **devices** used, **software** tools used, and statistical
+**methods** applied. Depending on the dimension, we either analyzed the title,
+keywords, abstract or material and methods (M&M). The sections used for each
+aspect of the analysis are detailed in the following table.
+
+|Dimension|Title|Keywords|Abstract|M&M|
+|--- |--- |--- |--- |--- |
+|Topics|||X||
+|Taxonomy|X|X|X||
+|Framework|X|X|X||
+|Devices|X|X|X|X|
+|Software|X|X|X|X|
+|Methods|X|X|X|X|
+
+## 3.4. Tracking devices
+
+We grouped tracking devices in 11 categories. These categories were meant to be
+as monophyletic as possible, and so broad categories had to be defined. Also,
+use of one technology does not rule out the use of another technology. E.g.
+radio + GPS is frequently used, and marine studies frequently have an array of
+sensors on them that may combine multiple technologies. These categories are:
+
+1. Light loggers: Any technology that records light levels and derives movement from the change in light levels.  
+2. Satellite: Any tag that collects location via, and sends data to, satellites so that data can be accessed remotely. Frequently the ARGOS system.  
+3. Radio telemetry: Any technology that infers location based on radio telemetry (VHF/UHF frequency). Sometimes it is in addition to either light logger or GPS technology, though this destinction can not be reasily infered via our methods.  
+4. Video/camera:  Any data that records movement or location via photos or video. Either camera traps with known locations and the capture of the individual implies the location, or recording observations where the movement across the screen is the movement being collected (tracking spiders on a grid).  
+5. Acoustic:  Any technology that uses sound to infer location, either in a similar technique as radio telemetry or in an acoustic array where the animals sound is record and the arrays location infers the location.  
+6. Pressure: Any technology that records pressure readings (frequently in the water), and these changes infer movement, as through a water column.  
+7. Accelerometer: Any technology that is placed on a subject and measures the acceleration of the tag, and this delta infers movement.
+8. Body conditions: Any technology that uses body condition sensors to collect data on the subject that may be associated with a movement or lack thereof, such as temperature and heart rate.  
+9. GPS: Any technology that uses Global Position System satellites to calculate the location of an object. Can be handheld GPS devices, or tags that are mounted and must be retrieved on a subject.  
+10. Radar: Any technology that uses "radio detection and ranging" devices to track objects. Can be large weather arrays or tracking radars.  
+11. Encounter: Any analog tracking tactic where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category is understandably very difficult to capture as the exact phrases must be used.  
+
+Their use was assessed with a dictionary approach. The dictionary is here <https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv>.
+
+To assessed how well the dictionary identified the types of devices in the papers, a
+quality control procedure was established. For each aspect, a random sample
+of 50 papers was selected, and a coauthor who did not lead the construction of
+the dictionary was randomly selected to check if in those papers the categories
+of the dictionary were correctly identified (i.e. accuracy). The accuracy
+was XX%.  [Still waiting for Mathieu]
+
+### Output
+
+<center>
+![](moveco-images/devices_ts_all.png){width=50%}
+
+Proportion of papers of each year using each type of
+device. 
+</center>
+<br /> 
+
+The code for the graph is [PASTE LINK]
+
+
+## 3.5. Software
+
+Here we also used a dictionary approach. We used expert opinion to compile all 
+known software used in movement ecology.  Also during manual checks of software
+we did not find obvious missing software. The 33 software in our list were 1) R, 
+2) Python, 3) SPSS, 4) Matlab, 5) SAS, 6) MARK (program Mark and not R package 
+unmarked), 7) Java, 8) C (if researchers wrote C code themselves; i.e some 
+tracking Radars for pre-processing), 9) Fortran, 10) WinBUGS, 11) Agent-Analyst,
+12) BASTrack, 13) QGIS, 14) GRASS, 15) Microsoft Excel, 16) Noldus observer, 
+17) fragstats, 18) postgis (we separated postGIS from the database category 
+because its high spatial analytical capabilities), 19) databases (any relational 
+database, likely for data management and summarizing necessarily for analyitical 
+use), 20) e-surge, 21) m-surge, 22) u-care, 23) Genstat,
+24) Biotas, 25) Statview, 26) Primer-e, 27) PAST, 28) STATA, 29) Statistica, 
+30) UCINET, 31) Mathcad, 32) Vicon, and 33) GME (geospatial modeling environment).
+More details on the terms used are in 
+<https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Software.csv>.
+
+For quality control, we examined a random sample of 50 papers. The accuracy
+was 88%.  
+
+### Output
+
+
+<center>
+![](moveco-images/software_ts_all.png){width=50%}
+
+Proportion of papers of each year using each software. 
+</center>
+<br /> 
+
+[PASTE LINK TO Code for graph]
+
+
+
+## 3.6. Statistical methods
+
+Within a dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology. We complemented it with a revisitation of a sample of mov-eco papers and added a few more. 204 terms were finally used <https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv>. 
+
+We classified statistical methods into Spatial, Time-series, Movement, Spatiotemporal, Social, and General. Their definitions are below:
+
+1. Spatial: spatial statistical methods (e.g. geostatistics)
+2. Time-series: time series methods (e.g. functional data analysis)
+3. Movement: statistical method used for the study of movement (e.g. behavioral change point analysis)
+4. Spatiotemporal: spatiotemporal but not movement method (e.g. spatiotemporal geostatistics)
+5. Social: statistical methods that are not exclusively for movement, but that characterize or model social processes (e.g. social networks)
+6. General: general statistical methods that could be used in any type of study, that are not inherently spatial, temporal or social (e.g. a regression analysis)
+
+Terms related to hypothesis tests were first considered but ultimately removed; we considered that the tendency in papers to present p-values could be biasing researchers towards the use of hypothesis tests, thus creating a bias towards general methods. 
+
+For quality control, we examined a random sample of 50 papers. The accuracy
+was 84%.  
+
+### Outputs
+
+
+<center>
+![](moveco-images/methods_ts.png){width=50%}
+
+Proportion of papers of each year using each type of methods. 
+</center>
+<br /> 
+
+
+
+| general | Movement  | spatial | time-series | social | spatiotemporal |
+|---------|-----------|---------|-------------|--------|----------------|
+| 71.3%   |  31.6%    |  19.2%  |   14.9%     | 3.5%   |    0.4%        |
+
+Table. Percentage of papers using each type of statistical method. 
+
+
+| trigram                         | n   |
+|---------------------------------|-----|
+| linear mixed models             | 231 |
+| linear mixed effects            | 229 |
+| generalized linear mixed        | 202 |
+| mixed effects models            | 202 |
+| linear mixed model              | 188 |
+| markov chain monte              | 180 |
+| chain monte carlo               | 178 |
+| akaike's information criterion  | 174 |
+| akaike information criterion    | 162 |
+| minimum convex polygon          | 158 |
+| information criterion aic       | 146 |
+| monte carlo mcmc                | 133 |
+| correlated random walk          | 129 |
+| mixed effects model             | 117 |
+| hidden markov model             | 116 |
+
+
+Table. Most common statistical trigrams in M&M sections of papers (with more than 100 mentions in papers).
+
+Codes for graphs and tables in this section are in [PASTE LINK]
