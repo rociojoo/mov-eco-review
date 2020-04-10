@@ -23,29 +23,7 @@ from Joo et al., available as a preprint here [PASTE LINK].
 
 ## Abstract of the manuscript
 
-Movement is fundamental to life, shaping population dynamics, biodiversity, and
-ecosystem structure. Recent advances in tracking technology have enabled
-fundamental questions about movement to be tackled, and the number of
-publications in movement ecology has increased considerably over time. A decade
-ago, a framework was proposed for the study of movement ecology, as a first step
-for an integrative theory of organism movement (@Nathan2008). This
-movement ecology framework (MEF), published in a PNAS' special feature on
-movement ecology, has been recognized in the literature as a milestone in the
-field. Ten years after the publication of the MEF, we investigated the state of
-research in movement ecology. In this work, we show a snapshot of the field and
-its research topics, evaluate the impact of the MEF in the literature, and
-assess changes in the use of technological devices, software and statistical
-methods. To accomplish this task, we used a text mining approach to review
-\> 8000 movement ecology published papers. We found that, while there have been
-major technological changes in the decade (i.e. more use of GPS devices,
-accelerometers and video cameras, and a convergence towards the use of R), the
-focus remains on the same research questions, and more specifically, on the
-effect of external factors such as the environment on movement and behavior. In
-practice, the comprehensive approach from the MEF has not been integrated into
-movement ecology research. Based on these results, we discuss the future of
-movement ecology, whether if technology will continue to be the driving force in
-the field, or if the field will rather transform, embrace the MEF and face the
-challenges of interdisciplinarity.
+Wait for it!
 
 
 
