@@ -22,14 +22,11 @@ voluntary movement of one or more living individuals. This included humans.
 
 ### Search keywords
 
-We used Web of Science (WoS) as a search engine for the papers.
-
+  - We used Web of Science (WoS) as a search engine for the papers.
 
   - We defined mov-eco papers as scientific peer-reviewed papers that studied
     the voluntary movement of one or more living individuals. This included
     humans.
-  
-  - We used Web of Science (WoS) as a search engine for the papers.
 
   - Very few papers mention "movement ecology" in their abstracts, so we did not
     use "movement ecology" as a search phrase. After much testing, we came up
@@ -63,14 +60,14 @@ Title, Abstract, and Keywords sections. We downloaded the search results from
 WoS, which contain information on title, keywords, abstracts and authors, among
 others. We downloaded all references in raw `.txt` format as it was the valid
 input for the refsplitr package available for R (@R2018) on github
-(<https://github.com/embruna/refsplitr>) (@Rrefsplitr). Refsplitr reads in
+(<https://github.com/ropensci/refsplitr>) (@Rrefsplitr). Refsplitr reads in
 multiple WoS files, parses addresses, and performs author matching. We used the
 `references_read` function to compile the .txt files into one data sheet. To be
 sure that the papers shown in our search in WoS were respecting our search
 criteria for the abstracts, we applied the same filters described above to the
 downloaded search results via R. In addition to the grouping criteria we
 filtered by Document Type to only allow 'Articles','Proceedings Papers', and
-'Reviews'. [RJ: We should insert here a link to the R code for this part.]
+'Reviews'. [Link to download code](R/01-download_process_fulltext.R)
   
 8007 papers were obtained from this.
 
@@ -79,8 +76,10 @@ filtered by Document Type to only allow 'Articles','Proceedings Papers', and
 <!-- <https://www.R-project.org/>. -->
 
 <!-- Fournier, Auriel M. V., Matthew E. Boone, Forrest R. Stevens, and Emilio -->
-<!-- Bruna. 2019. Refsplitr: Clarivate Analytics Web of Knowledge/Science and Isi -->
-<!-- Reference Data Tools. <https://github.com/embruna/refsplitr>. -->
+<!-- Bruna. 2019. Refsplitr: Author name disambiguation, author georeferencing, -->
+<!-- and mapping of coauthorship networks with Web of Science data. Journal of -->
+<!-- Open Source Software 5(45): 2028, 10.21105/joss.02028 --> 
+<!-- <https://github.com/ropensci/refsplitr>. -->
   
 ### Quality control
   
@@ -177,11 +176,14 @@ Summary of procedure to extract Material and Methods section from each paper.
 <br />
 
 For some analyses (\@ref(analyses)), we needed the Material and methods
-section of the manuscripts. We created codes for .xml and .pdf files [RJ: We
-should put the links here], using the *xml2* (@Rxml2) and *tm*
+section of the manuscripts. We created codes for .xml and .pdf files [Link to processing code](R/01-processing_code.R), using the *xml2* (@Rxml2) and *tm*
 (@Rtm) packages, respectively. They took account of the
 structure of the papers in either format, and aimed at finding section names
-related to "Methods", "Data" or "Statistical Analysis". Not all papers had an
+related to "Methods", "Data" or "Statistical Analysis". 
+
+[MEB: I feel like saying `tm` found all the various sections of the papers is burrying the lead. Y'all wrote all the code to actually extract that info, its giving tm way too much credit and us no credit. If you recheck the pdf-analysis code, theres a whole lot in there yall did. We just used tm::Corpus() to originally split stuff.]
+
+Not all papers had an
 M\&M section (e.g. reviews or perspective papers). We were able to extract 3674
 M\&M sections (46% of mov-eco paper results and 90% of fully downloaded papers).
 

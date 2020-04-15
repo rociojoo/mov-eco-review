@@ -63,7 +63,7 @@ the same lemma) (@Ingason2008), 4) filtering out words that were only
 used once in the whole set of abstracts. R packages *tidytext* (@Silge2016), 
 *tm* and *textstem* (@Rtextstem) were used in this stage.
 
-[PASTE LINK TO CODES]
+[PASTE LINK TO CODES] 
 
 ### Fitting LDAs
 
@@ -83,7 +83,7 @@ abstracts and obtained 300 topics. Hence, we decided to fix the number of topics
 to 15, as a reasonable value that would not be too large than we could not
 interpret them, or too small that the topics were too general. 
 
-[PASTE LINK TO CODES]
+[PASTE LINK TO CODES]   [MEB: These are all you]
 
 ### Model outputs
 
@@ -105,7 +105,7 @@ to its $\beta$ value.
 <center>
 ![](posts/moveco-images/wordcloud_topics_15.png){width=100%}
 
-Wordclouds of each topic based on $\beta$ values.
+Wordclouds of each topic based on $\beta$ values. [Code for wordcloud](R/02-wordcloud_plot.R)
 </center>
 <br />
 
@@ -140,7 +140,7 @@ Measure of popularity of each topic.
 <center>
 ![](posts/moveco-images/TopicsGamma_ts.png){width=100%}
 
-Time series of the relative popularity of each topic every year.
+Time series of the relative popularity of each topic every year. [Code for plot](R/man_topics_trend_plot.R)
 </center>
 <br />
 
@@ -158,7 +158,10 @@ complementary information.
 <center>
 ![](posts/moveco-images/wordcloud_topics_15_abstracts.png){width=100%}
 
-Wordclouds of each topic based on most strongly associated abstracts.
+Wordclouds of each topic based on most strongly associated abstracts. [Code for plot](R/02-wordcloud_plot.R)
+[MEB: Im not really sure where the abstract world cloud is or is called in the code, since i never
+made that you just used the code for the topics one I made. So i'm just copying
+the code for the topics and you can build it yourself or take out the link entirely. Idc.]
 </center>
 <br />
 
@@ -170,11 +173,11 @@ several topics.
 <center>
 ![](posts/moveco-images/heatmap.png){width=100%}
 
-Heatmap of $\gamma$ values per abstract and topic. 
+Heatmap of $\gamma$ values per abstract and topic. [Code for the plot](R/02-heatmap_plot.R)
 </center>
 <br />  
 
-All the codes to get the model outputs are in [PASTE LINK]
+All the codes to get the model outputs are in [PASTE LINK]. [MEB: The actual code is so disjunct and complicated and idk whats on or off or being called or not that i just made each one separately. You can do it yourself and remake one big giant commented code or just keep it as Ive made it. I honestly cant follow some of the code very well]
 
 ## Taxonomical identification
 
@@ -189,13 +192,17 @@ but also have a current language meaning; for example: "Here", "Scales",
 "Costa", "Ray", etc. Because we wanted to consider humans as a separate
 category, we excluded "Homo sapiens" from the search terms, but used the
 following non-ambiguous terms to identify papers that focus on movement ecology
-of humans: "player", "players", "patient", "patients", "child", "children",
+of humans: 
+```
+"player", "players", "patient", "patients", "child", "children",
 "teenager", "teenagers", "people", "student", "students", "fishermen", "person",
 "tourist", "tourists", "visitor", "visitors", "hunter", "hunters", "customer",
 "customers", "runner", "runners", "participant", "participants", "cycler",
 "cyclers", "employee", "employees", "hiker", "hikers", "athlete", "athletes",
 "boy", "boys", "girl", "girls", "woman", "women", "man", "men", "adolescent",
-"adolescents". In cases where words may be suffixes of larger words, we used
+"adolescents". 
+```
+In cases where words may be suffixes of larger words, we used
 regular expression notation to exact match words, e.g 'man' must match only the
 word 'man' and not 'human' or 'postman'. We excluded words that could have an
 ambiguous meaning: "passenger" may appear in papers that mention passenger
@@ -203,16 +210,20 @@ pigeons; "driver" may be used to refer to a causing factor.
 
 After having identified any taxon mentioned in a paper, we
 summarized all taxa at the Class level. Thus, each paper was classified as
-focusing on one or more Classes: Fish, Mammals, Birds, Reptiles, Amphibians,
+focusing on one or more taxa: Fish, Mammals, Birds, Reptiles, Amphibians,
 Insects, Crustaceans, Mollusks, and others. For
 the purpose of our analysis, we kept Humans as a separate category and did not
 count them within Class Mammalia. 
 
+[MEB: So These are not Classes, Fish sit in something like 5 classes, and sharks sit way out somewhere else, though most of the rest are. 
+You told me these classifications were actually based on someones prior categories. 
+We need to be explicit on this as we will not argue with people about the semantics and 'rightness' 
+of these categories. Just say we're copying someones prior categories. And call them taxa not Classes.]
+
 The quality control procedure consisted in selecting a random sample of 100
 abstracts and verifying that the common taxonomical group was correctly
 identified. The accuracy was 93%. The code for taxonomical identification can be
-found in
-<https://github.com/rociojoo/MovEcoReview-Repository/blob/master/R/taxonomy_analysis_meb.R>
+found [here](R/taxonomy_analysis.R)
 
 ### Outputs  
   
@@ -220,7 +231,7 @@ found in
 <center>
 ![](posts/moveco-images/species_year_stacked.png){width=70%}
 
-More species have been studied in the last years. 
+More species have been studied in the last years. [Code for plot](R/02-stacked_species_plots.R)
 </center>
 <br /> 
 
@@ -228,11 +239,9 @@ More species have been studied in the last years.
 <center>
 ![](posts/moveco-images/taxonomy_ts_all.png){width=70%}
 
-Proportion of papers in each year studying each taxonomical group.
+Proportion of papers in each year studying each taxonomical group. [Code for plot](R/man_taxa_trend_plot.R)
 </center>
 <br /> 
-
-The codes to produce these graphs are in [PASTE LINK]
 
 
 ## Movement ecology framework (MEF)
@@ -307,7 +316,7 @@ quality control procedure was established. For each aspect, a random sample
 of 50 papers was selected, and a coauthor who did not lead the construction of
 the dictionary was randomly selected to check if in those papers the categories
 of the dictionary were correctly identified (i.e. accuracy). The accuracy
-was XX%.  [Still waiting for Mathieu]
+was XX%.  [Still waiting for Mathieu] [MEB: This is ridiculous, why dont you just do it yourself at this stage]
 
 To assess if we were identifying GPS biologging devices, i.e. 
 attached to the tracked individuals, or rather hand-held GPS, we took a sample of 100 
@@ -321,11 +330,9 @@ tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordina
 ![](posts/moveco-images/devices_ts_all.png){width=50%}
 
 Proportion of papers of each year using each type of
-device. 
+device. [Code for plot](R/man_data_trend_plot.R)
 </center>
 <br /> 
-
-The code for the graph is [PASTE LINK]
 
 
 ## Software
@@ -355,12 +362,9 @@ was 88%.
 <center>
 ![](posts/moveco-images/software_ts_all.png){width=50%}
 
-Proportion of papers of each year using each software. 
+Proportion of papers of each year using each software. [Code for plot](R/man_software_trend_plot.R)
 </center>
 <br /> 
-
-[PASTE LINK TO Code for graph]
-
 
 
 ## Statistical methods
@@ -387,7 +391,7 @@ was 84%.
 <center>
 ![](posts/moveco-images/methods_ts.png){width=50%}
 
-Proportion of papers of each year using each type of methods. 
+Proportion of papers of each year using each type of methods. [Code for plot](R/man_method_trend_plot.R)
 </center>
 <br /> 
 
