@@ -22,15 +22,12 @@ voluntary movement of one or more living individuals. This included humans.
 
 ### Search keywords
 
-We used Web of Science (WoS) as a search engine for the papers.
-
+  - We used Web of Science (WoS) as a search engine for the papers.
 
   - We defined mov-eco papers as scientific peer-reviewed papers that studied
     the voluntary movement of one or more living individuals. This included
     humans.
   
-  - We used Web of Science (WoS) as a search engine for the papers.
-
   - Very few papers mention "movement ecology" in their abstracts, so we did not
     use "movement ecology" as a search phrase. After much testing, we came up
     with the following groups of words:
@@ -63,15 +60,15 @@ Title, Abstract, and Keywords sections. We downloaded the search results from
 WoS, which contain information on title, keywords, abstracts and authors, among
 others. We downloaded all references in raw `.txt` format as it was the valid
 input for the refsplitr package available for R (@R2018) on github
-(<https://github.com/embruna/refsplitr>) (@Rrefsplitr). Refsplitr reads in
+(<https://github.com/ropensci/refsplitr>) (@Rrefsplitr). Refsplitr reads in
 multiple WoS files, parses addresses, and performs author matching. We used the
 `references_read` function to compile the .txt files into one data sheet. To be
 sure that the papers shown in our search in WoS were respecting our search
 criteria for the abstracts, we applied the same filters described above to the
 downloaded search results via R. In addition to the grouping criteria we
 filtered by Document Type to only allow 'Articles','Proceedings Papers', and
-'Reviews'. [RJ: We should insert here a link to the R code for this part.]
-  
+'Reviews'. [Link to download code](R/01-download_process_fulltext.R)
+
 8007 papers were obtained from this.
 
 <!-- R Core Team. 2018. R: A Language and Environment for Statistical Computing. -->
