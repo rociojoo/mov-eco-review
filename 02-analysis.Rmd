@@ -37,7 +37,7 @@ and that the choice of words in the abstracts were related to the topics the
 authors were addressing. Thus, an abstract would have been composed of one or
 more topics, and a topic would have been composed of a mixture of words. The
 probability of a word appearing in an abstract depended on the topic the
-abstract was adressing. There are several variations of topic models (@Nunez-Mir2016). 
+abstract was addressing. There are several variations of topic models (@Nunez-Mir2016). 
 Here we used the LDA model with variational EM estimation (@Wainwright2008) 
 implemented in the *topicmodels* package. All the details of the model 
 specification and estimation are in @Grun2011. 
@@ -55,35 +55,33 @@ Source of the image: Blei, D.M. 2012. Probabilistic topic models. Communications
 ### Preprocessing
 
 To improve the quality of our LDA model outputs, we cleaned the data by 1)
-removing unuseful words for identifying topics (e.g. prepositions and
+removing redundant words for identifying topics (e.g. prepositions and
 numbers), 2) converting all British English words to American English so they
 would not be seen as different words, 3) lemmatizing (i.e. extracting the lemma
 of a word based on its intended meaning, with the aim of grouping words under
 the same lemma) (@Ingason2008), 4) filtering out words that were only
 used once in the whole set of abstracts. R packages *tidytext* (@Silge2016), 
-*tm* and *textstem* (@Rtextstem) were used in this stage.
+*tm* and *textstem* (@Rtextstem) were used in this [stage](R/02-CleaningWords_TopicModeling.R).
 
-[PASTE LINK TO CODES]
 
 ### Fitting LDAs
 
 The parameter estimates of the LDA model were obtained by running 20 replicates
 of the models (with the VEM estimation method), and keeping the one with the
-highest likelihood [RJ: add link to the code]. A key argument in the fitting
-function is the number of latent topics. The most commonly used criterion to
-choose a number of topics is the perplexity score or likelihood of a test
-dataset (@Waal2008). Basically, this quantity measures the degree
-of uncertainty a language model has when predicting some new text (for this
-study, a new abstract of a paper). Lower values of the perplexity is good and it
-means the model is assigning higher probabilities. However, the perplexity score
+highest likelihood; see [here](R/02-TopicModelingScript_rj.R). A key argument in
+the fitting function is the number of latent topics. The most commonly used
+criterion to choose a number of topics is the perplexity score or likelihood of
+a test dataset (@Waal2008). Basically, this quantity measures the degree of
+uncertainty a language model has when predicting some new text (for this study,
+a new abstract of a paper). Lower values of the perplexity is good and it means
+the model is assigning higher probabilities. However, the perplexity score
 measures predictive capacities, rather than having actual humanly-interpretable
-latent topics (@Chang2009). In fact, using this score could result into
-having too many topics; see @Griffiths2004 who analyzed PNAS
-abstracts and obtained 300 topics. Hence, we decided to fix the number of topics
-to 15, as a reasonable value that would not be too large than we could not
-interpret them, or too small that the topics were too general. 
+latent topics (@Chang2009). In fact, using this score could result in there
+being too many topics; see @Griffiths2004 who analyzed PNAS abstracts and
+obtained 300 topics. Hence, we decided to fix the number of topics to 15, as a
+reasonable value that would not be too large than we could not interpret them,
+or too small that the topics were too general.
 
-[PASTE LINK TO CODES]
 
 ### Model outputs
 
@@ -93,8 +91,7 @@ From the fitted LDA model, we obtained:
 1) the probabilities of having a word in
 a document given the presence of a certain topic (denoted by $\beta$), and 
 
-2)
-the probabilities of a topic being referred to in each document (denoted by
+2) the probabilities of a topic being referred to in each document (denoted by
 $\gamma$). 
 
 The $\beta$ values were thus a proxy of the importance of a word in

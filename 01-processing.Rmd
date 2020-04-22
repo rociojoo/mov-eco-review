@@ -162,8 +162,8 @@ Summary of procedure to extract Material and Methods section from each paper.
 <br />
 
 For some analyses (\@ref(analyses)), we needed the Material and methods section
-of the manuscripts. We created codes for [.xml](R/xml-analysis.R) and
-[.pdf](R/pdf-analysis.R) files. The former was built using the functions of the
+of the manuscripts. We created codes for [.xml](R/01-xml-analysis.R) and
+[.pdf](R/01-pdf-analysis.R) files. The former was built using the functions of the
 *xml2* package (@Rxml2). The later was inspired on [this web
 page](https://medium.com/@CharlesBordet/how-to-extract-and-clean-data-from-pdf-files-in-r-da11964e252e),
 and calls the `readPDF` and `Corpus` functions from the *tm* (@Rtm) package. In

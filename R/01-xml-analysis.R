@@ -2,8 +2,8 @@
 # XML analysis and methods extraction
 #######################################
 # Using xml2
-#path.fulltext.raw <- './fulltext/raw/'
-#path.fulltext<- './fulltext/'
+#path.fulltext.raw <- './fulltext/raw/': path to the downloaded papers
+#path.fulltext<- './fulltext/': path to the directory where we'll save the methods and fulltext files
 xml_analysis <- function(path.fulltext.raw, path.fulltext){
   library(xml2)
 files <- dir(path=path.fulltext.raw,pattern='.xml')

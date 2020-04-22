@@ -4,8 +4,9 @@
 
 # trying to follow the guidelines from https://medium.com/@CharlesBordet/how-to-extract-and-clean-data-from-pdf-files-in-r-da11964e252e
 
-#path.fulltext.raw <- './fulltext/raw/'
-#path.fulltext<- './fulltext/'
+#path.fulltext.raw <- './fulltext/raw/': path to the downloaded papers
+#path.fulltext<- './fulltext/': path to the directory where we'll save the methods and fulltext files
+
 pdf_analysis <- function(path.fulltext.raw, path.fulltext){
   files <- dir(path=path.fulltext.raw,pattern='.pdf')
 # If we have already extracted some methods sections, let's do this
