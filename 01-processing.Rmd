@@ -41,7 +41,7 @@ voluntary movement of one or more living individuals. This included humans.
     <br />
     
     Paper abstracts had to have words from at least 3 of the groups above to be selected. 
-    Also, unless they had words from group 3, they could not contain:
+    An initial search revealed these keywords to pick up papers from a variety of fields such as biochemistry, medicine, physics and economics. As such, unless they had words from group 3, paper abstracts could not contain the following words:
     
     * Group 5 - Missleading words: cell, DNA, enzyme, strain, neurons, atom, molecule, lymph, 
     cortex, cortic, neurotransmi, patient prosthese, eye, particle, tectonic, counsel, cognit, 
@@ -55,7 +55,7 @@ parallel with keyword tunning.
 
 ### Cleaning and filtering results in R
 
-The grouping criteria were applied to the Topic field in WoS, which search the
+The grouping criteria were applied to the Topic field in WoS, which searched the
 Title, Abstract, and Keywords sections. We downloaded the search results from
 WoS, which contain information on title, keywords, abstracts and authors, among
 others. We downloaded all references in raw `.txt` format as it was the valid
@@ -67,18 +67,8 @@ sure that the papers shown in our search in WoS were respecting our search
 criteria for the abstracts, we applied the same filters described above to the
 downloaded search results via R. In addition to the grouping criteria we
 filtered by Document Type to only allow 'Articles','Proceedings Papers', and
-'Reviews'. [Link to download code](R/01-download_process_fulltext.R)
+'Reviews'. This process yielded 8007 papers. The code can be found [here](R/01-processing_code.R). 
 
-8007 papers were obtained from this.
-
-<!-- R Core Team. 2018. R: A Language and Environment for Statistical Computing. -->
-<!-- Vienna, Austria: R Foundation for Statistical Computing. -->
-<!-- <https://www.R-project.org/>. -->
-
-<!-- Fournier, Auriel M. V., Matthew E. Boone, Forrest R. Stevens, and Emilio -->
-<!-- Bruna. 2019. Refsplitr: Clarivate Analytics Web of Knowledge/Science and Isi -->
-<!-- Reference Data Tools. <https://github.com/embruna/refsplitr>. -->
-  
 ### Quality control
   
 From the cleaned results, we took a random sample of 100 papers (i.e. with
@@ -90,19 +80,18 @@ rules for the groups). This is how we came up with the groups introduced above
 (section 2.1). We obtained 90% of precision. That means that, from the papers
 that we had, almost all of them were mov-eco papers.
   
-We also wanted to obtain a recall or sensitivity rate to quantify, from the
-universe of mov-eco papers in the literature, how many we had in our search
-results. To get an exact number is an impossible task because if we could get
-the "real" list of mov-eco papers in the literature, we would use it in the
-first place. Instead, we looked at the list of papers published by the journal
-Movement Ecology. 69% of them were in our list. An estimated sensitivity of 69%
-and precision of 90% implies that though we did not get the whole population of
-mov-eco papers in our set, from the set of papers that we have, there is a very
-high certainty that they are mov-eco papers.
+We also wanted to obtain a recall or sensitivity rate to quantify, from all
+mov-eco papers in the literature, how many we had in our search results. As it
+is impossible to obtain the "real" list of mov-eco papers in the literature, we
+instead looked at the list of papers published by the journal Movement Ecology.
+We found that 69% were in our list. An estimated sensitivity of 69% and
+precision of 90% implies that though we did not get the whole population of
+mov-eco papers in our set, there is a high certainty that those obtained are
+mov-eco papers.
   
 ### Possible biases
  
-We have no reason to believe that our searching criteria has introduced biases
+We have no reason to believe that our search criteria have introduced biases
 to our results. The relatively short list of words is due to the fact that other
 words we tried were actually reducing our precision, providing us many papers
 that were not about movement ecology. Of course, it is always possible that we
@@ -153,8 +142,7 @@ Downloading movement ecology papers.
 We used the *fulltext* package (@Rfulltext) in R, using Elsevier,
 Springer, Scopus, Wiley, BMC and PLOS one API keys. We downloaded the articles
 we had access to, as xml or pdf documents. We downloaded a total of 4060
-complete manuscripts, representing 51% of our list of mov-eco papers. [PASTE 
-LINK TO CODES]
+complete manuscripts, representing 51% of our list of mov-eco papers. The codes to download papers can be found in this [link](R/01-processing_code.R).
 
 <!-- Chamberlain, Scott. 2019. Fulltext: Full Text of ’Scholarly’ Articles Across -->
 <!-- Many Data Sources. <https://CRAN.R-project.org/package=fulltext>. -->
@@ -173,14 +161,17 @@ Summary of procedure to extract Material and Methods section from each paper.
 
 <br />
 
-For some analyses (\@ref(analyses)), we needed the Material and methods
-section of the manuscripts. We created codes for .xml and .pdf files [RJ: We
-should put the links here], using the *xml2* (@Rxml2) and *tm*
-(@Rtm) packages, respectively. They took account of the
-structure of the papers in either format, and aimed at finding section names
-related to "Methods", "Data" or "Statistical Analysis". Not all papers had an
-M\&M section (e.g. reviews or perspective papers). We were able to extract 3674
-M\&M sections (46% of mov-eco paper results and 90% of fully downloaded papers).
+For some analyses (\@ref(analyses)), we needed the Material and methods section
+of the manuscripts. We created codes for [.xml](R/xml-analysis.R) and
+[.pdf](R/pdf-analysis.R) files. The former was built using the functions of the
+*xml2* package (@Rxml2). The later was inspired on [this web
+page](https://medium.com/@CharlesBordet/how-to-extract-and-clean-data-from-pdf-files-in-r-da11964e252e),
+and calls the `readPDF` and `Corpus` functions from the *tm* (@Rtm) package. In
+order to write the codes, we took account of the structure of the papers in
+either format, and aimed at finding section names related to "Methods", "Data"
+or "Statistical Analysis". Not all papers had an M\&M section (e.g. reviews or
+perspective papers). We were able to extract 3674 M\&M sections (46% of mov-eco
+paper results and 90% of fully downloaded papers).
 
 <!-- Wickham, Hadley, James Hester, and Jeroen Ooms. 2018. Xml2: Parse Xml. https://CRAN.R-project.org/package=xml2. -->
 
