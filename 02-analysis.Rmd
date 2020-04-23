@@ -319,8 +319,7 @@ device. [Code for plot](R/man_data_trend_plot.R).
 ## Software
 
 Here we also used a dictionary approach. We used expert opinion to compile all 
-known software used in movement ecology.  Also during manual checks of software
-we did not find obvious missing software. The 33 software in our list were 1) R, 
+known software used in movement ecology.  The 33 software in our list were 1) R, 
 2) Python, 3) SPSS, 4) Matlab, 5) SAS, 6) MARK (program Mark and not R package 
 unmarked), 7) Java, 8) C (if researchers wrote C code themselves; i.e some 
 tracking Radars for pre-processing), 9) Fortran, 10) WinBUGS, 11) Agent-Analyst,
@@ -331,8 +330,7 @@ database, likely for data management and summarizing necessarily for analyitical
 use), 20) e-surge, 21) m-surge, 22) u-care, 23) Genstat,
 24) Biotas, 25) Statview, 26) Primer-e, 27) PAST, 28) STATA, 29) Statistica, 
 30) UCINET, 31) Mathcad, 32) Vicon, and 33) GME (geospatial modeling environment).
-More details on the terms used are in 
-<https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Software.csv>.
+The dictionary with the terms used can be found [here](Data/Dictionary/csv-updated-versions/Dictionaries-Software.csv). 
 
 For quality control, we examined a random sample of 50 papers. The accuracy
 was 88%.  
