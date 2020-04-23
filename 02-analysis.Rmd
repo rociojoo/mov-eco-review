@@ -163,15 +163,14 @@ several topics.
 <center>
 ![](posts/moveco-images/heatmap.png){width=100%}
 
-Heatmap of $\gamma$ values per abstract and topic. 
+Heatmap of $\gamma$ values per abstract and topic. The corresponding code is [here](R/02-heatmap_plot.R).
 </center>
 <br />  
 
-All the codes to get the model outputs are in [PASTE LINK]
 
 ## Taxonomical identification
 
-To identify the taxonomy of the individuals studied in the papers, the ITIS
+To identify the taxonomy of the organisms studied in the papers, the ITIS
 (Integrated Taxonomic Information System) database (USGS Core Science Analytics
 and Synthesis) was used to detect names of any animal species (kingdom Animalia)
 that were mentioned in the abstracts, titles and keywords. We screened these
@@ -182,30 +181,29 @@ but also have a current language meaning; for example: "Here", "Scales",
 "Costa", "Ray", etc. Because we wanted to consider humans as a separate
 category, we excluded "Homo sapiens" from the search terms, but used the
 following non-ambiguous terms to identify papers that focus on movement ecology
-of humans: "player", "players", "patient", "patients", "child", "children",
+of humans: 
+```
+"player", "players", "patient", "patients", "child", "children",
 "teenager", "teenagers", "people", "student", "students", "fishermen", "person",
 "tourist", "tourists", "visitor", "visitors", "hunter", "hunters", "customer",
 "customers", "runner", "runners", "participant", "participants", "cycler",
 "cyclers", "employee", "employees", "hiker", "hikers", "athlete", "athletes",
 "boy", "boys", "girl", "girls", "woman", "women", "man", "men", "adolescent",
-"adolescents". In cases where words may be suffixes of larger words, we used
+"adolescents". 
+```
+In cases where words may be suffixes of larger words, we used
 regular expression notation to exact match words, e.g 'man' must match only the
 word 'man' and not 'human' or 'postman'. We excluded words that could have an
 ambiguous meaning: "passenger" may appear in papers that mention passenger
 pigeons; "driver" may be used to refer to a causing factor.
 
-After having identified any taxon mentioned in a paper, we
-summarized all taxa at the Class level. Thus, each paper was classified as
-focusing on one or more Classes: Fish, Mammals, Birds, Reptiles, Amphibians,
-Insects, Crustaceans, Mollusks, and others. For
-the purpose of our analysis, we kept Humans as a separate category and did not
-count them within Class Mammalia. 
+After having identified any taxon mentioned in a paper,  we summarized taxa at the Class level (except for superclasses Osteichthyes and Chondrichthyes which we merged into a single group labeled Fish, and for classes within the phylum Mollusca and the subphylum Crustacea which we considered collectively). Thus, each paper was classified as focusing on one or more class-like groups, as in @Holyoak2008: Fish, Mammals, Birds, Reptiles, Amphibians, Insects, Crustaceans, Mollusks, and others. For the purpose of our analysis, we kept humans as a separate category and did not count them within Class Mammalia. 
 
 The quality control procedure consisted in selecting a random sample of 100
 abstracts and verifying that the common taxonomical group was correctly
 identified. The accuracy was 93%. The code for taxonomical identification can be
-found in
-<https://github.com/rociojoo/MovEcoReview-Repository/blob/master/R/taxonomy_analysis_meb.R>
+found [here](R/taxonomy_analysis.R).
+
 
 ### Outputs  
   
@@ -213,7 +211,7 @@ found in
 <center>
 ![](posts/moveco-images/species_year_stacked.png){width=70%}
 
-More species have been studied in the last years. 
+More species have been studied in the last years. [Code for plot](R/02-stacked_species_plots.R).
 </center>
 <br /> 
 

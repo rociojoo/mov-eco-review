@@ -8,9 +8,15 @@ library(tidyverse)
 library(topicmodels)
 library(heatmaply)
 
+###  Read in arguments
+# Arguments are as follows : 
+#   **path_data** : path for cleaned WoS reference csv  
+#   **path.plots** : folder path to save plots  
+#   **path_topics** : folder of topics rds outputs  
+
 # paths
-path_data <- "./Data/ProcessedQueries/References/cleaned_papers_all_years_simple.csv"
-path.plots <- "./Rocio/Plots/"
+path_data <- "./Data/Rocio-temporal/cleaned_papers_all_years_simple.csv"
+path.plots <- "./Data/Rocio-temporal/"
 path_topics <- "./Data/Topics/"
 
  
@@ -35,13 +41,7 @@ N_topics <- 15
 alpha_par <- 1 #NULL
 method_par <- "VEM" # logliks are way higher with VEM
 
-if (is.null(alpha_par)){
-  modk <- readRDS(file = paste0(path_topics,"BestTopicModel",N_topics,".rds"))
-}else if(method_par == "VEM"){
-  modk <- readRDS(file = paste0(path_topics,"NewBestTopicModel",N_topics,"_alpha_",alpha_par,"_method_",method_par,"_filtered_II.rds"))
-}else{
-  modk <- readRDS(file = paste0(path_topics,"BestTopicModel",N_topics,"_alpha_",alpha_par,".rds"))
-}
+modk <- readRDS(file = paste0(path_topics,"NewBestTopicModel",N_topics,"_alpha_",alpha_par,"_method_",method_par,"_filtered_II.rds"))
 
 ############ NUMBER OF PAPERS RELATED TO EACH TOPIC #################
 
