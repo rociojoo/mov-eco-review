@@ -4,6 +4,7 @@
 
 library(tidyverse)
 library(topicmodels) #install in ubuntu libgsl-dev and gsl-bin
+library(RColorBrewer)
 source("./R/expectation_functions.R")
 
 # Arguments
@@ -12,7 +13,7 @@ path.plots <- "./Rocio/Plots/"
 
 # Summarizing
 if (!dir.exists(path.plots)){
-  dir.create(path.plots)
+  dir.create(path.plots,recursive=TRUE)
 }
 path_processed_dictionaries <- "./Data/Dictionary/Papers-Term/"
 path_dictionary_info <- "./Data/Dictionary/"

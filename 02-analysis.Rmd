@@ -341,7 +341,7 @@ was 88%.
 <center>
 ![](posts/moveco-images/software_ts_all.png){width=50%}
 
-Proportion of papers of each year using each software. 
+Proportion of papers of each year using each software. [Code for plot](R/man_software_trend_plot.R).
 </center>
 <br /> 
 
