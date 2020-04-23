@@ -380,7 +380,7 @@ Proportion of papers of each year using each type of methods. [Code for plot](R/
 |---------|-----------|---------|-------------|--------|----------------|
 | 67.8%   |  32.6%    |  18.9%  |   16.5%     | 3.3%   |    0.3%        |
 
-Table. Percentage of papers using each type of statistical method. 
+Table. Percentage of papers using each type of statistical method. The code for this table can be found [here](R/man_method_trend_plot.R). 
 
 
 | trigram                         | n   |
@@ -402,7 +402,5 @@ Table. Percentage of papers using each type of statistical method.
 | hidden markov model             | 116 |
 
 
-Table. Most common statistical trigrams in M&M sections of papers (with more than 100 mentions in papers).
-
-Codes for graphs and tables in this section are in [PASTE LINK]
+Table. Most common statistical trigrams in M&M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to [this code](R/trigrams.R). 
 

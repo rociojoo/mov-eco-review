@@ -23,9 +23,10 @@
 library(tidyverse)
 library(topicmodels)
 library(ggwordcloud)
-library(tidytext)
+library(tidytext) # to use unnest_tokens and tidy
 library(textstem) # to use lemmatize_words
 library(tm) # to use stopwords
+library(stringr) # to use str_detect
 
 # paths
 path_data <- "./Data/Rocio-temporal/cleaned_papers_all_years_simple.csv"

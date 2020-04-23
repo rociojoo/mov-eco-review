@@ -34,7 +34,7 @@ matrix_CatTerm <-
 synonyms_keywords <- read_csv(paste0(path_dictionary_info,"Synonyms-Methods.csv"))
 
 res <- methods_cat_analysis(matrix_CatTerm = matrix_CatTerm, synonyms_keywords, col_cat = 3, data_decade)
-
+## print(res[[1]]) gives the output of the Table "Percentage of papers using each type of statistical method."
 
 # Internally, I'm filtering out tests and other stuff:
 filter_out_methods <- unique(c(which(synonyms_keywords$meaning2 == "test" | 
