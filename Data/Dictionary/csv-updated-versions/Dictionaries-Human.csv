@@ -1,0 +1,20 @@
+Human,Sport-player,Fisher,Hunter,Patient,Collective
+^child$,players?,fishermen,,^patients?,humans
+children,runners?,Fisher & vessel,,,crowd
+teenagers?,cyclists?,^fishing vessel$,,,
+^people$,hikers?,,,,
+students?,athletes?,,,,
+^person$,,,,,
+tourists?,,,,,
+visitors?,,,,,
+^hunters?$,,,,,
+customers?,,,,,
+participants?,,,,,
+employees?,,,,,
+^boys?,,,,,
+girls?,,,,,
+woman,,,,,
+women,,,,,
+^man$,,,,,
+^men$,,,,,
+adolescents?,,,,,

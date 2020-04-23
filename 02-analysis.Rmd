@@ -242,9 +242,7 @@ the framework (i.e. internal state, external factor, motion and navigation), and
 their meanings were the terms potentially used in the abstracts to refer to the
 study of each component. For example, terms like "memory", "sensory
 information", "path integration" or "orientation" were used to identify the
-study of navigation. The framework dictionary is in:
-<https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv>
-
+study of navigation. The framework dictionary is [here](Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv).
 
 To assessed how well the dictionary identified the components in the papers, a
 quality control procedure was established. For each aspect, a random sample
@@ -269,6 +267,11 @@ component.
 <center>
 ![](posts/moveco-images/Framework-StackPlot-2009-2018.png){width=50%}
 
+Stack plot of the percentage of studies analyzing the components of the movement ecology framework. Each row represents a combination of the colored components, and the percentage of studies analyzing those components is indicated. [I'LL WAIT FOR MATT AND SEE IF HE CAN WRITE A NICE CODE]
+</center>
+<br /> 
+
+
 ## Tracking devices
 
 We grouped tracking devices in 11 categories. These categories were meant to be
@@ -277,19 +280,19 @@ use of one technology does not rule out the use of another technology. E.g.
 radio + GPS is frequently used, and marine studies frequently have an array of
 sensors on them that may combine multiple technologies. These categories are:
 
-1. Light loggers: Any technology that records light levels and derives movement from the change in light levels.  
-2. Satellite: Any tag that collects location via, and sends data to, satellites so that data can be accessed remotely. Frequently the ARGOS system.  
-3. Radio telemetry: Any technology that infers location based on radio telemetry (VHF/UHF frequency). Sometimes it is in addition to either light logger or GPS technology, though this destinction can not be reasily infered via our methods.  
+1. Light loggers: Any technology that records light levels and derives locations based on the timing of twilight events.
+2. Satellite: Any tag that collects location via, and sends data to, satellites, so that data can be accessed remotely. Frequently, the ARGOS system.  
+3. Radio telemetry: Any technology that infers location based on radio telemetry (VHF/UHF frequency). Sometimes it is used in addition to either light logger or GPS technology, though this distinction cannot be readily inferred using our methodology.
 4. Video/camera:  Any data that records movement or location via photos or video. Either camera traps with known locations and the capture of the individual implies the location, or recording observations where the movement across the screen is the movement being collected (tracking spiders on a grid).  
-5. Acoustic:  Any technology that uses sound to infer location, either in a similar technique as radio telemetry or in an acoustic array where the animals sound is record and the arrays location infers the location.  
-6. Pressure: Any technology that records pressure readings (frequently in the water), and these changes infer movement, as through a water column.  
+5. Acoustic:  Any technology that uses sound to infer location, either in a similar way to radio telemetry or in an acoustic array where animal vocalizations are recorded and the location of sensors in the array are used to obtain an animal location.  
+6. Pressure: Any technology that records pressure readings (frequently in the water), and these changes infer vertical movement, such as through a water column.
 7. Accelerometer: Any technology that is placed on a subject and measures the acceleration of the tag, and this delta infers movement.
 8. Body conditions: Any technology that uses body condition sensors to collect data on the subject that may be associated with a movement or lack thereof, such as temperature and heart rate.  
-9. GPS: Any technology that uses Global Position System satellites to calculate the location of an object. Can be handheld GPS devices, or tags that are mounted and must be retrieved on a subject.  
+9. GPS: Any technology that uses Global Position System satellites to calculate the location of an object. Can be handheld GPS devices, or animal-borne tags.  
 10. Radar: Any technology that uses "radio detection and ranging" devices to track objects. Can be large weather arrays or tracking radars.  
-11. Encounter: Any analog tracking tactic where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category is understandably very difficult to capture as the exact phrases must be used.  
+11. Encounter: Any analog tracking method where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category was difficult to capture in our study due to a lack of specific phrases that can be used.  
 
-Their use was assessed with a dictionary approach. The dictionary is here <https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv>.
+Their use was assessed with a dictionary approach. The dictionary can be found [here](Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv). 
 
 To assessed how well the dictionary identified the types of devices in the papers, a
 quality control procedure was established. For each aspect, a random sample
