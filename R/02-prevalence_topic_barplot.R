@@ -13,7 +13,7 @@ library(RColorBrewer)
 library(stringr) # to use str_detect for numbers
 
 # paths
-path_data <- "./Data/ProcessedQueries/References/" # path to main dataset
+path_data <- "./Data/Rocio-temporal/" # path to main dataset
 path.plots <- "./Rocio/Plots/" # path for storing plots
 path_topics <- "./Data/Topics/" # path to topic files
 
@@ -25,9 +25,6 @@ data_decade <- papers %>%
   filter(pubyear > 2008 & pubyear < 2019)
 
 data_decade_summ <- data_decade %>% select(doi,pubyear)
-
-############ ANALYSIS FROM THE TOPICS #################
-
 
 # LOAD LDA data
 N_topics <- 15
@@ -51,11 +48,6 @@ new_order <-  gamma_topic %>% select(topic)
 new_label_for_order <- 1:N_topics
 
 papers_gamma$topic_lab <- mapvalues(papers_gamma$topic, from = t(as.data.frame(new_order)), to = new_label_for_order)
-
-
-
-########## GRAPHS WITH GAMMAS ##################
-
 
 # Long format to short format
 papers_gamma_onlylab <- select(papers_gamma,-topic) # only reordered labels
