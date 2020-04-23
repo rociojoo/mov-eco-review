@@ -125,7 +125,7 @@ them.
 <center>
 ![](posts/moveco-images/SumGammas_labels.png){width=50%}
 
-Measure of prevalence of each topic. See the codes for the plot [here](R/02-wordcloud_plot.R).
+Measure of prevalence of each topic. See the codes for the plot [here](R/02-prevalence_topic_barplot.R).
 </center>
 <br />
 

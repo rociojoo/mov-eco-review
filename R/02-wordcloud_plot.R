@@ -11,8 +11,6 @@
 #   **path_topics** : folder of topics rds outputs  
 #   **data** : df with words (as term column) and frequencies (as beta column) by topic (as topic column)  
 #   **values_tresh** : lower limit for frequencies of words  
-#   **indiv_angle** : TRUE if each word would have a different angle which could be (-90, -45, 0, 45, 90). 
-#   FALSE if every word is horizontal  
 #   **max_size_area** : to plot each wordcloud. Depends on number of words. If too large, there could be a lot of
 #   space between wordclouds. If too small, some words may not appear in the wordcloud  
 #   **height_file_par** and **width_file_par** : height and width of file where we save the plots (in inches)
@@ -26,7 +24,7 @@ library(topicmodels)
 library(ggwordcloud)
 
 # paths
-path_data <- "./Data/ProcessedQueries/References/cleaned_papers_all_years_simple.csv"
+path_data <- "./Data/Rocio-temporal/cleaned_papers_all_years_simple.csv"
 path.plots <- "./Rocio/Plots/"
 path_topics <- "./Data/Topics/"
 
@@ -38,12 +36,13 @@ max_size_area = 30
 values_thresh = 0.003
 rm_outside_par = FALSE
 eccentricity_par = 1
+filename <- paste0("wordcloud.pdf")
 
 ### Now read in data and prepare it
 
 # main dataset
 
-papers <- read.csv(file = paste0(),stringsAsFactors = FALSE)
+papers <- read.csv(file = paste0(path_data),stringsAsFactors = FALSE)
 
 data_decade <- papers %>% 
   filter(pubyear > 2008 & pubyear < 2019)
@@ -59,6 +58,9 @@ modk <- readRDS(file = paste0(path_topics,"NewBestTopicModel",N_topics,"_alpha_"
 
 ############ NUMBER OF PAPERS RELATED TO EACH TOPIC #################
 
+# this "gamma" part serves only to get the prevalence of papers and rank them,
+# so that we use this ranking to order the wordclouds
+
 papers_gamma <- tidytext::tidy(modk, matrix = "gamma")
 head(papers_gamma)
 
@@ -70,8 +72,8 @@ gamma_topic <- papers_gamma %>% group_by(topic) %>% dplyr::summarise(gamma = sum
 gamma_topic$percentage <- gamma_topic$gamma/length(unique(papers_gamma$document))*100
 new_order <-  gamma_topic %>% select(topic)
 new_label_for_order <- 1:N_topics
-
-papers_gamma$topic_lab <- plyr::mapvalues(papers_gamma$topic, from = t(as.data.frame(new_order)), to = new_label_for_order)
+# 
+# papers_gamma$topic_lab <- plyr::mapvalues(papers_gamma$topic, from = t(as.data.frame(new_order)), to = new_label_for_order)
 
 ##################################
 # Create and save the word clouds
@@ -87,15 +89,10 @@ papers_beta$topic_lab <- as.factor(papers_beta$topic)
 papers_beta$topic_lab <- plyr::mapvalues(papers_beta$topic_lab, from = t(as.data.frame(new_order)), to = new_label_for_order)
 papers_beta$topic_lab <- factor(papers_beta$topic_lab, levels = new_label_for_order)
 
-topic_sample <- data %>% filter(beta > values_thresh) #%>%  select(term,beta)
+topic_sample <- papers_beta %>% filter(beta > values_thresh) #%>%  select(term,beta)
 
-if (indiv_angle == TRUE){
-  table_topic <- topic_sample %>%
-    mutate(angle = 45 * sample(-2:2, n(), replace = TRUE, prob = c(1, 2, 4, 2, 1)))
-}else{
-  table_topic <- topic_sample %>%
+table_topic <- topic_sample %>%
     mutate(angle = rep(0,nrow(topic_sample)))
-}
 
 plot_w <- ggplot(table_topic, aes(label = term, size = beta, angle = angle, 
   color = beta)) +
@@ -106,3 +103,7 @@ plot_w <- ggplot(table_topic, aes(label = term, size = beta, angle = angle,
   theme(strip.text = element_text(size = 45),
     plot.margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "pt"),
     strip.background = element_rect(fill = 'white')) 
+
+
+ggsave(plot=plot_w,filename=filename, height=height_file_par, width = width_file_par, units = "in")
+
