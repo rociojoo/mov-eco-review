@@ -219,11 +219,9 @@ More species have been studied in the last years. [Code for plot](R/02-stacked_s
 <center>
 ![](posts/moveco-images/taxonomy_ts_all.png){width=70%}
 
-Proportion of papers in each year studying each taxonomical group.
+Proportion of papers in each year studying each taxonomical group. [Code for plot](R/man_taxa_trend_plot.R).
 </center>
 <br /> 
-
-The codes to produce these graphs are in [PASTE LINK]
 
 
 ## Movement ecology framework (MEF)
