@@ -55,13 +55,7 @@ N_topics <- 15
 alpha_par <- 1 #NULL
 method_par <- "VEM" # logliks are way higher with VEM
 
-if (is.null(alpha_par)){
-  modk <- readRDS(file = paste0(path_topics,"BestTopicModel",N_topics,".rds"))
-}else if(method_par == "VEM"){
-  modk <- readRDS(file = paste0(path_topics,"NewBestTopicModel",N_topics,"_alpha_",alpha_par,"_method_",method_par,"_filtered_II.rds"))
-}else{
-  modk <- readRDS(file = paste0(path_topics,"BestTopicModel",N_topics,"_alpha_",alpha_par,".rds"))
-}
+modk <- readRDS(file = paste0(path_topics,"NewBestTopicModel",N_topics,"_alpha_",alpha_par,"_method_",method_par,"_filtered_II.rds"))
 
 ############ NUMBER OF PAPERS RELATED TO EACH TOPIC #################
 

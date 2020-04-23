@@ -102,34 +102,30 @@ to its $\beta$ value.
 <center>
 ![](posts/moveco-images/wordcloud_topics_15.png){width=100%}
 
-Wordclouds of each topic based on $\beta$ values.
+Wordclouds of each topic based on $\beta$ values. See the codes for the plot [here](R/02-wordcloud_plot.R).
 </center>
 <br />
 
 Since $\gamma$ indicated the degree of association between an abstract and a topic, 
-we obtained a sample of the 5 most associated abstracts to each topic, to aid the
-interpretation of the topics. [PASTE LINK TO .CSV]
+we obtained a [sample](Data/Topics/sample_validation_top_Ntopics_15_method_VEM_II.csv) of the 5 most associated abstracts to each topic, to aid the
+interpretation of the topics.
 
-Based on these outputs, the topics were interpreted as: 1)  Social interactions 
+Based on these outputs, the topics were interpreted as: 1) Social interactions 
 and dispersal, 2)  Movement models, 3)  Habitat selection, 4)  Detection and 
 data, 5)  Home-ranging, 6)  Aquatic systems, 7)  Foraging in marine megafauna, 
 8)  Biomechanics, 9)  Acoustic telemetry, 10) Experimental designs, 11) Activity 
 budget, 12) Avian migration, 13) Sports, 14) Human activity patterns, 
-15) Breeding ecology. For an extended description of these topics, see [PASTE
-LINK TO PRE-PRINT]
-
-
-
+15) Breeding ecology. For an extended description of these topics, see the main text of the manuscript. 
 
 
 The sum of $\gamma$ values for each topic served as proxies of the
-"popularity" of the topic relative to all other topics and were used to rank
+"prevalence" of the topic relative to all other topics and were used to rank
 them. 
 
 <center>
 ![](posts/moveco-images/SumGammas_labels.png){width=50%}
 
-Measure of popularity of each topic.
+Measure of prevalence of each topic. See the codes for the plot [here](R/02-wordcloud_plot.R).
 </center>
 <br />
 
