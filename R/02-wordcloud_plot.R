@@ -29,7 +29,6 @@ path.plots <- "./Rocio/Plots/"
 path_topics <- "./Data/Topics/"
 
 # arguments
-indiv_angle = FALSE
 height_file_par = 26
 width_file_par = 26
 max_size_area = 30 

@@ -133,7 +133,7 @@ Measure of prevalence of each topic. See the codes for the plot [here](R/02-prev
 <center>
 ![](posts/moveco-images/TopicsGamma_ts.png){width=100%}
 
-Time series of the relative popularity of each topic every year.
+Time series of the relative prevalence of each topic every year.
 </center>
 <br />
 
@@ -151,7 +151,7 @@ complementary information.
 <center>
 ![](posts/moveco-images/wordcloud_topics_15_abstracts.png){width=100%}
 
-Wordclouds of each topic based on most strongly associated abstracts.
+Wordclouds of each topic based on most strongly associated abstracts. The code for this plot can be found [here](R/02-wordcloud_plot_II.R).
 </center>
 <br />
 
