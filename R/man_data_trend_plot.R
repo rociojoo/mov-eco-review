@@ -9,11 +9,6 @@ source("./R/expectation_functions.R")
 # Arguments
 path <- "./Data/ProcessedQueries/References/"
 path.plots <- "./Rocio/Plots/"
-
-# Summarizing
-if (!dir.exists(path.plots)){
-  dir.create(path.plots)
-}
 path_processed_dictionaries <- "./Data/Dictionary/Papers-Term/"
 path_dictionary_info <- "./Data/Dictionary/"
 
