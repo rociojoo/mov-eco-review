@@ -1,4 +1,19 @@
 library(tidyverse)
+library(RColorBrewer)
+
+# Arguments
+path <- "./Data/ProcessedQueries/References/"
+# path.plots <- "./Rocio/Plots/"
+path_processed_dictionaries <- "./Data/Dictionary/Papers-Term/"
+path_dictionary_info <- "./Data/Dictionary/"
+
+source("R/methods_cat_analysis.R")
+
+papers <- read.csv(file = paste0(path,"cleaned_papers_all_years_simple.csv"),stringsAsFactors = FALSE)
+
+data_decade <- papers %>% 
+  filter(pubyear > 2008 & pubyear < 2019)
+
 
 dictionary <- "Methods"
 
@@ -18,7 +33,7 @@ matrix_CatTerm <-
 
 synonyms_keywords <- read_csv(paste0(path_dictionary_info,"Synonyms-Methods.csv"))
 
-res <- methods_cat_analysis(matrix_CatTerm = matrix_CatTerm, synonyms_keywords, col_cat = 3)
+res <- methods_cat_analysis(matrix_CatTerm = matrix_CatTerm, synonyms_keywords, col_cat = 3, data_decade)
 
 
 # Internally, I'm filtering out tests and other stuff:

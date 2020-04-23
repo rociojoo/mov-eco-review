@@ -345,24 +345,21 @@ Proportion of papers of each year using each software. [Code for plot](R/man_sof
 </center>
 <br /> 
 
-[PASTE LINK TO Code for graph]
-
-
 
 ## Statistical methods
 
-Within a dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology. We complemented it with a revisitation of a sample of mov-eco papers and added a few more. 204 terms were finally used <https://github.com/rociojoo/MovEcoReview-Repository/blob/master/Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv>. 
+Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in [204 terms](Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv). 
 
 We classified statistical methods into Spatial, Time-series, Movement, Spatiotemporal, Social, and Generic. Their definitions are below:
 
 1. Spatial: spatial statistical methods (e.g. geostatistics)
 2. Time-series: time series methods (e.g. functional data analysis)
 3. Movement: statistical method used for the study of movement (e.g. behavioral change point analysis)
-4. Spatiotemporal: spatiotemporal but not movement method (e.g. spatiotemporal geostatistics)
+4. Spatiotemporal: spatiotemporal but not movement methods (e.g. spatiotemporal geostatistics)
 5. Social: statistical methods that are not exclusively for movement, but that characterize or model social processes (e.g. social networks)
 6. Generic: generic statistical methods that could be used in any type of study, that are not inherently spatial, temporal or social (e.g. a regression analysis)
 
-Terms related to hypothesis tests were first considered but ultimately removed; we considered that the tendency in papers to present p-values could be biasing researchers towards the use of hypothesis tests, thus creating a bias towards general methods. 
+Terms related to hypothesis tests were first considered but ultimately removed; we considered that the tendency of papers to present p-values could be biasing researchers towards the use of hypothesis tests, thus creating a bias towards general methods. 
 
 For quality control, we examined a random sample of 50 papers. The accuracy
 was 84%.  
@@ -373,7 +370,7 @@ was 84%.
 <center>
 ![](posts/moveco-images/methods_ts.png){width=50%}
 
-Proportion of papers of each year using each type of methods. 
+Proportion of papers of each year using each type of methods. [Code for plot](R/man_method_trend_plot.R). 
 </center>
 <br /> 
 
