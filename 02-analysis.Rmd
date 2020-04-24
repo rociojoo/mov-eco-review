@@ -404,3 +404,6 @@ Table. Percentage of papers using each type of statistical method. The code for 
 
 Table. Most common statistical trigrams in M&M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to [this code](R/trigrams.R). 
 
+
+*The [code](R/02-Dictionary_Analysis.R) to process the dictionaries of the framework, tracking devices, software, statistical methods, and taxonomy is also available.
+
