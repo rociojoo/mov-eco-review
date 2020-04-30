@@ -295,10 +295,10 @@ sensors on them that may combine multiple technologies. These categories are:
 Their use was assessed with a dictionary approach. The dictionary can be found [here](Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv). 
 
 To assess how well the dictionary identified the types of devices in the papers, a quality control procedure was established. For each aspect, a random sample
-of 50 papers was selected, and a coauthor who did not lead the construction of
+of 100 papers was selected, and a coauthor who did not lead the construction of
 the dictionary was randomly selected to check if in those papers the categories
 of the dictionary were correctly identified (i.e. accuracy). The accuracy
-was XX%.  [Still waiting for Mathieu]
+was 84%. 
 
 To assess if we were identifying animal-borne GPS rather than hand-held GPS, we took a sample of 100 
 papers already associated to GPS according to our dictionary. 83 referred to GPS
