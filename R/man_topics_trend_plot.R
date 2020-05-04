@@ -99,14 +99,28 @@ colnames(topics_count_year) <- c("Topic","year","num_papers")
 papers_year <- papers_summ_year %>% group_by(pubyear) %>% summarise(n())
 colnames(papers_year) <- c("year","num_papers")
 
-topics_count_year$prop <- topics_count_year$num_papers/rep(papers_year$num_papers,N_topics)
-topics_count_year$Topic <- as.factor(topics_count_year$Topic)
-levels(topics_count_year$Topic) <- topic_labels 
+papers_gamma_doi <- papers_gamma
+names(papers_gamma_doi) <- c("doi",names(papers_gamma)[2:length(names(papers_gamma))])
+papers_gamma_sum_year <- papers_gamma_doi %>% left_join(data_decade_summ, "doi")
 
+gamma_sum_year <- papers_gamma_sum_year %>% 
+  group_by(topic_lab,pubyear) %>% 
+  summarise(sum(gamma))
+colnames(gamma_sum_year) <- c("Topic","year","gamma")
+gamma_sum_year$Topic <- plyr::mapvalues(gamma_sum_year$Topic, from = t(as.data.frame(1:N_topics)), to = topic_labels)
+gamma_sum_year$prop <- gamma_sum_year$gamma/rep(papers_year$num_papers,N_topics)
 
+levels(gamma_sum_year$Topic) <- topic_labels 
+
+# probably not necessary
+values_prop <- sort(gamma_sum_year$prop)
+values_breaks <- seq(from=0,to=max(values_prop)+0.1,by=0.05)
+values_year <- seq(from=min(gamma_sum_year$year), to=max(gamma_sum_year$year),by=1)
+#####################
+# Plotting
 # We're going to plot our lines and then adjust the color, alpha, and linetype to better read the data
 
-plot_df <- topics_count_year
+plot_df <- gamma_sum_year
 
 # Run a quick linear model to measure which trend lines are positive or negative
 # we'll reference this when we choose our colors

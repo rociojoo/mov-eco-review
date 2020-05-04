@@ -1,0 +1,242 @@
+<br />
+
+<center>
+
+# **A decade of movement ecology**
+
+<br />
+<br />
+
+Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma Romero and Mathieu Basille
+
+</center>
+
+<br />
+<br />
+
+
+This is the companion website for the manuscript “A decade of movement ecology”,
+from Joo et al., available as a preprint here [PASTE LINK]. It is composed of
+a series of posts containing the following:
+
+1. <a href=post-moveco1-intro.html>An abstract of the manuscript</a>
+
+2. <a href=post-moveco2-processing.html>Data collection and processing</a>
+
+3. **Data analysis and results** 
+
+    3.1. **Topic analysis** (in this page!)
+    
+    3.2. <a href=post-moveco3-2-taxonomy.html>Taxonomical identification</a>  
+    
+    3.3. <a href=post-moveco3-3-framework.html>Movement ecology framework</a>  
+    
+    3.4. <a href=post-moveco3-4-tools.html>Tracking devices</a>  
+    
+    3.5. <a href=post-moveco3-4-tools.html>Software</a>
+    
+    3.6. <a href=post-moveco3-4-tools.html>Statistical methods</a>
+    
+4. <a href=post-moveco4-survey.html>Survey about the field of movement ecology applied to movement ecologists</a>
+
+
+<br />
+
+## 3. Data analysis
+
+Several dimensions of the mov-eco literature were analyzed: research **topics**,
+**taxonomical** groups studied, components of the movement ecology **framework**
+studied, tracking **devices** used, **software** tools used, and statistical
+**methods** applied. Depending on the dimension, we either analyzed the title,
+keywords, abstract or material and methods (M&M). The sections used for each
+aspect of the analysis are detailed in the following table.
+
+|Dimension|Title|Keywords|Abstract|M&M|
+|--- |--- |--- |--- |--- |
+|Topics|||X||
+|Taxonomy|X|X|X||
+|Framework|X|X|X||
+|Devices|X|X|X|X|
+|Software|X|X|X|X|
+|Methods|X|X|X|X|
+
+## 3.1. Topic analysis
+
+
+<center>
+![](moveco-images/Topics.png){width=70%}
+
+Stages of topic analysis.
+</center>
+<br />
+
+
+
+The topics were not defined a priori. Instead, we fitted Latent Dirichlet
+Allocation (LDA) models to the abstracts (Blei et al. 2003). LDAs are basically
+three-level hierarchical Bayesian models for documents (in our case, abstracts).
+Here we assumed that there were latent or hidden topics behind the abstracts,
+and that the choice of words in the abstracts were related to the topics the
+authors were addressing. Thus, an abstract would have been composed of one or
+more topics, and a topic would have been composed of a mixture of words. The
+probability of a word appearing in an abstract depended on the topic the
+abstract was adressing. There are several variations of topic models (Nunez-Mir et al. 2016). 
+Here we used the LDA model with variational EM estimation (Wainwright and Jordan 2008) 
+implemented in the *topicmodels* package. All the details of the model 
+specification and estimation are in Grün and Hornik 2011. 
+
+<center>
+![](moveco-images/LDA.png){width=80%}
+
+Schematic representation of the links between words, documents and topics. 
+Each document is a mixture of topics. Each topic is modeled as a distribution of words. 
+Each word comes out of one of these topics. 
+Source of the image: Blei, D.M. 2012. Probabilistic topic models. Communications of the ACM, 55(4), 77-84.
+</center>
+<br />
+
+### Preprocessing
+
+To improve the quality of our LDA model outputs, we cleaned the data by 1)
+removing unuseful words for identifying topics (e.g. prepositions and
+numbers), 2) converting all British English words to American English so they
+would not be seen as different words, 3) lemmatizing (i.e. extracting the lemma
+of a word based on its intended meaning, with the aim of grouping words under
+the same lemma) (Ingason et al. 2008), 4) filtering out words that were only
+used once in the whole set of abstracts. R packages *tidytext* (Silge and
+Robinson 2016), *tm* and *textstem* (Rinker 2018) were used in this stage.
+
+[PASTE LINK TO CODES]
+
+### Fitting LDAs
+
+The parameter estimates of the LDA model were obtained by running 20 replicates
+of the models (with the VEM estimation method), and keeping the one with the
+highest likelihood [RJ: add link to the code]. A key argument in the fitting
+function is the number of latent topics. The most commonly used criterion to
+choose a number of topics is the perplexity score or likelihood of a test
+dataset (De Waal and Barnard 2008). Basically, this quantity measures the degree
+of uncertainty a language model has when predicting some new text (for this
+study, a new abstract of a paper). Lower values of the perplexity is good and it
+means the model is assigning higher probabilities. However, the perplexity score
+measures predictive capacities, rather than having actual humanly-interpretable
+latent topics (Chang et al. 2009). In fact, using this score could result into
+having too many topics; see Griffiths and Steyvers (2004) who analyzed PNAS
+abstracts and obtained 300 topics. Hence, we decided to fix the number of topics
+to 15, as a reasonable value that would not be too large than we could not
+interpret them, or too small that the topics were too general. 
+
+[PASTE LINK TO CODES]
+
+### Model outputs
+
+
+From the fitted LDA model, we obtained:
+
+1) the probabilities of having a word in
+a document given the presence of a certain topic (denoted by $\beta$), and 
+
+2)
+the probabilities of a topic being referred to in each document (denoted by
+$\gamma$). 
+
+The $\beta$ values were thus a proxy of the importance of a word in
+a topic. They were used to interpret and label each topic, and to create
+wordclouds for each topic, where the area occupied by each word was proportional
+to its $\beta$ value. 
+
+<center>
+![](moveco-images/wordcloud_topics_15.png){width=100%}
+
+Wordclouds of each topic based on $\beta$ values.
+</center>
+<br />
+
+Since $\gamma$ indicated the degree of association between an abstract and a topic, 
+we obtained a sample of the 5 most associated abstracts to each topic, to aid the
+interpretation of the topics. [PASTE LINK TO .CSV]
+
+Based on these outputs, the topics were interpreted as: 1)  Social interactions 
+and dispersal, 2)  Movement models, 3)  Habitat selection, 4)  Detection and 
+data, 5)  Home-ranging, 6)  Aquatic systems, 7)  Foraging in marine megafauna, 
+8)  Biomechanics, 9)  Acoustic telemetry, 10) Experimental designs, 11) Activity 
+budget, 12) Avian migration, 13) Sports, 14) Human activity patterns, 
+15) Breeding ecology. For an extended description of these topics, see [PASTE
+LINK TO PRE-PRINT]
+
+
+
+
+
+The sum of $\gamma$ values for each topic served as proxies of the
+"popularity" of the topic relative to all other topics and were used to rank
+them. 
+
+<center>
+![](moveco-images/SumGammas_labels.png){width=50%}
+
+Measure of popularity of each topic.
+</center>
+<br />
+
+
+<center>
+![](moveco-images/TopicsGamma_ts.png){width=100%}
+
+Time series of the relative popularity of each topic every year.
+</center>
+<br />
+
+
+To check for consistency, for each topic, we selected the papers that were
+highly associated with the topic ($\\gamma \> 0.75$), and computed the number of
+times each unique word occurred in the abstracts related to the topic. We
+divided those values by the total number of words in the topic to get a relative
+frequency, denoted by $\\delta$. We then created wordclouds for each topic,
+where the area occupied by each word was proportional to its $\\delta$ value.
+These wordclouds were consistent with the topic wordclouds, and gave
+complementary information. 
+
+
+<center>
+![](moveco-images/wordcloud_topics_15_abstracts.png){width=100%}
+
+Wordclouds of each topic based on most strongly associated abstracts.
+</center>
+<br />
+
+Also for consistency, a heatmap of the $\\gamma$ values also showed that most
+papers were evidently more associated to one topic and few were splitted into
+several topics.
+
+
+<center>
+![](moveco-images/heatmap.png){width=100%}
+
+Heatmap of $\gamma$ values per abstract and topic. 
+</center>
+<br />  
+
+All the codes to get the model outputs are in [PASTE LINK]
+
+
+
+Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. “Latent Dirichlet Allocation.” Journal of Machine Learning Research 3 (Jan): 993–1022. http://jmlr.csail.mit.edu/papers/v3/blei03a.html.
+
+Chang, Jonathan, Sean Gerrish, Chong Wang, Jordan L Boyd-Graber, and David M Blei. 2009. “Reading Tea Leaves: How Humans Interpret Topic Models.” In Advances in Neural Information Processing Systems, 288–96.
+
+De Waal, Alta, and Etienne Barnard. 2008. “Evaluating Topic Models with Stability.” In, 5221:79–84. Nineteenth Annual Symposium of the Pattern Recognition Association of South Africa (PRASA 2008).
+
+Griffiths, Thomas L., and Mark Steyvers. 2004. “Finding Scientific Topics.” Proceedings of the National Academy of Sciences 101 (suppl 1): 5228–35. https://doi.org/10.1073/pnas.0307752101.
+
+Grün, Bettina, and Kurt Hornik. 2011. “topicmodels: An R Package for Fitting Topic Models.” Journal of Statistical Software 40 (13): 1–30. https://doi.org/10.18637/jss.v040.i13.
+
+Ingason, A. K., S. Helgadóttir, H. Loftsson, and E. Rögnvaldsson. 2008. “A Mixed Method Lemmatization Algorithm Using a Hierarchy of Linguistic Identities (Holi).” Advances in Natural Language Processing 5221: 205–16. https://doi.org/10.1007/978-3-540-85287-2_20.
+
+Nunez‐Mir, Gabriela C., Basil V. Iannone, Bryan C. Pijanowski, Ningning Kong, and Songlin Fei. 2016. “Automated Content Analysis: Addressing the Big Literature Challenge in Ecology and Evolution.” Methods in Ecology and Evolution 7 (11): 1262–72. https://doi.org/10.1111/2041-210X.12602.
+
+Rinker, Tyler W. 2018. textstem: Tools for Stemming and Lemmatizing Text. Buffalo, New York. http://github.com/trinker/textstem.
+
+Silge, Julia, and David Robinson. 2016. “Tidytext: Text Mining and Analysis Using Tidy Data Principles in R.” JOSS 1 (3). https://doi.org/10.21105/joss.00037.
+
+Wainwright, Martin J., and Michael I. Jordan. 2008. “Graphical Models, Exponential Families, and Variational Inference.” Foundations and Trends® in Machine Learning 1 (1–2): 1–305. https://doi.org/10.1561/2200000001.

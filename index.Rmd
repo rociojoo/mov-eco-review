@@ -23,6 +23,7 @@ from Joo et al., available as a preprint here [PASTE LINK].
 
 ## Abstract of the manuscript
 
+<<<<<<< HEAD
 Movement is fundamental to life, shaping population dynamics, biodiversity, and
 ecosystem structure. Recent advances in tracking technology have enabled
 fundamental questions about movement to be tackled, and the number of
@@ -46,6 +47,9 @@ movement ecology research. Based on these results, we discuss the future of
 movement ecology, whether if technology will continue to be the driving force in
 the field, or if the field will rather transform, embrace the MEF and face the
 challenges of interdisciplinarity.
+=======
+Wait for it!
+>>>>>>> b434a66c98e4fbcd7aff1436fcb71a83bcccda65
 
 
 
