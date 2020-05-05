@@ -1,3 +1,3 @@
 # moveco-review.github.io
-Official public repository with posts, data and codes for the movement ecology
-review paper
+Website for movement ecology review paper - mostly appendix with methods and
+codes for data processing and analysis

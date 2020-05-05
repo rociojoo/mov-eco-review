@@ -133,7 +133,7 @@ Measure of prevalence of each topic. See the codes for the plot [here](R/02-prev
 <center>
 ![](posts/moveco-images/TopicsGamma_ts.png){width=100%}
 
-Time series of the relative prevalence of each topic every year.
+Time series of the relative prevalence of each topic every year. The code can be found [here](R/man_topics_trend_plot.R).
 </center>
 <br />
 
@@ -322,7 +322,7 @@ tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordina
 ### Output
 
 <center>
-![](posts/moveco-images/devices_ts_all.png){width=50%}
+![](posts/moveco-images/devices_ts_all.png){width=100%}
 
 Proportion of papers of each year using each type of
 device. [Code for plot](R/man_data_trend_plot.R).
@@ -353,7 +353,7 @@ was 88%.
 
 
 <center>
-![](posts/moveco-images/software_ts_all.png){width=50%}
+![](posts/moveco-images/software_ts_all.png){width=100%}
 
 Proportion of papers of each year using each software. [Code for plot](R/man_software_trend_plot.R).
 </center>
@@ -382,7 +382,7 @@ was 84%.
 
 
 <center>
-![](posts/moveco-images/methods_ts.png){width=50%}
+![](posts/moveco-images/method_ts.png){width=100%}
 
 Proportion of papers of each year using each type of methods. [Code for plot](R/man_method_trend_plot.R). 
 </center>

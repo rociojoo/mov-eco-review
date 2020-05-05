@@ -16,13 +16,18 @@ if (!dir.exists(path.plots)){
 }
 path_processed_dictionaries <- "./Data/Dictionary/Papers-Term/"
 path_dictionary_info <- "./Data/Dictionary/"
+path_topics <- "./Data/Topics/"
 
 papers <- read.csv(file = paste0(path,"cleaned_papers_all_years_simple.csv"),stringsAsFactors = FALSE)
 
 data_decade <- papers %>% 
   filter(pubyear > 2008 & pubyear < 2019)
 
-# Now choose topic
+topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home-ranging",
+                  "Aquatic systems","Foraging in marine megafauna","Biomechanics","Acoustic telemetry",
+                  "Experimental designs","Activity budget","Avian migration","Sports","Human activity patterns","Nesting behavior")
+
+# Now choose dictionary
 dictionary <- "Taxonomy" # "Humans"
 res <- expectation_functions(dictionary, data_all = data_decade, num_cat=NULL, ini_cat=1, 
   paper_cat_out=TRUE, filter_lines=TRUE, suffix=NULL, 
@@ -31,7 +36,6 @@ res <- expectation_functions(dictionary, data_all = data_decade, num_cat=NULL, i
 newtaxa_df <- res[[2]]
 rownames(newtaxa_df) <- NULL
 
-path_topics <- "./Data/Topics/"
 papers_summ <- readRDS(paste0(path_topics,"Topics_Paper.rds"))
 
 taxa_topics <- left_join(newtaxa_df,papers_summ[, c("doi","top_50")],by="doi")
@@ -56,24 +60,37 @@ names(taxa_topics_50_count) <- c("Taxon","Topic","Total")
 plot_df <- taxa_topics_50_count
 plot_df <- merge(plot_df,data.frame(total_topic = tapply(plot_df$Total, plot_df$Topic,sum )), by.x='Topic', by.y = 0)
 plot_df$total_prop <- plot_df$Total/plot_df$total_topic
+plot_df <- merge(plot_df,data.frame(Topic = 1:15, topic_labels), by='Topic')
+
 
 # Color ramp
-color_ramp5 <- colorRampPalette(c( 'darkolivegreen4','wheat2','darkorchid3'))(length(unique(plot_df$Taxon)))
+color_pallete <- c('#88CCEE', '#44AA99', '#117733', '#332288', '#DDCC77', '#999933','#CC6677', '#882255', '#AA4499', '#DDDDDD')
+
 
 # # Reorder if youd like
-# plot_df$Taxon <- factor(plot_df$Taxon, 
-#   levels = c('Amphibians', 'Reptiles', 'Birds',
-#   'Humans','Mammals','Fish','Crustaceans',
-#   'Mollusks','Insects','others') )
+plot_df$Taxon <-  factor(plot_df$Taxon,
+                         levels = names(sort(tapply(plot_df$Total,plot_df$Taxon, sum),decreasing=T)))
+topic_labels
+plot_df$topic_labels <- factor(plot_df$topic_labels, levels = topic_labels)
+
+# make a dataframe of the n's for each group to add later
+ann_text <- plot_df %>% group_by(topic_labels) %>% 
+  summarise(n = sum(Total)) %>% 
+  mutate(Taxon = 'Amphibians', total_prop = 0.8)
 
 ggplot(data=plot_df, aes(x=Taxon, y=total_prop, fill=Taxon)) +
   geom_bar(stat="identity", position=position_dodge()) +
-  scale_fill_manual(values = color_ramp5)+
-  facet_wrap(facets = vars(Topic)) +
+  scale_fill_manual(values = color_pallete) +
+  facet_wrap(facets = vars(topic_labels)) +
+  geom_text(data = ann_text,label = paste0('(n = ',ann_text$n,')')) +
   theme_bw() + 
   theme(axis.title.y = element_text(size=16),
-    axis.title.x=element_blank(),
-    axis.text.x=element_blank(),
-    axis.ticks.x=element_blank()) + ylab('Total proportion of papers within a topic')
-  
+        axis.text.y = element_text(size=12),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 13)) + 
+  ylab('Total proportion of papers within a topic') 
 
+
+# ggsave('Manuscript/Images/Barplots_topics_taxa1.png', width=12,height=10)
