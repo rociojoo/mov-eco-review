@@ -251,6 +251,8 @@ the dictionary was randomly selected to check if in those papers the categories
 of the dictionary were correctly identified (i.e. accuracy). The accuracy
 was 91%. 
 
+We replicated this analysis for the 1999-2008 period for comparison purposes.
+
 ### Outputs
 
 |Component            |2009-2018| 1999-2008|
@@ -265,12 +267,24 @@ information on the framework was gathered) that use terms related to each
 component. 
 
 <center>
-![](posts/moveco-images/Framework-StackPlot-2009-2018.png){width=50%}
+![](posts/moveco-images/Framework-StackPlot-2009-2018_full_MB.png){width=50%}
 
-Stack plot of the percentage of studies analyzing the components of the movement ecology framework. Each row represents a combination of the colored components, and the percentage of studies analyzing those components is indicated. [I'LL WAIT FOR MATT AND SEE IF HE CAN WRITE A NICE CODE]
+Stack plot of the percentage of studies published between 2009 and 2018 analyzing the components of the
+movement ecology framework. Each row represents a combination of the colored
+components, and the percentage of studies analyzing those components is
+indicated for cases greater than 5%. For instance, the last row shows that 33.3% of the studies focused on the relation between external factors and movement, while the row above shows that 24.7% of the studies looked at both internal and external factors associated with movement. The code for the stack plot is [here](R/man_framework_stack_plot.R) (the graph was then edited in Inkscape for aesthetic purposes).
 </center>
 <br /> 
 
+<center>
+![](posts/moveco-images/Framework-StackPlot-1999-2008_full_MB.png){width=50%}
+
+Stack plot of the percentage of studies published between 1999 and 2008 analyzing the components of the
+movement ecology framework. Each row represents a combination of the colored
+components, and the percentage of studies analyzing those components is
+indicated for cases greater than 4%. The code for the stack plot is [here](R/man_framework_stack_plot_1999_2008.R) (the graph was then edited in Inkscape for aesthetic purposes).
+</center>
+<br /> 
 
 ## Tracking devices
 

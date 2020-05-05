@@ -3,7 +3,7 @@
 #############################
 
 library(tidyverse)
-library(topicmodels) #install in ubuntu libgsl-dev and gsl-bin
+# library(topicmodels) #install in ubuntu libgsl-dev and gsl-bin
 source("./R/expectation_functions.R")
 
 # Arguments
