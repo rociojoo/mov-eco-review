@@ -139,14 +139,24 @@ plot_df <- merge(plot_df,grouping, by='Topic')
 # Now to make our aesthetic features which will be added with scale_*_manual()
 # Colors
 # Make a color ramp where the amount of 'grays' will determine the highlighted categories
-colfunc <- colorRampPalette(c("red",'gray','gray','gray',"blue"))
-colorz <- colfunc(nrow(here))
-names(colorz) <- names(sort(here))
+Tol_muted <- c('#88CCEE', '#44AA99', '#117733', '#332288', '#DDCC77', '#999933','#CC6677', '#882255', '#AA4499', '#DDDDDD')
 
+Okabe_Ito <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
+# colfunc <- colorRampPalette(c("red",'gray','gray','gray',"blue"))
+# colorz <- colfunc(nrow(here))
+colorz <- Tol_muted[1:(length(here)+1) %% (length(Tol_muted)+1)]
+# change problematic colors to gray60
+colorz[5] <- "#7f7f7f"
+colorz[10] <- "#7f7f7f"
+colorz[11] <- "#000000"
+#colorz <- Okabe_Ito[1:(length(here)+1) %% (length(Okabe_Ito)+1)]
+
+names(colorz) <- names(sort(here))
+colorz
 # line types
 # just need to spread linetypes out enough so that the color and alpha can help distinguish as well
 # manual
-linetypez <- c(1,2,4,3,5,6,1,2,3,6,5,3,4,2,1)
+linetypez <- c(5,5,3,3,3,3,3,3,3,3,3,3,3,1,1)
 # or random
 # linetypez <- rep(1:6,times=ceiling(length(levels(plot_df$Topic))/6))
 # linetypez <- linetypez[seq_along(levels(plot_df$Topic))]
@@ -160,27 +170,42 @@ nz <- length(here)
 alphaz <- c((1*nz/2):(.2*nz/2)/nz*2,(.2*nz/2):(1*nz/2)/nz*2,ifelse(nz%%2==0,NULL,1))
 # or manually
 
-alphaz <- c(1,.9,.7,.6,.4,.4,.4,.4,.4,.4,.4,.6,.7,.9,1)
+alphaz <- c(1,.7,.45,.45,.45,.45,.45,.45,.45,.45,.45,.45,.45,.7,1)
 names(alphaz) <- names(sort(here))
 
+# line width
+sizez <-  c(1,1,2,1,1,1,1,1,1,2,1,2,1,1,2)
+names(sizez) <- names(here)
+sizez
+sizez <- rep(sizez, each = 10)
+sizez
 # You have to include color, linetype, and alpha in the mapping even if youre going to override it anyway.
 
-ggplot(
-data  = plot_df, 
-mapping = aes(x = year, y = prop, color = Topic, group = group, linetype = Topic, alpha = Topic)
+p <- ggplot(
+data  = plot_df
 ) +
-geom_line(size=1.5) +
+geom_line(size=sizez, 
+  mapping = aes(x = year, y = prop, color = Topic, group = group, linetype = Topic, alpha = Topic)) +
 scale_color_manual(values = colorz) +
 scale_linetype_manual(values = linetypez) +
 scale_alpha_manual(values = alphaz)+
-theme_bw()+xlab("") + ylab("Proportion of articles in a year") +
+theme_classic()+xlab("") + ylab("Proportion of articles in a year") +
 theme(axis.text.x = element_text(angle = 15, hjust = 1,size=16),axis.text.y = element_text(size=16),
-legend.position = "bottom", legend.justification = "right",legend.text=element_text(size=15),
+legend.position = "none", legend.justification = "right",legend.text=element_text(size=15),
 axis.title.y = element_text(margin = margin(r=10),size=17), 
 axis.title.x = element_text(margin = margin(t=10)),
 legend.key.size = unit(2,"line"),
 legend.title=element_text(size=16))
 
-#ggsave(paste0(path.plots,"TopicsMax_ts_Ntopics_trendlines_",N_topics,"_method_",method_par,".pdf"), width=16,height=8)
+start_pos <- plot_df %>% group_by(Topic) %>% summarise(y = last(prop)) %>% mutate(x = 2018)
+start_pos$colorz <- colorz
+start_pos
 
+#start_pos$x_new <- start_pos$x + c(0.49,0.55,1.0,0.5,0.61,0.57,0.48,0.57,0.97,0.75,0.53,0.61,0.69,0.62,0.26)
+start_pos$x_new <- start_pos$x + 0.1
+start_pos$y_new <- start_pos$y + c(0.004,-0.003,0,0.004,0.0024,0.001,0.0022,0,0.0043,0,0.000,0,0.0022,0,0.002)
+p + geom_text(data = start_pos, aes(x =x_new ,y=y_new, label = Topic), color=colorz,hjust=0,size=5)+
+    coord_cartesian(xlim = c(2009, 2018),clip = 'off') + 
+    theme(plot.margin = unit(c(1,13,1,1), "lines"))
 
+ggsave("Manuscript/Images/TopicsGamma_ts1.png", width=16,height=10)
