@@ -82,15 +82,17 @@ ggplot(data=plot_df, aes(x=Taxon, y=total_prop, fill=Taxon)) +
   geom_bar(stat="identity", position=position_dodge()) +
   scale_fill_manual(values = color_pallete) +
   facet_wrap(facets = vars(topic_labels)) +
-  geom_text(data = ann_text,label = paste0('(n = ',ann_text$n,')')) +
+  geom_text(data = ann_text,label = paste0('(n = ',ann_text$n,')'), size = 5) +
   theme_bw() + 
-  theme(axis.title.y = element_text(size=16),
-        axis.text.y = element_text(size=12),
+  theme(axis.title.y = element_text(size=20),
+        axis.text.y = element_text(size=16),
         axis.title.x = element_blank(),
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank(),
-        strip.text = element_text(size = 13)) + 
+        strip.text = element_text(size = 16),
+        legend.title=element_text(size=16),
+        legend.text = element_text(size = 16)) + 
   ylab('Total proportion of papers within a topic') 
 
-ggsave(filename=paste0(path.plots,"Barplots_topics_taxa.png"), height=10,width=14)
+ggsave(filename=paste0(path.plots,"Barplots_topics_taxa.pdf"), height=10,width=16)
 # ggsave('Manuscript/Images/Barplots_topics_taxa1.png', width=12,height=10)
