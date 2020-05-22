@@ -54,9 +54,9 @@ papers_gamma_onlylab <- select(papers_gamma,-topic) # only reordered labels
 papers_gamma_short <- spread(papers_gamma_onlylab, key = topic_lab, value = gamma)
 names(papers_gamma_short) <- c("document", paste("Topic", names(papers_gamma_short)[-1])) 
 
-topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home-ranging",
+topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home ranges",
                       "Aquatic systems","Foraging in marine megafauna","Biomechanics","Acoustic telemetry",
-                      "Experimental designs","Activity budget","Avian migration","Sports","Human activity patterns","Nesting behavior")
+                      "Experimental designs","Activity budgets","Avian migration","Sports","Human activity patterns","Breeding ecology")
 
 
 ################ CALCULATE AN IMPORTANCE MEASURE FOR THE TOPICS (SUM OF GAMMAS) ###################
@@ -74,4 +74,5 @@ ggplot(gamma_sum_ordered, aes(x=Topic,y=Gamma)) +
   coord_flip() +
   xlab("Topic") + ylab("Total gamma") +
   theme_cowplot() + theme(text = element_text(size=20),axis.text.y = element_text(size=16))
-ggsave(filename=paste0(path.plots,"SumGammas_labels.pdf"), height=7,width=7)
+# ggsave(filename=paste0(path.plots,"SumGammas_labels.pdf"), height=7,width=7)
+# ggsave(filename=paste0(path.plots,"SumGammas_labels.png"), height=7,width=7)

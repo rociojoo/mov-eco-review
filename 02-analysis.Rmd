@@ -112,9 +112,9 @@ interpretation of the topics.
 
 Based on these outputs, the topics were interpreted as: 1) Social interactions 
 and dispersal, 2)  Movement models, 3)  Habitat selection, 4)  Detection and 
-data, 5)  Home-ranging, 6)  Aquatic systems, 7)  Foraging in marine megafauna, 
+data, 5)  Home ranges, 6)  Aquatic systems, 7)  Foraging in marine megafauna, 
 8)  Biomechanics, 9)  Acoustic telemetry, 10) Experimental designs, 11) Activity 
-budget, 12) Avian migration, 13) Sports, 14) Human activity patterns, 
+budgets, 12) Avian migration, 13) Sports, 14) Human activity patterns, 
 15) Breeding ecology. For an extended description of these topics, see the main text of the manuscript. 
 
 
@@ -131,7 +131,7 @@ Measure of prevalence of each topic. See the codes for the plot [here](R/02-prev
 
 
 <center>
-![](posts/moveco-images/TopicsGamma_ts.png){width=100%}
+![](posts/moveco-images/TopicsGamma_ts1.png){width=100%}
 
 Time series of the relative prevalence of each topic every year. The code can be found [here](R/man_topics_trend_plot.R).
 </center>
@@ -220,6 +220,13 @@ More species have been studied in the last years. [Code for plot](R/02-stacked_s
 ![](posts/moveco-images/taxonomy_ts_all.png){width=70%}
 
 Proportion of papers in each year studying each taxonomical group. [Code for plot](R/man_taxa_trend_plot.R).
+</center>
+<br /> 
+
+<center>
+![](posts/moveco-images/Barplots_topics_taxa.png){width=100%}
+
+For each topic, relative frequencies of papers studying each taxonomical group. Only papers with more than 50% of association to each topic are used for this graph. [Code for plot](R/man_taxa_topic_barplot.R).
 </center>
 <br /> 
 

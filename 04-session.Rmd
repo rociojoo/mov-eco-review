@@ -1,0 +1,5 @@
+# R session information
+
+```{r details, echo = FALSE, eval=TRUE, include=TRUE}
+devtools::session_info()
+```

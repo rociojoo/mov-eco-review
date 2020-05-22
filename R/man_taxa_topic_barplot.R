@@ -23,9 +23,9 @@ papers <- read.csv(file = paste0(path,"cleaned_papers_all_years_simple.csv"),str
 data_decade <- papers %>% 
   filter(pubyear > 2008 & pubyear < 2019)
 
-topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home-ranging",
+topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home ranges",
                   "Aquatic systems","Foraging in marine megafauna","Biomechanics","Acoustic telemetry",
-                  "Experimental designs","Activity budget","Avian migration","Sports","Human activity patterns","Nesting behavior")
+                  "Experimental designs","Activity budgets","Avian migration","Sports","Human activity patterns","Breeding ecology")
 
 # Now choose dictionary
 dictionary <- "Taxonomy" # "Humans"
@@ -92,5 +92,5 @@ ggplot(data=plot_df, aes(x=Taxon, y=total_prop, fill=Taxon)) +
         strip.text = element_text(size = 13)) + 
   ylab('Total proportion of papers within a topic') 
 
-
+ggsave(filename=paste0(path.plots,"Barplots_topics_taxa.png"), height=10,width=14)
 # ggsave('Manuscript/Images/Barplots_topics_taxa1.png', width=12,height=10)

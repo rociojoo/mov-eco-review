@@ -57,9 +57,10 @@ papers_summ <- cbind.data.frame(doi = as.character(papers_gamma_short$document),
 
 #
 ### if we have labels :
-topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home-ranging",
+topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home ranges",
                   "Aquatic systems","Foraging in marine megafauna","Biomechanics","Acoustic telemetry",
-                  "Experimental designs","Activity budget","Avian migration","Sports","Human activity patterns","Nesting behavior")
+                  "Experimental designs","Activity budgets","Avian migration","Sports","Human activity patterns","Breeding ecology")
+
 
 # now we have to count and make a data frame
 papers_summ$topic_max <- as.factor(papers_summ$topic_max)
@@ -178,8 +179,9 @@ start_pos
 #start_pos$x_new <- start_pos$x + c(0.49,0.55,1.0,0.5,0.61,0.57,0.48,0.57,0.97,0.75,0.53,0.61,0.69,0.62,0.26)
 start_pos$x_new <- start_pos$x + 0.1
 start_pos$y_new <- start_pos$y + c(0.004,-0.003,0,0.004,0.0024,0.001,0.0022,0,0.0043,0,0.000,0,0.0022,0,0.002)
-p + geom_text(data = start_pos, aes(x =x_new ,y=y_new, label = Topic), color=colorz,hjust=0,size=5)+
+p + geom_text(data = start_pos, aes(x =x_new ,y=y_new, label = Topic), color=colorz,hjust=0,size=5.5)+
   coord_cartesian(xlim = c(2009, 2018),clip = 'off') + 
   theme(plot.margin = unit(c(1,13,1,1), "lines"))
 
+ggsave(filename=paste0(path.plots,"TopicsGamma_ts1.png"), height=10,width=18)
 # ggsave("Manuscript/Images/TopicsGamma_ts1.png", width=16,height=10)

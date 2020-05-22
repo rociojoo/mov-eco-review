@@ -15,7 +15,7 @@
 #   **path.save.query** - a place to save the final output  
 #   **name** <- the filename extension to add to our new outputs  
 
-devtools::install_github('ropensci/refsplitr')
+# devtools::install_github('ropensci/refsplitr')
 library(refsplitr)
 path.fulltext <- "fulltext/"
 path.pmc <- "Data/doi/"
