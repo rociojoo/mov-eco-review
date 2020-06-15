@@ -1,4 +1,5 @@
 library(tidyverse)
+library(RColorBrewer)
 
 # Arguments
 path <- "./Data/ProcessedQueries/References/"
@@ -172,7 +173,5 @@ start_pos$y_new <- start_pos$y + c(0,0,0,0,0,0)
 p + geom_text(data = start_pos, aes(x =x_new ,y=y_new, label = subcategory), color=colorz,hjust=0,size=5)+
   coord_cartesian(xlim = c(2009, 2018),clip = 'off') + 
   theme(plot.margin = unit(c(1,10,1,1), "lines"))
-
-
 
 # ggsave("Manuscript/Images/method_ts1.png", width=12,height=8)
