@@ -24,7 +24,7 @@ path.save.stats <- 'Data/ProcessedQueries/Stats/'
 path.save.reviews <- 'Data/ProcessedQueries/Reviews/' 
 path.save.query <- 'Data/ProcessedQueries/References/'
 name <- 'cleaned_papers_all_years'
-source('R/CleaningQueries_meb.R')
+source('R/CleaningQueries.R')
 
 
 # `Query-Results-WoK` is the folder we saved the bulk WoS files in. 
