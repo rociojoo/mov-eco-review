@@ -1,5 +1,5 @@
 --- 
-title: "A decade of movement ecology"
+title: "Reviewing the last decade of movement ecology"
 author: "Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma S. Romero-Romero and Mathieu Basille"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -17,28 +17,27 @@ description: "Quantitative review of the last decade of movement ecology (from 2
 ![](posts/moveco-images/mov-logo.png){width=40%}
 </center>
 
-> **Note:** This is the companion website for the manuscript “A decade of movement ecology”,
+> **Note:** This is the companion website for the manuscript “Reviewing the last decade of movement ecology”,
 from Joo et al. 
 
 
 ## Abstract of the manuscript
 
-Movement is fundamental to life, shaping population dynamics, biodiversity
+Movement is fundamental to life, shaping population dynamics, biodiversity 
 patterns, and ecosystem structure.
-Recent advances in tracking technology have enabled fundamental questions about
-movement to be tackled, and the number of publications in movement ecology has
-increased considerably.
-In 2008, the movement ecology framework (MEF) was proposed in a PNAS
-special feature on movement ecology (Nathan et al. 2008). 
-The MEF introduced an integrative theory of organism movement - linking internal
-state, movement capacity and navigation capacity to external factors - and has
-been recognized in the literature as a milestone in the field.
-Here, over ten years later, we investigated the current state of research. Specifically, we explore the main research topics, evaluate the impact the MEF has had in the literature, and assess changes in the use of technological devices, software and statistical methods. 
-To do so, we used a text mining approach to review \> 8000 peer-reviewed papers in movement ecology. 
-We found that, while there have been major technological changes in the past decade (i.e. increased use of GPS devices, accelerometers and video cameras, and a convergence towards R), research focusses on the same questions, specifically, on the effect of external (e.g. environmental) factors on movement and behavior. 
-In practice, it appears that movement ecology research does not reflect the MEF.
-We call on researchers in movement ecology and other disciplines to transform the field from technology-driven to embrace interdisciplinary collaboration.
-Through a better linking of different components of the framework, key processes underlying movement, such as navigation, as well as evolutionary, physiological and life-history consequences of particular strategies, can be revealed.
+It has been studied for millenia from different perspectives, diversifying into 
+several research fields like physics, physiology, data science, and ecology.
+Around a decade ago, the movement ecology framework (MEF), an integrative framework for movement studies, was developed. It required more integrative interdisciplinary research to understand the processes behind movement.
+In parallel, recent advances in tracking technology have enabled tagging individuals from a large diversity of species and taxa globally, and collecting data at ever finer spatio-temporal resolutions. 
+Here, a decade later, we investigated the current state of research in the field.
+Using a text mining approach on \> 8000 peer-reviewed
+papers in movement ecology, we explored the main research topics,
+and assessed changes in the study of the movement components described in the MEF, the use of technological devices, software and statistical methods. 
+The number of publications has increased considerably and there have been major technological changes in the past decade (i.e. increased use of GPS devices, accelerometers and video cameras, and a convergence towards R), yet we found that research focuses on the same questions, like the effect of environmental factors on
+movement, and overall neglects the study of movement processes. 
+We call on researchers to transform the field from technology-driven to embrace interdisciplinary collaboration, in order to reveal key processes
+underlying movement (e.g. navigation), as well as evolutionary, physiological
+and life-history consequences of particular strategies.
 
 
 <center>
