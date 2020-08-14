@@ -27,23 +27,49 @@ Stages of topic analysis.
 </center>
 <br />
 
+The topics were not defined a priori.
+Instead, we fitted Latent Dirichlet Allocation (LDA) models to the abstracts
+(@Blei2003).
 
+### The model 
 
-The topics were not defined a priori. Instead, we fitted Latent Dirichlet
-Allocation (LDA) models to the abstracts (@Blei2003). LDAs are basically
-three-level hierarchical Bayesian models for documents (in our case, abstracts).
-Here we assumed that there were latent or hidden topics behind the abstracts,
-and that the choice of words in the abstracts were related to the topics the
-authors were addressing. Thus, an abstract would have been composed of one or
-more topics, and a topic would have been composed of a mixture of words. The
-probability of a word appearing in an abstract depended on the topic the
-abstract was addressing. There are several variations of topic models (@Nunez-Mir2016). 
-Here we used the LDA model with variational EM estimation (@Wainwright2008) 
+LDAs are Bayesian mixture models that assume the existence of a fixed number $K$
+of topics behind the abstracts.
+Each topic can be characterized by a multinomial distribution of words with
+parameter $\beta$, drawn from a Dirichlet distribution with parameter
+$\gamma$. 
+Each document $d \in {1, ..., D}$ is composed by a mixture of topics, drawn
+from a multinomial distribution with parameter $\theta$, which is drawn from a
+Dirichlet distribution with parameter $\alpha$. 
+For each word $w$ in document $d$, first a hidden topic $z$ is selected from the
+multinomial distribution with parameter $\theta$.
+From the selected topic $z$, a word is selected based on the multinomial
+distribution with parameter $\beta$.
+The log-likelihood of a document $d = \{w_1,...,w_N\}$ is
+$l(\alpha,\beta) = \log(p(d|\alpha,\beta)) = \log\int\sum_z\left[\prod_{n=1}^{N} p(w_i|z_i,\beta)p(z_i|\theta)\right]p(\theta|\alpha)d\theta$
+
+Here we used the LDA model with variational EM estimation (@Wainwright2008, @Blei2003) 
 implemented in the *topicmodels* package. All the details of the model 
 specification and estimation are in @Grun2011. 
 
+The model assumes exchangeability (i.e. the order of words is negligible), that topics are uncorrelated, and that the number of topics is known.
+
+The most commonly used criterion to choose a number of topics is the perplexity
+score or likelihood of a test dataset (@Waal2008). 
+Basically, this quantity measures the degree of uncertainty a language model has
+when predicting some new text (for this study, a new abstract of a paper). 
+Lower values of the perplexity is good and it means the model is assigning
+higher probabilities. 
+However, the perplexity score measures predictive capacities, rather than having
+actual humanly-interpretable latent topics (@Chang2009). 
+In fact, using this score could result in there being too many topics; see
+@Griffiths2004 who analyzed PNAS abstracts and obtained 300 topics. 
+Hence, we decided to fix the number of topics to 15, as a
+reasonable value that would not be too large than we could not interpret them,
+or too small that the topics were too general.
+
 <center>
-![](posts/moveco-images/LDA.png){width=80%}
+![](posts/moveco-images/TopicModeling.png){width=80%}
 
 Schematic representation of the links between words, documents and topics. 
 Each document is a mixture of topics. Each topic is modeled as a distribution of words. 
@@ -51,6 +77,15 @@ Each word comes out of one of these topics.
 Source of the image: Blei, D.M. 2012. Probabilistic topic models. Communications of the ACM, 55(4), 77-84.
 </center>
 <br />
+
+<center>
+![](posts/moveco-images/LDA.png){width=80%}
+
+Schematic representation of the Latent Dirichlet model described above.
+</center>
+<br />
+
+
 
 ### Preprocessing
 
@@ -64,45 +99,33 @@ used once in the whole set of abstracts. R packages *tidytext* (@Silge2016),
 *tm* and *textstem* (@Rtextstem) were used in this [stage](R/02-CleaningWords_TopicModeling.R).
 
 
-### Fitting LDAs
+### Model fitting
 
 The parameter estimates of the LDA model were obtained by running 20 replicates
 of the models (with the VEM estimation method), and keeping the one with the
-highest likelihood; see [here](R/02-TopicModelingScript_rj.R). A key argument in
-the fitting function is the number of latent topics. The most commonly used
-criterion to choose a number of topics is the perplexity score or likelihood of
-a test dataset (@Waal2008). Basically, this quantity measures the degree of
-uncertainty a language model has when predicting some new text (for this study,
-a new abstract of a paper). Lower values of the perplexity is good and it means
-the model is assigning higher probabilities. However, the perplexity score
-measures predictive capacities, rather than having actual humanly-interpretable
-latent topics (@Chang2009). In fact, using this score could result in there
-being too many topics; see @Griffiths2004 who analyzed PNAS abstracts and
-obtained 300 topics. Hence, we decided to fix the number of topics to 15, as a
-reasonable value that would not be too large than we could not interpret them,
-or too small that the topics were too general.
+highest likelihood; see [here](R/02-TopicModelingScript_rj.R). 
 
 
 ### Model outputs
 
 
-From the fitted LDA model, we obtained:
+From the fitted LDA model, we can obtained:
 
-1) the probabilities of having a word in
-a document given the presence of a certain topic (denoted by $\beta$), and 
+1)  $E(\beta | z,w)$, as the posterior expected values of word distribution per
+    topic, denoted by $\hat{\beta}$, and
 
-2) the probabilities of a topic being referred to in each document (denoted by
-$\gamma$). 
+2)  $E(\theta\_d | z)$, the posterior topic distribution per abstract, denoted
+    by $\gamma$ in the package.
 
-The $\beta$ values were thus a proxy of the importance of a word in
+The $\hat{\beta}$ values were thus a proxy of the importance of a word in
 a topic. They were used to interpret and label each topic, and to create
 wordclouds for each topic, where the area occupied by each word was proportional
-to its $\beta$ value. 
+to its $\hat{\beta}$ value. 
 
 <center>
 ![](posts/moveco-images/wordcloud_topics_15.png){width=100%}
 
-Wordclouds of each topic based on $\beta$ values. See the codes for the plot [here](R/02-wordcloud_plot.R).
+Wordclouds of each topic based on $\hat{\beta}$ values. See the codes for the plot [here](R/02-wordcloud_plot.R).
 </center>
 <br />
 
@@ -118,7 +141,7 @@ budgets, 12) Avian migration, 13) Sports, 14) Human activity patterns,
 15) Breeding ecology. For an extended description of these topics, see the main text of the manuscript. 
 
 
-The sum of $\gamma$ values for each topic served as proxies of the
+The sum of $\gamma$ values for each topic ($\sum_d E(\theta_d | z_k)$ for each $k$) served as proxies of the
 "prevalence" of the topic relative to all other topics and were used to rank
 them. 
 
@@ -137,27 +160,7 @@ Time series of the relative prevalence of each topic every year. The code can be
 </center>
 <br />
 
-
-To check for consistency, for each topic, we selected the papers that were
-highly associated with the topic ($\gamma > 0.75$), and computed the number of
-times each unique word occurred in the abstracts related to the topic. We
-divided those values by the total number of words in the topic to get a relative
-frequency, denoted by $\delta$. We then created wordclouds for each topic,
-where the area occupied by each word was proportional to its $\delta$ value.
-These wordclouds were consistent with the topic wordclouds, and gave
-complementary information. 
-
-
-<center>
-![](posts/moveco-images/wordcloud_topics_15_abstracts.png){width=100%}
-
-Wordclouds of each topic based on most strongly associated abstracts. The code for this plot can be found [here](R/02-wordcloud_plot_II.R).
-</center>
-<br />
-
-Also for consistency, a heatmap of the $\gamma$ values also showed that most
-papers were evidently more associated to one topic and few were splitted into
-several topics.
+A heatmap of the $\gamma$ values also showed that most papers were evidently more associated to one topic and few were splitted into several topics.
 
 
 <center>
@@ -166,6 +169,102 @@ several topics.
 Heatmap of $\gamma$ values per abstract and topic. The corresponding code is [here](R/02-heatmap_plot.R).
 </center>
 <br />  
+
+
+
+### Model assessment
+
+We assess the consistency and interpretation of the LDA results via internal and
+external expert judgement, respectively.
+
+#### Consistency
+
+In the heatmap, we showed that most papers were more strongly associated to one
+topic.
+To check for consistency, for each topic, we compared its wordcloud with one 
+obtained from abstracts that were highly associated with the topic 
+($\gamma > 0.75$). 
+The two wordclouds should be telling a very similar story, thus visually 
+resemble, with very small differences due to the abstracts being composed --in 
+a small proportion --by other topics as well.
+We selected the papers with $\gamma > 0.75$, and computed the number of
+times each unique word occurred in the abstracts related to the topic. 
+We divided those values by the total number of words in the topic to get a 
+relative frequency $\eta$. 
+We then created wordclouds for each topic, where the area occupied by each word 
+was proportional to its $\eta$ value.
+These wordclouds were overall consistent with the topic wordclouds, and gave
+complementary information. 
+
+
+<center>
+![](posts/moveco-images/wordcloud_topics_15_abstracts.png){width=100%}
+
+Wordclouds of each topic based on most strongly associated abstracts. 
+The code for this plot can be found [here](R/02-wordcloud_plot_II.R).
+</center>
+<br />
+
+#### Interpretation
+
+To assess the interpretability of the topics, we performed a word intrusion 
+analysis.
+For each topic, we identified the 
+[4 highest-probability words](Data/Topics/word_intrusion/word_intrusion_real.csv), 
+i.e. with the highest $\hat{\beta}$ values. 
+Then, we took a high-probability word from another topic --that was not 
+'movement' or 'behavior' as they were highly related to most topics --and [added
+it to the group](Data/Topics/word_intrusion/word_intrusion_test.csv).
+We asked 10 researchers in the field to identify the intruder in each group of 
+words without any more explanations; their answers are
+[here](Data/Topics/word_intrusion/).
+We then computed the number of correct answers for each topic. 
+A high score for a topic would indicate that the topic was easy to interpret 
+using the 4 highest associated words to it. 
+
+The scores are shown in the table below. 
+The codes written for this analysis are [here](R/02-Word_Intrusion.R).
+
+|Topic number | Topic label                       | Score (from 0 to 10)  |
+|-------------|---------------------------------  | ----------------------|
+| 1           | Social interactions and dispersal | 7                     |
+| 2           | Movement models                   | 10                    |
+| 3           | Habitat selection                 | 9                     |
+| 4           | Detection and data                | 5                     |
+| 5           | Home ranges                       | 8                     |
+| 6           | Aquatic systems                   | 8                     |
+| 7           | Foraging in marine megafauna      | 10                    |
+| 8           | Biomechanics                      | 0                     |
+| 9           | Acoustic telemetry                | 1                     |
+| 10          | Experimental designs              | 3                     |
+| 11          | Activity budgets                  | 2                     |
+| 12          | Avian migration                   | 9                     |
+| 13          | Sports                            | 0                     |
+| 14          | Human activity patterns           | 5                     |
+| 15          | Breeding ecology                  | 4                     |
+
+Topics 1, 2, 3, 5, 6, 7 and 12 got high scores. 
+A few of the low-scored topics had a word intrusion that could be considered 
+relatively general for the researchers thus confusing, such as "tag" (topic 4) and 
+"data" (topics 9 and 15). 
+Moreover, the two topics highly associated with humans, 13 and 14, also had low
+scores that could be a consequence of the researchers (all ecologists) not 
+expecting any human related group. 
+Overall, this analysis shows that only half of the topics are easily 
+interpretable using the 4 highest-probability words.
+Even for us, the researchers involved in this study, it was necessary to look
+at the abstracts with the highest association to each topic in order to be sure
+of the interpretation of some of the topics.
+We did not use a higher number of words in the word intrusion tests as we
+considered that it could have required more effort from the researchers who
+kindly and voluntarily participated in this process. 
+
+An alternative approach to model assessment in topics is through topic
+prediction on an independent data set, but this should be performed when the
+goal of the study is to predict over new data sets, which is not the case.
+
+The word intrusion approach is not an exhaustive assessment of topic 
+interpretability, but it allows putting our results into perspective. 
 
 
 ## Taxonomical identification
