@@ -8,7 +8,7 @@
 
 <center>
 
-![](posts/moveco-images/keywords.png){width=50%}
+![](posts/moveco-images/keywords_low.png){width=50%}
 
 Workflow to identify movement ecology papers.
 </center>
@@ -67,7 +67,8 @@ sure that the papers shown in our search in WoS were respecting our search
 criteria for the abstracts, we applied the same filters described above to the
 downloaded search results via R. In addition to the grouping criteria we
 filtered by Document Type to only allow 'Articles','Proceedings Papers', and
-'Reviews'. This process yielded 8007 papers. The code can be found [here](R/01-processing_code.R). 
+'Reviews'. This process yielded 8007 papers. The [code can be downloaded
+here](R/01-processing_code.R).
 
 ### Quality control
   
@@ -142,7 +143,9 @@ Downloading movement ecology papers.
 We used the *fulltext* package (@Rfulltext) in R, using Elsevier,
 Springer, Scopus, Wiley, BMC and PLOS one API keys. We downloaded the articles
 we had access to, as xml or pdf documents. We downloaded a total of 4060
-complete manuscripts, representing 51% of our list of mov-eco papers. The codes to download papers can be found in this [link](R/01-processing_code.R).
+complete manuscripts, representing 51% of our list of mov-eco papers. 
+The codes to download papers can be downloaded clicking on this
+[link](R/01-processing_code.R).
 
 <!-- Chamberlain, Scott. 2019. Fulltext: Full Text of ’Scholarly’ Articles Across -->
 <!-- Many Data Sources. <https://CRAN.R-project.org/package=fulltext>. -->
@@ -154,22 +157,24 @@ complete manuscripts, representing 51% of our list of mov-eco papers. The codes 
 
 <!-- knitr::include_graphics("posts/moveco-images/MatMet.png"", out.width=33%) -->
 
-![](posts/moveco-images/MatMet.png){width=75%}
+![](posts/moveco-images/MatMet_low.png){width=75%}
 
 Summary of procedure to extract Material and Methods section from each paper.
 </center>
 
 <br />
 
-For some analyses (\@ref(analyses)), we needed the Material and methods section
-of the manuscripts. We created codes for [.xml](R/01-xml-analysis.R) and
-[.pdf](R/01-pdf-analysis.R) files. The former was built using the functions of the
-*xml2* package (@Rxml2). The later calls the `readPDF` and `Corpus` functions from the *tm* (@Rtm) package. In
-order to write the codes, we took account of the structure of the papers in
-either format, and aimed at finding section names related to "Methods", "Data"
-or "Statistical Analysis". Not all papers had an M\&M section (e.g. reviews or
-perspective papers). We were able to extract 3674 M\&M sections (46% of mov-eco
-paper results and 90% of fully downloaded papers).
+For some analyses (section \@ref(analyses)), we needed the Material and methods
+section of the manuscripts. We created codes for [.xml (click to
+download)](R/01-xml-analysis.R) and [.pdf (click to
+download)](R/01-pdf-analysis.R) files. The former was built using the functions
+of the *xml2* package (@Rxml2). The later calls the `readPDF` and `Corpus`
+functions from the *tm* (@Rtm) package. In order to write the codes, we took
+account of the structure of the papers in either format, and aimed at finding
+section names related to "Methods", "Data" or "Statistical Analysis". Not all
+papers had an M\&M section (e.g. reviews or perspective papers). We were able to
+extract 3674 M\&M sections (46% of mov-eco paper results and 90% of fully
+downloaded papers).
 
 <!-- Wickham, Hadley, James Hester, and Jeroen Ooms. 2018. Xml2: Parse Xml. https://CRAN.R-project.org/package=xml2. -->
 

@@ -21,7 +21,7 @@ aspect of the analysis are detailed in the following table.
 
 
 <center>
-![](posts/moveco-images/Topics.png){width=70%}
+![](posts/moveco-images/Topics_low.png){width=70%}
 
 Stages of topic analysis.
 </center>
@@ -52,7 +52,8 @@ Here we used the LDA model with variational EM estimation (@Wainwright2008, @Ble
 implemented in the *topicmodels* package. All the details of the model 
 specification and estimation are in @Grun2011. 
 
-The model assumes exchangeability (i.e. the order of words is negligible), that topics are uncorrelated, and that the number of topics is known.
+The model assumes exchangeability (i.e. the order of words is negligible), that
+topics are uncorrelated, and that the number of topics is known.
 
 The most commonly used criterion to choose a number of topics is the perplexity
 score or likelihood of a test dataset (@Waal2008). 
@@ -94,16 +95,18 @@ removing redundant words for identifying topics (e.g. prepositions and
 numbers), 2) converting all British English words to American English so they
 would not be seen as different words, 3) lemmatizing (i.e. extracting the lemma
 of a word based on its intended meaning, with the aim of grouping words under
-the same lemma) (@Ingason2008), 4) filtering out words that were only
-used once in the whole set of abstracts. R packages *tidytext* (@Silge2016), 
-*tm* and *textstem* (@Rtextstem) were used in this [stage](R/02-CleaningWords_TopicModeling.R).
+the same lemma) (@Ingason2008), 4) filtering out words that were only used once
+in the whole set of abstracts. R packages *tidytext* (@Silge2016), *tm* and
+*textstem* (@Rtextstem) were used in this [stage (click to
+download)](R/02-CleaningWords_TopicModeling.R).
 
 
 ### Model fitting
 
 The parameter estimates of the LDA model were obtained by running 20 replicates
 of the models (with the VEM estimation method), and keeping the one with the
-highest likelihood; see [here](R/02-TopicModelingScript_rj.R). 
+highest likelihood; [click here to download the
+code](R/02-TopicModelingScript_rj.R). 
 
 
 ### Model outputs
@@ -123,15 +126,18 @@ wordclouds for each topic, where the area occupied by each word was proportional
 to its $\hat{\beta}$ value. 
 
 <center>
-![](posts/moveco-images/wordcloud_topics_15.png){width=100%}
+![](posts/moveco-images/wordcloud_topics_15_low.png){width=100%}
 
-Wordclouds of each topic based on $\hat{\beta}$ values. See the codes for the plot [here](R/02-wordcloud_plot.R).
+Wordclouds of each topic based on $\hat{\beta}$ values. 
+Download the codes for the plot [here](R/02-wordcloud_plot.R).
 </center>
 <br />
 
 Since $\gamma$ indicated the degree of association between an abstract and a topic, 
-we obtained a [sample](Data/Topics/sample_validation_top_Ntopics_15_method_VEM_II.csv) of the 5 most associated abstracts to each topic, to aid the
-interpretation of the topics.
+we obtained a [sample (click to
+download)](Data/Topics/sample_validation_top_Ntopics_15_method_VEM_II.csv) of
+the 5 most associated abstracts to each topic, to aid the interpretation of the
+topics.
 
 Based on these outputs, the topics were interpreted as: 1) Social interactions 
 and dispersal, 2)  Movement models, 3)  Habitat selection, 4)  Detection and 
@@ -146,17 +152,19 @@ The sum of $\gamma$ values for each topic ($\sum_d E(\theta_d | z_k)$ for each $
 them. 
 
 <center>
-![](posts/moveco-images/SumGammas_labels.png){width=50%}
+![](posts/moveco-images/SumGammas_labels_low.png){width=50%}
 
-Measure of prevalence of each topic. See the codes for the plot [here](R/02-prevalence_topic_barplot.R).
+Measure of prevalence of each topic. 
+Download the codes for the plot [here](R/02-prevalence_topic_barplot.R).
 </center>
 <br />
 
 
 <center>
-![](posts/moveco-images/TopicsGamma_ts1.png){width=100%}
+![](posts/moveco-images/TopicsGamma_ts1_low.png){width=100%}
 
-Time series of the relative prevalence of each topic every year. The code can be found [here](R/man_topics_trend_plot.R).
+Time series of the relative prevalence of each topic every year. 
+The code can be downloaded from [here](R/man_topics_trend_plot.R).
 </center>
 <br />
 
@@ -164,9 +172,10 @@ A heatmap of the $\gamma$ values also showed that most papers were evidently mor
 
 
 <center>
-![](posts/moveco-images/heatmap.png){width=100%}
+![](posts/moveco-images/heatmap_low.png){width=100%}
 
-Heatmap of $\gamma$ values per abstract and topic. The corresponding code is [here](R/02-heatmap_plot.R).
+Heatmap of $\gamma$ values per abstract and topic. 
+The corresponding code can be downloaded clicking [here](R/02-heatmap_plot.R).
 </center>
 <br />  
 
@@ -193,37 +202,45 @@ We divided those values by the total number of words in the topic to get a
 relative frequency $\eta$. 
 We then created wordclouds for each topic, where the area occupied by each word 
 was proportional to its $\eta$ value.
-These wordclouds were overall consistent with the topic wordclouds, and gave
-complementary information. 
+These wordclouds were overall consistent with the topic wordclouds, i.e. most
+words were the same, and the words that differ provided complementary
+information to interpret the topics and understand to which types of abstracts
+they were strongly associated to.
 
 
 <center>
-![](posts/moveco-images/wordcloud_topics_15_abstracts.png){width=100%}
+![](posts/moveco-images/wordcloud_topics_15_abstracts_low.png){width=100%}
 
 Wordclouds of each topic based on most strongly associated abstracts. 
-The code for this plot can be found [here](R/02-wordcloud_plot_II.R).
+The code for this plot can be downloaded clicking [here](R/02-wordcloud_plot_II.R).
 </center>
 <br />
 
 #### Interpretation
 
 To assess the interpretability of the topics, we performed a word intrusion 
-analysis.
+analysis, i.e. people are given the task to identify a word injected into the 
+top‐terms of each topic.
 For each topic, we identified the 
-[4 highest-probability words](Data/Topics/word_intrusion/word_intrusion_real.csv), 
+[4 highest-probability words (click to download)](Data/Topics/word_intrusion/word_intrusion_real.csv), 
 i.e. with the highest $\hat{\beta}$ values. 
+We did not use a higher number of words in the word intrusion tests as we
+considered that it could have required more effort from the researchers who
+kindly and voluntarily participated in this process. 
 Then, we took a high-probability word from another topic --that was not 
 'movement' or 'behavior' as they were highly related to most topics --and [added
-it to the group](Data/Topics/word_intrusion/word_intrusion_test.csv).
+it to the group; download file with intruder here](Data/Topics/word_intrusion/word_intrusion_test.csv).
 We asked 10 researchers in the field to identify the intruder in each group of 
-words without any more explanations; their answers are
-[here](Data/Topics/word_intrusion/).
+words without any more explanations, and suggested them to answer fast so that they
+would not have to overthink; their answers are
+[here](https://github.com/rociojoo/mov-eco-review/tree/master/Data/Topics/word_intrusion).
 We then computed the number of correct answers for each topic. 
 A high score for a topic would indicate that the topic was easy to interpret 
 using the 4 highest associated words to it. 
 
 The scores are shown in the table below. 
-The codes written for this analysis are [here](R/02-Word_Intrusion.R).
+The codes written for this analysis are 
+[downloadable clicking here](R/02-Word_Intrusion.R).
 
 |Topic number | Topic label                       | Score (from 0 to 10)  |
 |-------------|---------------------------------  | ----------------------|
@@ -243,8 +260,8 @@ The codes written for this analysis are [here](R/02-Word_Intrusion.R).
 | 14          | Human activity patterns           | 5                     |
 | 15          | Breeding ecology                  | 4                     |
 
-Topics 1, 2, 3, 5, 6, 7 and 12 got high scores. 
-A few of the low-scored topics had a word intrusion that could be considered 
+Topics 1, 2, 3, 5, 6, 7 and 12 got high scores (>7). 
+A few of the low-scored topics ($\leq 5$) had a word intrusion that could be considered 
 relatively general for the researchers thus confusing, such as "tag" (topic 4) and 
 "data" (topics 9 and 15). 
 Moreover, the two topics highly associated with humans, 13 and 14, also had low
@@ -255,16 +272,15 @@ interpretable using the 4 highest-probability words.
 Even for us, the researchers involved in this study, it was necessary to look
 at the abstracts with the highest association to each topic in order to be sure
 of the interpretation of some of the topics.
-We did not use a higher number of words in the word intrusion tests as we
-considered that it could have required more effort from the researchers who
-kindly and voluntarily participated in this process. 
 
 An alternative approach to model assessment in topics is through topic
 prediction on an independent data set, but this should be performed when the
-goal of the study is to predict over new data sets, which is not the case.
+goal of the study is to predict over new data sets, which is not the case here.
 
-The word intrusion approach is not an exhaustive assessment of topic 
-interpretability, but it allows putting our results into perspective. 
+The word intrusion approach is not an exhaustive assessment of topic
+interpretability, but it allows putting our results into perspective: some
+topics have a clear and easy interpretation and some others are really hard to
+interpret.
 
 
 ## Taxonomical identification
@@ -296,36 +312,43 @@ word 'man' and not 'human' or 'postman'. We excluded words that could have an
 ambiguous meaning: "passenger" may appear in papers that mention passenger
 pigeons; "driver" may be used to refer to a causing factor.
 
-After having identified any taxon mentioned in a paper,  we summarized taxa at the Class level (except for superclasses Osteichthyes and Chondrichthyes which we merged into a single group labeled Fish, and for classes within the phylum Mollusca and the subphylum Crustacea which we considered collectively). Thus, each paper was classified as focusing on one or more class-like groups, as in @Holyoak2008: Fish, Mammals, Birds, Reptiles, Amphibians, Insects, Crustaceans, Mollusks, and others. For the purpose of our analysis, we kept humans as a separate category and did not count them within Class Mammalia. 
+After having identified any taxon mentioned in a paper, we summarized taxa at
+the Class level (except for superclasses Osteichthyes and Chondrichthyes which
+we merged into a single group labeled Fish, and for classes within the phylum
+Mollusca and the subphylum Crustacea which we considered collectively). Thus,
+each paper was classified as focusing on one or more class-like groups, as in
+@Holyoak2008: Fish, Mammals, Birds, Reptiles, Amphibians, Insects, Crustaceans,
+Mollusks, and others. For the purpose of our analysis, we kept humans as a
+separate category and did not count them within Class Mammalia. 
 
 The quality control procedure consisted in selecting a random sample of 100
 abstracts and verifying that the common taxonomical group was correctly
 identified. The accuracy was 93%. The code for taxonomical identification can be
-found [here](R/taxonomy_analysis.R).
+downloaded [here](R/taxonomy_analysis.R).
 
 
 ### Outputs  
   
 
 <center>
-![](posts/moveco-images/species_year_stacked.png){width=70%}
+![](posts/moveco-images/species_year_stacked_low.png){width=70%}
 
-More species have been studied in the last years. [Code for plot](R/02-stacked_species_plots.R).
+More species have been studied in the last years. [The code for plot can be downloaded here](R/02-stacked_species_plots.R).
 </center>
 <br /> 
 
 
 <center>
-![](posts/moveco-images/taxonomy_ts_all.png){width=70%}
+![](posts/moveco-images/taxonomy_ts_all_low.png){width=70%}
 
-Proportion of papers in each year studying each taxonomical group. [Code for plot](R/man_taxa_trend_plot.R).
+Proportion of papers in each year studying each taxonomical group. [The code for plot can be downloaded here](R/man_taxa_trend_plot.R).
 </center>
 <br /> 
 
 <center>
-![](posts/moveco-images/Barplots_topics_taxa.png){width=100%}
+![](posts/moveco-images/Barplots_topics_taxa_low.png){width=100%}
 
-For each topic, relative frequencies of papers studying each taxonomical group. Only papers with more than 50% of association to each topic are used for this graph. [Code for plot](R/man_taxa_topic_barplot.R).
+For each topic, relative frequencies of papers studying each taxonomical group. Only papers with more than 50% of association to each topic are used for this graph. [The code for plot can be downloaded here](R/man_taxa_topic_barplot.R).
 </center>
 <br /> 
 
@@ -348,7 +371,7 @@ the framework (i.e. internal state, external factor, motion and navigation), and
 their meanings were the terms potentially used in the abstracts to refer to the
 study of each component. For example, terms like "memory", "sensory
 information", "path integration" or "orientation" were used to identify the
-study of navigation. The framework dictionary is [here](Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv).
+study of navigation. The framework dictionary is [downloadable here](Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv).
 
 To assessed how well the dictionary identified the components in the papers, a
 quality control procedure was established. For each aspect, a random sample
@@ -373,18 +396,18 @@ information on the framework was gathered) that use terms related to each
 component. 
 
 <center>
-![](posts/moveco-images/MovEcoDesign-V.png){width=75%}
+![](posts/moveco-images/MovEcoDesign-V_low.png){width=75%}
 
 Representation of the components of the movement ecology framework and how much they were studied in the last decade: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path. 
-The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to $>5\%$ of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had $<5\%$ of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in [this code](R/man_framework_stack_plot.R).
+The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to $>5\%$ of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had $<5\%$ of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in [this downloadable code](R/man_framework_stack_plot.R).
 </center>
 <br /> 
 
 <center>
-![](posts/moveco-images/MovEcoDesign-V-1999-2008.png){width=75%}
+![](posts/moveco-images/MovEcoDesign-V-1999-2008_low.png){width=75%}
 
 Representation of the components of the movement ecology framework and how much they were studied between 1999 and 2008: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path. 
-The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to $>5\%$ of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had $<5\%$ of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in [this code](R/man_framework_stack_plot_1999_2008.R).
+The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to $>5\%$ of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had $<5\%$ of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in [this downloadable code](R/man_framework_stack_plot_1999_2008.R).
 </center>
 <br /> 
 
@@ -408,7 +431,7 @@ sensors on them that may combine multiple technologies. These categories are:
 10. Radar: Any technology that uses "radio detection and ranging" devices to track objects. Can be large weather arrays or tracking radars.  
 11. Encounter: Any analog tracking method where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category was difficult to capture in our study due to a lack of specific phrases that can be used.  
 
-Their use was assessed with a dictionary approach. The dictionary can be found [here](Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv). 
+Their use was assessed with a dictionary approach. The dictionary can be downloaded [here](Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv). 
 
 To assess how well the dictionary identified the types of devices in the papers, a quality control procedure was established. For each aspect, a random sample
 of 100 papers was selected, and a coauthor who did not lead the construction of
@@ -424,10 +447,10 @@ tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordina
 ### Output
 
 <center>
-![](posts/moveco-images/devices_ts_all.png){width=100%}
+![](posts/moveco-images/devices_ts_all_low.png){width=100%}
 
 Proportion of papers of each year using each type of
-device. [Code for plot](R/man_data_trend_plot.R).
+device. [The code for plot can be downloaded here](R/man_data_trend_plot.R).
 </center>
 <br /> 
 
@@ -446,7 +469,7 @@ database, likely for data management and summarizing necessarily for analyitical
 use), 20) e-surge, 21) m-surge, 22) u-care, 23) Genstat,
 24) Biotas, 25) Statview, 26) Primer-e, 27) PAST, 28) STATA, 29) Statistica, 
 30) UCINET, 31) Mathcad, 32) Vicon, and 33) GME (geospatial modeling environment).
-The dictionary with the terms used can be found [here](Data/Dictionary/csv-updated-versions/Dictionaries-Software.csv). 
+The dictionary with the terms used can be downloaded [here](Data/Dictionary/csv-updated-versions/Dictionaries-Software.csv). 
 
 For quality control, we examined a random sample of 50 papers. The accuracy
 was 88%.  
@@ -455,16 +478,16 @@ was 88%.
 
 
 <center>
-![](posts/moveco-images/software_ts_all.png){width=100%}
+![](posts/moveco-images/software_ts_all_low.png){width=100%}
 
-Proportion of papers of each year using each software. [Code for plot](R/man_software_trend_plot.R).
+Proportion of papers of each year using each software. [The code for plot can be downloaded here](R/man_software_trend_plot.R).
 </center>
 <br /> 
 
 
 ## Statistical methods
 
-Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in [204 terms](Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv). 
+Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in 204 terms; [click here to download the corresponding file](Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv). 
 
 We classified statistical methods into Spatial, Time-series, Movement, Spatiotemporal, Social, and Generic. Their definitions are below:
 
@@ -484,9 +507,9 @@ was 84%.
 
 
 <center>
-![](posts/moveco-images/method_ts.png){width=100%}
+![](posts/moveco-images/method_ts_low.png){width=100%}
 
-Proportion of papers of each year using each type of methods. [Code for plot](R/man_method_trend_plot.R). 
+Proportion of papers of each year using each type of methods. [The code for the plot can be downloaded here](R/man_method_trend_plot.R). 
 </center>
 <br /> 
 
@@ -496,7 +519,7 @@ Proportion of papers of each year using each type of methods. [Code for plot](R/
 |---------|-----------|---------|-------------|--------|----------------|
 | 67.8%   |  32.6%    |  18.9%  |   16.5%     | 3.3%   |    0.3%        |
 
-Table. Percentage of papers using each type of statistical method. The code for this table can be found [here](R/man_method_trend_plot.R). 
+Table. Percentage of papers using each type of statistical method. The code for this table can be downloaded [here](R/man_method_trend_plot.R). 
 
 
 | trigram                         | n   |
@@ -518,8 +541,8 @@ Table. Percentage of papers using each type of statistical method. The code for 
 | hidden markov model             | 116 |
 
 
-Table. Most common statistical trigrams in M&M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to [this code](R/trigrams.R). 
+Table. Most common statistical trigrams in M&M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to [this downloadable code](R/trigrams.R). 
 
 
-*The [code](R/02-Dictionary_Analysis.R) to process the dictionaries of the framework, tracking devices, software, statistical methods, and taxonomy is also available.
+*The code to process the dictionaries of the framework, tracking devices, software, statistical methods, and taxonomy is [downloadable here](R/02-Dictionary_Analysis.R).
 

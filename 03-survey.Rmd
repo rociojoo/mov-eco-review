@@ -30,7 +30,7 @@ answers_real <- dim(data)[1] - sum(sapply(1:dim(data)[1],function(x){
 
 As a complementary source of information for our review, we elaborated a survey to get the perspectives of movement ecologists about the field and how it is evolving. 
 
-The exact formulation of the questions in the survey can be viewed [here](survey/Survey.pdf).
+The exact formulation of the questions in the survey can be downloaded [here](survey/Survey.pdf).
 
 
 
