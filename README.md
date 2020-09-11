@@ -8,7 +8,7 @@ This repository is a companion to the manuscript "Recent trends in Movement Ecol
     <https://rociojoo.github.io/mov-eco-review>.
   - It contains the [codes](./R/) to do the analyses of the paper. The data
     processing and analysis are explained on the website.
-    - It also contains a [dataset of movement ecology
+  - It also contains a [dataset of movement ecology
     papers](./Data/cleaned_papers_all_years_simple.csv) obtained after
     pre-processing the query results from Web of Science and applying the
     cleaning procedure. For each movement ecology paper, the dataset contains
