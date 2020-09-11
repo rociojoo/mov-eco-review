@@ -18,4 +18,4 @@ This repository is a companion to the manuscript "Recent trends in Movement Ecol
     publisher, publication date, doi, affiliations, and an alternative
     identifier used for the analyses.
 
-The entire content of this repository (website, code,  and dataset) is released under the terms of the [MIT license](License.md), which basically grants all rights on the use and reuse of these files, as long as the original copyright and license stay attached to them.
+The entire content of this repository (website, code,  and dataset) is released under the terms of the [MIT license](LICENSE.md), which basically grants all rights on the use and reuse of these files, as long as the original copyright and license stay attached to them.
