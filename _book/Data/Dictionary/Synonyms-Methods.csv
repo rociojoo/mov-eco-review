@@ -1,0 +1,220 @@
+keyword,meaning,meaning2,meaning3
+^t test$,t-test,test,generic
+^t tests$,t-test,test,generic
+%G test%,G-test,test,generic
+Akaike information,Akaike's information,model selection,other
+%AIC%,Akaike's information,model selection,other
+goodness of fit,Goodness-of-fit,test,generic
+GOF statistic,Goodness-of-fit,test,generic
+^Z test$,Z-test,test,generic
+K-S test|KS test,Kolmogorov-Smirnov test,test,generic
+Dunn's method,Dunn method,test,generic
+Dunn test,Dunn method,test,generic
+Dunn's test,Dunn method,test,generic
+Dunn's multiple comparison,Dunn method,test,generic
+Fisher exact,Fisher's exact test,test,generic
+Fisher's method,Fisher's exact test,test,generic
+analysis of variance,%ANOVA%,regression,generic
+analysis of covariance,ANCOVA,regression,generic
+generalized additive model,%GAM%,regression,generic
+Log-linear analysis,Log-linear model,regression,generic
+mixed model,mixed effects model,regression,generic
+Mixed-effects model,mixed effects model,regression,generic
+regression analysis,regression model,regression,generic
+ensemble method,ensemble of classifiers,machine learning,generic
+Multi-layer perceptron,Feed-forward network,machine learning,generic
+multilayer perceptron,Feed-forward network,machine learning,generic
+Bayesian network,Bayesian network,machine learning,generic
+Bayes network,Bayesian network,machine learning,generic
+belief network,Bayesian network,machine learning,generic
+kernel density,density kernel,spatial stats,spatial
+kernel estimation,density kernel,spatial stats,spatial
+kernel home-range,density kernel,spatial stats,spatial
+resource selection function,%RSF%,selection functions,spatial
+resource selection model,%RSF%,selection functions,spatial
+resource selection analysis,%RSF%,selection functions,spatial
+step selection function,%SSF%,selection functions,Movement
+step selection analysis,%SSF%,selection functions,Movement
+Mantel correlogram,Mantel correlation,spatial stats,spatial
+point pattern process,point process,spatial stats,spatial
+Matérn covariance,Matérn model,spatial stats,spatial
+state-space model,%SSM%,movement model,Movement
+state model,%SSM%,movement model,Movement
+state space model,%SSM%,movement model,Movement
+hidden Markov model,%HMM%,movement model,Movement
+switching model,%HMM%,movement model,Movement
+Multi-state model,%HMM%,movement model,Movement
+behavioral change point analysis,bcpa,time series,Movement
+functional model,functional analysis,functional analysis,time-series
+functional movement model,functional analysis,functional analysis,time-series
+functional data analysis,functional analysis,functional analysis,time-series
+Continuous-time behavioural switching process,Continuous-time behavioral switching process,movement model,Movement
+survival model,survival analysis,time series,time-series
+cross sampled entropy,Cross-sampled entropy,time series,time-series
+Markovian process,Markov process,time series,time-series
+integrated population model,integrated population analysis,time series,time-series
+Capture-recapture,capture recapture,population size,time-series
+individual based model,individual-based model,movement model,Movement
+self-propelled particle,%SPP%,movement model,Movement
+random field Ising model,%RFIM%,movement model,Movement
+network analysis!artificial network!neural network!sedentary,social network!sedentary,social network,social
+random-walk,random walk,movement model,Movement
+walks & power law,random walk,movement model,Movement
+walks & power-law,random walk,movement model,Movement
+%CRW%,random walk,movement model,Movement
+Brownian bridge movement model,%BBMM%,movement model,Movement
+Yet Another Positioning Solver,%YAPS%,movement model,Movement
+Brownian movement,Brownian motion,movement model,Movement
+Brownian walk,Brownian motion,movement model,Movement
+Lévy movement,Lévy walk,movement model,Movement
+Lévy search patterns,Lévy walk,movement model,Movement
+spatio-temporal geostatistic,spatiotemporal geostatistic,geostatistics,spatiotemporal
+spatio-temporal model,spatiotemporal model,spatial stats,spatiotemporal
+agent based model,agent-based model,movement model,Movement
+discriminant regression,discriminant analysis,multivariate analysis,generic
+range-shift analysis,range shift analysis,time series,Movement
+t-test,t-test,test,generic
+G-test,G-test,test,generic
+Akaike's information,Akaike's information,model selection,other
+Goodness-of-fit,Goodness-of-fit,test,generic
+Z-test,Z-test,test,generic
+Kolmogorov-Smirnov test,Kolmogorov-Smirnov test,test,generic
+Dunn method,Dunn method,test,generic
+Fisher's exact test,Fisher's exact test,test,generic
+%ANOVA%,%ANOVA%,regression,generic
+ANCOVA,ANCOVA,regression,generic
+%GAM%,%GAM%,regression,generic
+mixed effects model,mixed effects model,regression,generic
+regression model,regression model,regression,generic
+ensemble of classifiers,ensemble of classifiers,machine learning,generic
+Feed-forward network,Feed-forward network,machine learning,generic
+Bayesian network,Bayesian network,machine learning,generic
+density kernel,density kernel,spatial stats,generic
+%RSF%,%RSF%,selection functions,spatial
+Mantel correlation,Mantel correlation,spatial stats,spatial
+point process,point process,spatial stats,spatial
+%SSM%,%SSM%,SSM,Movement
+%HMM%,%HMM%,SSM,Movement
+bcpa,bcpa,movement model,Movement
+Continuous-time behavioral switching process,Continuous-time behavioral switching process,movement model,Movement
+survival analysis,survival analysis,time series,time-series
+Cross-sampled entropy,Cross-sampled entropy,time series,time-series
+Markov process,Markov process,time series,time-series
+integrated population analysis,integrated population analysis,time series,time-series
+capture recapture,capture recapture,population size,generic
+individual-based model,individual-based model,movement model,Movement
+%SPP%,%SPP%,movement model,Movement
+%RFIM%,%RFIM%,movement model,Movement
+social network!sedentary,social network!sedentary,social network,social
+random walk,random walk,movement model,Movement
+%BBMM%,%BBMM%,movement model,Movement
+%YAPS%,%YAPS%,movement model,Movement
+Brownian motion,Brownian motion,movement model,Movement
+Lévy walk,Lévy walk,movement model,Movement
+spatiotemporal geostatistic,spatiotemporal geostatistic,geostatistics,spatiotemporal
+spatiotemporal model,spatiotemporal model,spatial stats,spatiotemporal
+agent-based model,agent-based model,movement model,Movement
+discriminant analysis,discriminant analysis,multivariate analysis,generic
+range shift analysis,range shift analysis,time series,Movement
+linear model,linear model,regression,generic
+minimum convex polygon,minimum convex polygon,spatial stats,spatial
+bootstrap,bootstrap,simulation,generic
+Fourier,Fourier,time series,time-series
+histogram,histogram,descriptive,generic
+linear regression,regression model,regression,generic
+logistic regression,regression model,regression,generic
+%MCMC%,%MCMC%,simulation,generic
+utilization distribution,utilization distribution,spatial stats,generic
+%GLM%,regression model,regression,generic
+^t test$,t-test,test,generic
+tortuosity,tortuosity,descriptive,Movement
+Kruskal-Wallis|Kruskal Wallis,Kruskal-Wallis,test,generic
+mechanistic model,mechanistic model,NA,other
+decision tree,decision tree,machine learning,generic
+First passage time,First passage time,movement model,Movement
+odba,dba,descriptive,Movement
+%BIC%,%BIC%,model selection,generic
+%SSF%,%SSF%,selection functions,Movement
+classification tree,classification tree,machine learning,generic
+clustering analysis|clustering algorithm,clustering,multivariate analysis,generic
+Markov chain,Markov process,time series,time-series
+principal component,principal component,multivariate analysis,generic
+sinuosity,sinuosity,descriptive,Movement
+game theory,game theory,game theory,generic
+hierarchical model,hierarchical model,regression,generic
+Mann-Whitney|Mann Whitney,Mann-Whitney,test,generic
+%DIC%,%DIC%,model selection,generic
+autoregressive model,autoregressive model,time series,time-series
+boxplot,boxplot,descriptive,generic
+Chi-squared test,Chi-squared test,test,generic
+factor analysis,factor analysis,multivariate analysis,generic
+fractal dimension,fractal,spatial stats,generic
+K-means,K-means,multivariate analysis,generic
+P-value,P-value,test,generic
+Pearson's correlation|Pearson correlation|Pearson product-moment correlation,correlation,descriptive,generic
+Binomial regression,regression model,regression,generic
+binomial test,binomial test,test,generic
+Gibbs,Gibbs,simulation,generic
+graph theory,graph theory,social network,social
+Individual-based simulation model,IBM,movement model,Movement
+mixture model,mixture model,regression,generic
+random forest,random forest,machine learning,generic
+straightness index,straightness,descriptive,Movement
+support vector machines,SVM,machine learning,generic
+wavelet,wavelet,time series,time-series
+Wilcoxon,Wilcoxon test,test,generic
+acf,acf,time series,generic
+agglomerative clustering,clustering,multivariate analysis,generic
+Bayesian regression,regression model,regression,generic
+continuous time movement model,continuous time movement model,movement model,Movement
+cross entropy,cross entropy,time series,time-series
+distance sampl,distance sampling,spatial stats,spatial
+hierarchical Bayesian model,Bayesian model,regression,generic
+K-nearest neighbo,K-nearest neighbor,multivariate analysis,generic
+logit model,regression model,regression,generic
+net squared displacement,NSD,spatial stats,Movement
+network topology,social network,social network,social
+Poisson regression,regression model,regression,generic
+Rayleigh test,Rayleigh test,test,generic
+relative phase,relative phase,time series,time-series
+scatterplot,scatterplot,descriptive,generic
+maximum likelihood,maximum likelihood,NA,generic
+analytical model,analytical model,NA,generic
+Bayesian estimation,Bayesian estimation,NA,generic
+Pattern-oriented model,Pattern-oriented model,machine learning,generic
+Advection-diffusion,advection-diffusion,movement model,Movement
+Convection-diffusion,advection-diffusion,movement model,Movement
+drift-diffusion,advection-diffusion,movement model,Movement
+scalar transport,advection-diffusion,movement model,Movement
+ANOSIM,ANOSIM,regression,generic
+Approximate Bayesian computation,ABC,simulation,generic
+biplot,biplot,descriptive,generic
+Bray-Curtis,Bray-Curtis,descriptive,generic
+Canonical correlation analysis,Canonical correlation analysis,multivariate analysis,generic
+Correspondence analysis,Correspondence analysis,multivariate analysis,generic
+hazard function,survival analysis,time series,time-series
+hidden semi-Markov,HSMM,SSM,Movement
+%HSMM%,HSMM,SSM,Movement
+joint potential path area,joint potential path area,descriptive,Movement
+kriging,geostatistics,spatial stats,spatial
+Mantel test,Mantel test,test,generic
+Mark-resight,capture recapture,population size,time-series
+multinomial regression,regression model,regression,generic
+occupancy model,occupancy model,spatial stats,spatial
+Path Identification Index,Path Identification Index,descriptive,Movement
+Poisson process,Poisson process,spatial stats,spatial
+polynomial equation,polynomial equation,regression,generic
+regression tree,regression tree,machine learning,generic
+Self-organizing map,SOM,machine learning,generic
+Shapiro-Wilk,Shapiro-Wilk,test,generic
+spatial autocorrelation analysis,spatial autocorrelation analysis,spatial stats,spatial
+transfer entropy,transfer entropy,time series,time-series
+variogram,geostatistics,spatial stats,spatial
+Watson's test|Watson test,Watson test,test,generic
+multidimensional scaling,multidimensional scaling,multivariate analysis,generic
+Spearman correlation,correlation,descriptive,generic
+Brownian bridge kernel,continuous time movement model,movement model,Movement
+convex hull area,convex hull,spatial stats,spatial
+cox process,survival analysis,time series,time-series
+structural equation model,structural equation model,regression,generic
+utility function,utility function,regression,generic

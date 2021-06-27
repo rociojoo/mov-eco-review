@@ -1,0 +1,17 @@
+Home ranges,Intensity of use,Connectivity,Spatial memory,Large scale movements,Pure movement,Habitat use,Behavioral modes,Personality,Optimality,Events,Interactions,Intraspecific interactions,Interspecific interactions,Predator-prey interactions,Disease and parasites,Human impact,Management and conservation,Bias
+home range|home-range,space use,connectivity,familiar,dispersal,random walk|random-walk,habitat use|habitat-use,movement mode|behavioral mode|behavioural mode,personality|personalities,optimality theory,kill site|kill location,interaction,dyad,competition&interspecific,anti-predat,disease,impact assessment,conservation,habitat bias|habitat-driven bias|habitat-related bias
+ranging behavior|ranging behaviour,refuge,permeab,memory,^migrat,first passage time|first-passage time,habitat selection|habitat-selection,movement state|behavioral state|behavioural state,behavioral syndrome|behavioural syndrome,optimal foraging,nest site|nesting site,,group dynamic,competitive exclusion,predator-prey dynamics,parasite,risk assessment,protected area,precision
+mechanistic home range|mechanistic home-range,residence time|residence-time,impediment,,long-distance movement|long distance movement,search behavior,step selection function|step-selection function,path segmentation,behavioral reaction norm,marginal value theor,reproduction,,fusion-fission,mutualis,predator-prey system,^host$,human-dominated landscape,rare species,position error|positional error
+excursion,revisitation,barrier,,large-scale movement|large scale movement,area-restricted search,functional response,,,optimal behavior|optimal behaviour|optimal phenotype,recruitment,,competition&intraspecific,,predator-prey interaction,^infect,disturbance,endemic,position accuracy|positional accuracy
+utilization distribution|utilization-distribution,time-to-return,corridor!migratory corridor,,,step length|step-length|turn angle|turn-angle|turning angle|turning-angle,heterogene,,,fitness,senescence,,social behavior|social behaviour,,trophic interaction,,human structure|human infrastructure|anthropogenic structure|anthropogenic infrastructure,endangered|vulnerable|threatened,
+minimum convex polygon,fidelity,corridor!migration corridor,,,stationary|stationarity,niche,,,lifetime reproductive success,,,social interaction,,landscape of fear,,human activity,management,
+convex hull,,,,,,,,,benefit&cost,,,social network,,predation risk,,human footprint,polic,
+kernel,,,,,,,,,tradeoff|trade-off,,,collective movement,,perceived risk,,anthropogenic alteration|human alteration|anthropogenic habitat alteration|human habitat alteration|human-modified environment|human modified environment,^regulation$,
+,,,,,,,,,evolutionary stable,,,collective behavior|collective behaviour,,^flight$,,climate change,^regulations$,
+,,,,,,,,,adaptive,,,,,spatial game,,global change,regulatory,
+,,,,,,,,,energy gain,,,,,,,hunting risk|hunting pressure,action plan,
+,,,,,,,,,foraging strateg,,,,,,,,status assessment,
+,,,,,,,,,foraging tactic,,,,,,,,conflict with human|conflicts with human|conflict interaction with human|conflict interactions with human|conflict with people|conflicts with people|conflict interaction with people|conflict interactions with people,
+,,,,,,,,,currency,,,,,,,,mitigation strateg,
+,,,,,,,,,thermoregulation,,,,,,,,hunting regime,
+,,,,,,,,,activity pattern|activity budget,,,,,,,,hunting season,
