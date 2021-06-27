@@ -366,12 +366,12 @@ interactions between these four components would be the observed movement path
 
 To assess the study of the different components of the movement ecology
 framework, we built what we call here a "dictionary". A dictionary is composed
-of words and their meanings. Here, the words of interest were the components of
-the framework (i.e. internal state, external factor, motion and navigation), and
-their meanings were the terms potentially used in the abstracts to refer to the
-study of each component. For example, terms like "memory", "sensory
-information", "path integration" or "orientation" were used to identify the
-study of navigation. The framework dictionary is [downloadable here](Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv).
+of concepts and associated words. Here, the concepts of interest were the
+components of the framework (i.e. internal state, external factor, motion and
+navigation), and their associated words were the terms potentially used in the
+abstracts to refer to the study of each component. For example, terms like
+"memory", "sensory information", "path integration" or "orientation" were used
+to identify the study of navigation. The framework dictionary is [downloadable here](Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv).
 
 To assessed how well the dictionary identified the components in the papers, a
 quality control procedure was established. For each aspect, a random sample

@@ -4,7 +4,8 @@
 devtools::session_info()
 ```
 
-─ Session info ───────────────────────────────────────────────────────────────────
+─ Session info ────────────────────────────────────────────────────────────────
+
  setting  value                       
  version  R version 3.6.3 (2020-02-29)
  os       Ubuntu 18.04.4 LTS          
@@ -16,7 +17,9 @@ devtools::session_info()
  tz       America/Nassau              
  date     2020-05-22                  
 
-─ Packages ───────────────────────────────────────────────────────────────────────
+
+─ Packages ────────────────────────────────────────────────────────────────────
+
  package        * version   date       lib source                             
  aRxiv            0.5.19    2019-08-08 [1] CRAN (R 3.6.1)                     
  assertthat       0.2.1     2019-03-21 [1] CRAN (R 3.6.1)                     
