@@ -4,6 +4,7 @@ author: "Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha 
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+output_dir: "docs"
 documentclass: book
 bibliography: ["Bibliography/references_total.bib"]
 biblio-style: apalike
