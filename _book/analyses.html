@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Data analysis | Recent trends in Movement Ecology: a quantitative review of tools, topics and research gaps</title>
+  <meta name="description" content="Quantitative review of the last decade of movement ecology (from 2009 to 2018)" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Data analysis | Recent trends in Movement Ecology: a quantitative review of tools, topics and research gaps" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Quantitative review of the last decade of movement ecology (from 2009 to 2018)" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Data analysis | Recent trends in Movement Ecology: a quantitative review of tools, topics and research gaps" />
+  
+  <meta name="twitter:description" content="Quantitative review of the last decade of movement ecology (from 2009 to 2018)" />
+  
+
+<meta name="author" content="Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma S. Romero-Romero and Mathieu Basille" />
+
+
+<meta name="date" content="2021-11-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-collection-and-processing.html"/>
+<link rel="next" href="survey-about-movement-ecology.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#abstract-of-the-manuscript"><i class="fa fa-check"></i><b>1.1</b> Abstract of the manuscript</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html"><i class="fa fa-check"></i><b>2</b> Data collection and processing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#identification-of-movement-ecology-mov-eco-papers"><i class="fa fa-check"></i><b>2.1</b> Identification of movement ecology (mov-eco) papers</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#what-is-a-movement-ecology-paper"><i class="fa fa-check"></i><b>2.1.1</b> What is a movement ecology paper?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#search-keywords"><i class="fa fa-check"></i><b>2.1.2</b> Search keywords</a></li>
+<li class="chapter" data-level="2.1.3" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#cleaning-and-filtering-results-in-r"><i class="fa fa-check"></i><b>2.1.3</b> Cleaning and filtering results in R</a></li>
+<li class="chapter" data-level="2.1.4" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#quality-control"><i class="fa fa-check"></i><b>2.1.4</b> Quality control</a></li>
+<li class="chapter" data-level="2.1.5" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#possible-biases"><i class="fa fa-check"></i><b>2.1.5</b> Possible biases</a></li>
+<li class="chapter" data-level="2.1.6" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#differences-with-other-approaches-selecting-and-analyzing-mov-eco-papers"><i class="fa fa-check"></i><b>2.1.6</b> Differences with other approaches selecting and analyzing mov-eco papers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#downloading-whole-manuscripts"><i class="fa fa-check"></i><b>2.2</b> Downloading whole manuscripts</a></li>
+<li class="chapter" data-level="2.3" data-path="data-collection-and-processing.html"><a href="data-collection-and-processing.html#extracting-the-material-and-methods-mm-sections"><i class="fa fa-check"></i><b>2.3</b> Extracting the Material and Methods (M&amp;M) sections</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analyses.html"><a href="analyses.html"><i class="fa fa-check"></i><b>3</b> Data analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analyses.html"><a href="analyses.html#topic-analysis"><i class="fa fa-check"></i><b>3.1</b> Topic analysis</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="analyses.html"><a href="analyses.html#the-model"><i class="fa fa-check"></i><b>3.1.1</b> The model</a></li>
+<li class="chapter" data-level="3.1.2" data-path="analyses.html"><a href="analyses.html#preprocessing"><i class="fa fa-check"></i><b>3.1.2</b> Preprocessing</a></li>
+<li class="chapter" data-level="3.1.3" data-path="analyses.html"><a href="analyses.html#model-fitting"><i class="fa fa-check"></i><b>3.1.3</b> Model fitting</a></li>
+<li class="chapter" data-level="3.1.4" data-path="analyses.html"><a href="analyses.html#model-outputs"><i class="fa fa-check"></i><b>3.1.4</b> Model outputs</a></li>
+<li class="chapter" data-level="3.1.5" data-path="analyses.html"><a href="analyses.html#model-assessment"><i class="fa fa-check"></i><b>3.1.5</b> Model assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="analyses.html"><a href="analyses.html#taxonomical-identification"><i class="fa fa-check"></i><b>3.2</b> Taxonomical identification</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="analyses.html"><a href="analyses.html#outputs"><i class="fa fa-check"></i><b>3.2.1</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="analyses.html"><a href="analyses.html#movement-ecology-framework-mef"><i class="fa fa-check"></i><b>3.3</b> Movement ecology framework (MEF)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="analyses.html"><a href="analyses.html#outputs-1"><i class="fa fa-check"></i><b>3.3.1</b> Outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="analyses.html"><a href="analyses.html#tracking-devices"><i class="fa fa-check"></i><b>3.4</b> Tracking devices</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="analyses.html"><a href="analyses.html#output"><i class="fa fa-check"></i><b>3.4.1</b> Output</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="analyses.html"><a href="analyses.html#software"><i class="fa fa-check"></i><b>3.5</b> Software</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="analyses.html"><a href="analyses.html#output-1"><i class="fa fa-check"></i><b>3.5.1</b> Output</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="analyses.html"><a href="analyses.html#statistical-methods"><i class="fa fa-check"></i><b>3.6</b> Statistical methods</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="analyses.html"><a href="analyses.html#outputs-2"><i class="fa fa-check"></i><b>3.6.1</b> Outputs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html"><i class="fa fa-check"></i><b>4</b> Survey about movement ecology</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#description-of-the-survey"><i class="fa fa-check"></i><b>4.1</b> Description of the survey</a></li>
+<li class="chapter" data-level="4.2" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#participation-in-the-survey"><i class="fa fa-check"></i><b>4.2</b> Participation in the survey</a></li>
+<li class="chapter" data-level="4.3" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#movement-ecology-framework"><i class="fa fa-check"></i><b>4.3</b> Movement ecology framework</a></li>
+<li class="chapter" data-level="4.4" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#taxa"><i class="fa fa-check"></i><b>4.4</b> Taxa</a></li>
+<li class="chapter" data-level="4.5" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#tracking-devices-1"><i class="fa fa-check"></i><b>4.5</b> Tracking devices</a></li>
+<li class="chapter" data-level="4.6" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#software-1"><i class="fa fa-check"></i><b>4.6</b> Software</a></li>
+<li class="chapter" data-level="4.7" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#methods"><i class="fa fa-check"></i><b>4.7</b> Methods</a></li>
+<li class="chapter" data-level="4.8" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#big-changes-in-the-field"><i class="fa fa-check"></i><b>4.8</b> Big changes in the field</a></li>
+<li class="chapter" data-level="4.9" data-path="survey-about-movement-ecology.html"><a href="survey-about-movement-ecology.html#summary"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-session-information.html"><a href="r-session-information.html"><i class="fa fa-check"></i><b>5</b> R session information</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Recent trends in Movement Ecology: a quantitative review of tools, topics and research gaps</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analyses" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Data analysis</h1>
+<p>Several dimensions of the mov-eco literature were analyzed: research <strong>topics</strong>,
+<strong>taxonomical</strong> groups studied, components of the movement ecology <strong>framework</strong>
+studied, tracking <strong>devices</strong> used, <strong>software</strong> tools used, and statistical
+<strong>methods</strong> applied. Depending on the dimension, we either analyzed the title,
+keywords, abstract or material and methods (M&amp;M). The sections used for each
+aspect of the analysis are detailed in the following table.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Title</th>
+<th>Keywords</th>
+<th>Abstract</th>
+<th>M&amp;M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Topics</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Taxonomy</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Framework</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Devices</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>Software</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>Methods</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<div id="topic-analysis" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Topic analysis</h2>
+<center>
+<p><img src="posts/moveco-images/Topics_low.png" style="width:70.0%" /></p>
+Stages of topic analysis.
+</center>
+<p><br /></p>
+<p>The topics were not defined a priori.
+Instead, we fitted Latent Dirichlet Allocation (LDA) models to the abstracts
+(<span class="citation"><a href="#ref-Blei2003" role="doc-biblioref">Blei, Ng, and Jordan</a> (<a href="#ref-Blei2003" role="doc-biblioref">2003</a>)</span>).</p>
+<div id="the-model" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> The model</h3>
+<p>LDAs are Bayesian mixture models that assume the existence of a fixed number <span class="math inline">\(K\)</span>
+of topics behind the abstracts.
+Each topic can be characterized by a multinomial distribution of words with
+parameter <span class="math inline">\(\beta\)</span>, drawn from a Dirichlet distribution with parameter
+<span class="math inline">\(\gamma\)</span>.
+Each document <span class="math inline">\(d \in {1, ..., D}\)</span> is composed by a mixture of topics, drawn
+from a multinomial distribution with parameter <span class="math inline">\(\theta\)</span>, which is drawn from a
+Dirichlet distribution with parameter <span class="math inline">\(\alpha\)</span>.
+For each word <span class="math inline">\(w\)</span> in document <span class="math inline">\(d\)</span>, first a hidden topic <span class="math inline">\(z\)</span> is selected from the
+multinomial distribution with parameter <span class="math inline">\(\theta\)</span>.
+From the selected topic <span class="math inline">\(z\)</span>, a word is selected based on the multinomial
+distribution with parameter <span class="math inline">\(\beta\)</span>.
+The log-likelihood of a document <span class="math inline">\(d = \{w_1,...,w_N\}\)</span> is
+<span class="math inline">\(l(\alpha,\beta) = \log(p(d|\alpha,\beta)) = \log\int\sum_z\left[\prod_{n=1}^{N} p(w_i|z_i,\beta)p(z_i|\theta)\right]p(\theta|\alpha)d\theta\)</span></p>
+<p>Here we used the LDA model with variational EM estimation (<span class="citation"><a href="#ref-Wainwright2008" role="doc-biblioref">Wainwright and Jordan</a> (<a href="#ref-Wainwright2008" role="doc-biblioref">2008</a>)</span>, <span class="citation"><a href="#ref-Blei2003" role="doc-biblioref">Blei, Ng, and Jordan</a> (<a href="#ref-Blei2003" role="doc-biblioref">2003</a>)</span>)
+implemented in the <em>topicmodels</em> package. All the details of the model
+specification and estimation are in <span class="citation"><a href="#ref-Grun2011" role="doc-biblioref">Grün and Hornik</a> (<a href="#ref-Grun2011" role="doc-biblioref">2011</a>)</span>.</p>
+<p>The model assumes exchangeability (i.e. the order of words is negligible), that
+topics are uncorrelated, and that the number of topics is known.</p>
+<p>The most commonly used criterion to choose a number of topics is the perplexity
+score or likelihood of a test dataset (<span class="citation"><a href="#ref-Waal2008" role="doc-biblioref">De Waal and Barnard</a> (<a href="#ref-Waal2008" role="doc-biblioref">2008</a>)</span>).
+Basically, this quantity measures the degree of uncertainty a language model has
+when predicting some new text (for this study, a new abstract of a paper).
+Lower values of the perplexity is good and it means the model is assigning
+higher probabilities.
+However, the perplexity score measures predictive capacities, rather than having
+actual humanly-interpretable latent topics (<span class="citation"><a href="#ref-Chang2009" role="doc-biblioref">Chang et al.</a> (<a href="#ref-Chang2009" role="doc-biblioref">2009</a>)</span>).
+In fact, using this score could result in there being too many topics; see
+<span class="citation"><a href="#ref-Griffiths2004" role="doc-biblioref">Griffiths and Steyvers</a> (<a href="#ref-Griffiths2004" role="doc-biblioref">2004</a>)</span> who analyzed PNAS abstracts and obtained 300 topics.
+Hence, we decided to fix the number of topics to 15, as a
+reasonable value that would not be too large than we could not interpret them,
+or too small that the topics were too general.</p>
+<center>
+<p><img src="posts/moveco-images/TopicModeling.png" style="width:80.0%" /></p>
+Schematic representation of the links between words, documents and topics.
+Each document is a mixture of topics. Each topic is modeled as a distribution of words.
+Each word comes out of one of these topics.
+Source of the image: Blei, D.M. 2012. Probabilistic topic models. Communications of the ACM, 55(4), 77-84.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/LDA.png" style="width:80.0%" /></p>
+Schematic representation of the Latent Dirichlet model described above.
+</center>
+<p><br /></p>
+</div>
+<div id="preprocessing" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Preprocessing</h3>
+<p>To improve the quality of our LDA model outputs, we cleaned the data by 1)
+removing redundant words for identifying topics (e.g. prepositions and
+numbers), 2) converting all British English words to American English so they
+would not be seen as different words, 3) lemmatizing (i.e. extracting the lemma
+of a word based on its intended meaning, with the aim of grouping words under
+the same lemma) (<span class="citation"><a href="#ref-Ingason2008" role="doc-biblioref">Ingason et al.</a> (<a href="#ref-Ingason2008" role="doc-biblioref">2008</a>)</span>), 4) filtering out words that were only used once
+in the whole set of abstracts. R packages <em>tidytext</em> (<span class="citation"><a href="#ref-Silge2016" role="doc-biblioref">Silge and Robinson</a> (<a href="#ref-Silge2016" role="doc-biblioref">2016</a>)</span>), <em>tm</em> and
+<em>textstem</em> (<span class="citation"><a href="#ref-Rtextstem" role="doc-biblioref">Rinker</a> (<a href="#ref-Rtextstem" role="doc-biblioref">2018</a>)</span>) were used in this <a href="R/02-CleaningWords_TopicModeling.R">stage (click to
+download)</a>.</p>
+</div>
+<div id="model-fitting" class="section level3" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Model fitting</h3>
+<p>The parameter estimates of the LDA model were obtained by running 20 replicates
+of the models (with the VEM estimation method), and keeping the one with the
+highest likelihood; <a href="R/02-TopicModelingScript_rj.R">click here to download the
+code</a>.</p>
+</div>
+<div id="model-outputs" class="section level3" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Model outputs</h3>
+<p>From the fitted LDA model, we can obtained:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(E(\beta | z,w)\)</span>, as the posterior expected values of word distribution per
+topic, denoted by <span class="math inline">\(\hat{\beta}\)</span>, and</p></li>
+<li><p><span class="math inline">\(E(\theta\_d | z)\)</span>, the posterior topic distribution per abstract, denoted
+by <span class="math inline">\(\gamma\)</span> in the package.</p></li>
+</ol>
+<p>The <span class="math inline">\(\hat{\beta}\)</span> values were thus a proxy of the importance of a word in
+a topic. They were used to interpret and label each topic, and to create
+wordclouds for each topic, where the area occupied by each word was proportional
+to its <span class="math inline">\(\hat{\beta}\)</span> value.</p>
+<center>
+<p><img src="posts/moveco-images/wordcloud_topics_15_low.png" style="width:100.0%" /></p>
+Wordclouds of each topic based on <span class="math inline">\(\hat{\beta}\)</span> values.
+Download the codes for the plot <a href="R/02-wordcloud_plot.R">here</a>.
+</center>
+<p><br /></p>
+<p>Since <span class="math inline">\(\gamma\)</span> indicated the degree of association between an abstract and a topic,
+we obtained a <a href="Data/Topics/sample_validation_top_Ntopics_15_method_VEM_II.csv">sample (click to
+download)</a> of
+the 5 most associated abstracts to each topic, to aid the interpretation of the
+topics.</p>
+<p>Based on these outputs, the topics were interpreted as: 1) Social interactions
+and dispersal, 2) Movement models, 3) Habitat selection, 4) Detection and
+data, 5) Home ranges, 6) Aquatic systems, 7) Foraging in marine megafauna,
+8) Biomechanics, 9) Acoustic telemetry, 10) Experimental designs, 11) Activity
+budgets, 12) Avian migration, 13) Sports, 14) Human activity patterns,
+15) Breeding ecology. For an extended description of these topics, see the main text of the manuscript.</p>
+<p>The sum of <span class="math inline">\(\gamma\)</span> values for each topic (<span class="math inline">\(\sum_d E(\theta_d | z_k)\)</span> for each <span class="math inline">\(k\)</span>) served as proxies of the
+“prevalence” of the topic relative to all other topics and were used to rank
+them.</p>
+<center>
+<p><img src="posts/moveco-images/SumGammas_labels_low.png" style="width:50.0%" /></p>
+Measure of prevalence of each topic.
+Download the codes for the plot <a href="R/02-prevalence_topic_barplot.R">here</a>.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/TopicsGamma_ts1_low.png" style="width:100.0%" /></p>
+Time series of the relative prevalence of each topic every year.
+The code can be downloaded from <a href="R/man_topics_trend_plot.R">here</a>.
+</center>
+<p><br /></p>
+<p>A heatmap of the <span class="math inline">\(\gamma\)</span> values also showed that most papers were evidently more associated to one topic and few were splitted into several topics.</p>
+<center>
+<p><img src="posts/moveco-images/heatmap_low.png" style="width:100.0%" /></p>
+Heatmap of <span class="math inline">\(\gamma\)</span> values per abstract and topic.
+The corresponding code can be downloaded clicking <a href="R/02-heatmap_plot.R">here</a>.
+</center>
+<p><br /></p>
+</div>
+<div id="model-assessment" class="section level3" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> Model assessment</h3>
+<p>We assess the consistency and interpretation of the LDA results via internal and
+external expert judgement, respectively.</p>
+<div id="consistency" class="section level4" number="3.1.5.1">
+<h4><span class="header-section-number">3.1.5.1</span> Consistency</h4>
+<p>In the heatmap, we showed that most papers were more strongly associated to one
+topic.
+To check for consistency, for each topic, we compared its wordcloud with one
+obtained from abstracts that were highly associated with the topic
+(<span class="math inline">\(\gamma &gt; 0.75\)</span>).
+The two wordclouds should be telling a very similar story, thus visually
+resemble, with very small differences due to the abstracts being composed –in
+a small proportion –by other topics as well.
+We selected the papers with <span class="math inline">\(\gamma &gt; 0.75\)</span>, and computed the number of
+times each unique word occurred in the abstracts related to the topic.
+We divided those values by the total number of words in the topic to get a
+relative frequency <span class="math inline">\(\eta\)</span>.
+We then created wordclouds for each topic, where the area occupied by each word
+was proportional to its <span class="math inline">\(\eta\)</span> value.
+These wordclouds were overall consistent with the topic wordclouds, i.e. most
+words were the same, and the words that differ provided complementary
+information to interpret the topics and understand to which types of abstracts
+they were strongly associated to.</p>
+<center>
+<p><img src="posts/moveco-images/wordcloud_topics_15_abstracts_low.png" style="width:100.0%" /></p>
+Wordclouds of each topic based on most strongly associated abstracts.
+The code for this plot can be downloaded clicking <a href="R/02-wordcloud_plot_II.R">here</a>.
+</center>
+<p><br /></p>
+</div>
+<div id="interpretation" class="section level4" number="3.1.5.2">
+<h4><span class="header-section-number">3.1.5.2</span> Interpretation</h4>
+<p>To assess the interpretability of the topics, we performed a word intrusion
+analysis, i.e. people are given the task to identify a word injected into the
+top‐terms of each topic.
+For each topic, we identified the
+<a href="Data/Topics/word_intrusion/word_intrusion_real.csv">4 highest-probability words (click to download)</a>,
+i.e. with the highest <span class="math inline">\(\hat{\beta}\)</span> values.
+We did not use a higher number of words in the word intrusion tests as we
+considered that it could have required more effort from the researchers who
+kindly and voluntarily participated in this process.
+Then, we took a high-probability word from another topic –that was not
+‘movement’ or ‘behavior’ as they were highly related to most topics –and <a href="Data/Topics/word_intrusion/word_intrusion_test.csv">added
+it to the group; download file with intruder here</a>.
+We asked 10 researchers in the field to identify the intruder in each group of
+words without any more explanations, and suggested them to answer fast so that they
+would not have to overthink; their answers are
+<a href="https://github.com/rociojoo/mov-eco-review/tree/master/Data/Topics/word_intrusion">here</a>.
+We then computed the number of correct answers for each topic.
+A high score for a topic would indicate that the topic was easy to interpret
+using the 4 highest associated words to it.</p>
+<p>The scores are shown in the table below.
+The codes written for this analysis are
+<a href="R/02-Word_Intrusion.R">downloadable clicking here</a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Topic number</th>
+<th>Topic label</th>
+<th>Score (from 0 to 10)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Social interactions and dispersal</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Movement models</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Habitat selection</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Detection and data</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Home ranges</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Aquatic systems</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Foraging in marine megafauna</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Biomechanics</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Acoustic telemetry</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Experimental designs</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Activity budgets</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Avian migration</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Sports</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Human activity patterns</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Breeding ecology</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Topics 1, 2, 3, 5, 6, 7 and 12 got high scores (&gt;7).
+A few of the low-scored topics (<span class="math inline">\(\leq 5\)</span>) had a word intrusion that could be considered
+relatively general for the researchers thus confusing, such as “tag” (topic 4) and
+“data” (topics 9 and 15).
+Moreover, the two topics highly associated with humans, 13 and 14, also had low
+scores that could be a consequence of the researchers (all ecologists) not
+expecting any human related group.
+Overall, this analysis shows that only half of the topics are easily
+interpretable using the 4 highest-probability words.
+Even for us, the researchers involved in this study, it was necessary to look
+at the abstracts with the highest association to each topic in order to be sure
+of the interpretation of some of the topics.</p>
+<p>An alternative approach to model assessment in topics is through topic
+prediction on an independent data set, but this should be performed when the
+goal of the study is to predict over new data sets, which is not the case here.</p>
+<p>The word intrusion approach is not an exhaustive assessment of topic
+interpretability, but it allows putting our results into perspective: some
+topics have a clear and easy interpretation and some others are really hard to
+interpret.</p>
+</div>
+</div>
+</div>
+<div id="taxonomical-identification" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Taxonomical identification</h2>
+<p>To identify the taxonomy of the organisms studied in the papers, the ITIS
+(Integrated Taxonomic Information System) database (USGS Core Science Analytics
+and Synthesis) was used to detect names of any animal species (kingdom Animalia)
+that were mentioned in the abstracts, titles and keywords. We screened these
+sections for latin and common (i.e., vernacular) names of species (both singular
+and plural), as well as common names of higher taxonomic levels such as orders
+and families. We excluded ambiguous terms that are used as common names for taxa
+but also have a current language meaning; for example: “Here,” “Scales,”
+“Costa,” “Ray,” etc. Because we wanted to consider humans as a separate
+category, we excluded “Homo sapiens” from the search terms, but used the
+following non-ambiguous terms to identify papers that focus on movement ecology
+of humans:</p>
+<pre><code>&quot;player&quot;, &quot;players&quot;, &quot;patient&quot;, &quot;patients&quot;, &quot;child&quot;, &quot;children&quot;,
+&quot;teenager&quot;, &quot;teenagers&quot;, &quot;people&quot;, &quot;student&quot;, &quot;students&quot;, &quot;fishermen&quot;, &quot;person&quot;,
+&quot;tourist&quot;, &quot;tourists&quot;, &quot;visitor&quot;, &quot;visitors&quot;, &quot;hunter&quot;, &quot;hunters&quot;, &quot;customer&quot;,
+&quot;customers&quot;, &quot;runner&quot;, &quot;runners&quot;, &quot;participant&quot;, &quot;participants&quot;, &quot;cycler&quot;,
+&quot;cyclers&quot;, &quot;employee&quot;, &quot;employees&quot;, &quot;hiker&quot;, &quot;hikers&quot;, &quot;athlete&quot;, &quot;athletes&quot;,
+&quot;boy&quot;, &quot;boys&quot;, &quot;girl&quot;, &quot;girls&quot;, &quot;woman&quot;, &quot;women&quot;, &quot;man&quot;, &quot;men&quot;, &quot;adolescent&quot;,
+&quot;adolescents&quot;. </code></pre>
+<p>In cases where words may be suffixes of larger words, we used
+regular expression notation to exact match words, e.g ‘man’ must match only the
+word ‘man’ and not ‘manually.’ We excluded words that could have an
+ambiguous meaning: “passenger” may appear in papers that mention passenger
+pigeons; “driver” may be used to refer to a causing factor.</p>
+<p>After having identified any taxon mentioned in a paper, we summarized taxa at
+the Class level (except for superclasses Osteichthyes and Chondrichthyes which
+we merged into a single group labeled Fish, and for classes within the phylum
+Mollusca and the subphylum Crustacea which we considered collectively). Thus,
+each paper was classified as focusing on one or more class-like groups, as in
+<span class="citation"><a href="#ref-Holyoak2008" role="doc-biblioref">Holyoak et al.</a> (<a href="#ref-Holyoak2008" role="doc-biblioref">2008</a>)</span>: Fish, Mammals, Birds, Reptiles, Amphibians, Insects, Crustaceans,
+Mollusks, and others. For the purpose of our analysis, we kept humans as a
+separate category and did not count them within Class Mammalia.</p>
+<p>The quality control procedure consisted in selecting a random sample of 100
+abstracts and verifying that the common taxonomical group was correctly
+identified. The accuracy was 93%. The code for taxonomical identification can be
+downloaded <a href="R/taxonomy_analysis.R">here</a>.</p>
+<div id="outputs" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Outputs</h3>
+<center>
+<p><img src="posts/moveco-images/species_year_stacked_low.png" style="width:70.0%" /></p>
+More species have been studied in the last years. <a href="R/02-stacked_species_plots.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/taxonomy_ts_all_low.png" style="width:70.0%" /></p>
+Proportion of papers in each year studying each taxonomical group. <a href="R/man_taxa_trend_plot.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/Barplots_topics_taxa_low.png" style="width:100.0%" /></p>
+For each topic, relative frequencies of papers studying each taxonomical group. Only papers with more than 50% of association to each topic are used for this graph. <a href="R/man_taxa_topic_barplot.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+</div>
+</div>
+<div id="movement-ecology-framework-mef" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Movement ecology framework (MEF)</h2>
+<p>A unifying conceptual framework for movement ecology was proposed in
+<span class="citation"><a href="#ref-Nathan2008" role="doc-biblioref">Nathan et al.</a> (<a href="#ref-Nathan2008" role="doc-biblioref">2008</a>)</span>. It consisted of four components: external factors (i.e. the set of
+environmental factors that affect movement), internal state (i.e. the inner
+state affecting motivation and readiness to move), navigation capacity (i.e. the
+set of traits enabling the individual to orient), and motion capacity (i.e. the
+set of traits enabling the individual to execute movement). The outcome of the
+interactions between these four components would be the observed movement path
+(plus observation errors).</p>
+<p>To assess the study of the different components of the movement ecology
+framework, we built what we call here a “dictionary.” A dictionary is composed
+of concepts and associated words. Here, the concepts of interest were the
+components of the framework (i.e. internal state, external factor, motion and
+navigation), and their associated words were the terms potentially used in the
+abstracts to refer to the study of each component. For example, terms like
+“memory,” “sensory information,” “path integration” or “orientation” were used
+to identify the study of navigation. The framework dictionary is <a href="Data/Dictionary/csv-updated-versions/Dictionaries-Framework.csv">downloadable here</a>.</p>
+<p>To assessed how well the dictionary identified the components in the papers, a
+quality control procedure was established. For each aspect, a random sample
+of 100 papers was selected, and a coauthor who did not lead the construction of
+the dictionary was randomly selected to check if in those papers the categories
+of the dictionary were correctly identified (i.e. accuracy). The accuracy
+was 91%.</p>
+<p>We replicated this analysis for the 1999-2008 period for comparison purposes.</p>
+<div id="outputs-1" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Outputs</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>2009-2018</th>
+<th>1999-2008</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>External factors</td>
+<td>77.3%</td>
+<td>76.7%</td>
+</tr>
+<tr class="even">
+<td>Internal state</td>
+<td>49.0%</td>
+<td>45.7%</td>
+</tr>
+<tr class="odd">
+<td>Motion capacity</td>
+<td>26.2%</td>
+<td>27.3%</td>
+</tr>
+<tr class="even">
+<td>Navigation capacity</td>
+<td>9.0%</td>
+<td>11.7%</td>
+</tr>
+</tbody>
+</table>
+<p>Framework components. The values are the percentages of abstracts (where
+information on the framework was gathered) that use terms related to each
+component.</p>
+<center>
+<p><img src="posts/moveco-images/MovEcoDesign-V_low.png" style="width:75.0%" /></p>
+Representation of the components of the movement ecology framework and how much they were studied in the last decade: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path.
+The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to <span class="math inline">\(&gt;5\%\)</span> of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had <span class="math inline">\(&lt;5\%\)</span> of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in <a href="R/man_framework_stack_plot.R">this downloadable code</a>.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/MovEcoDesign-V-1999-2008_low.png" style="width:75.0%" /></p>
+Representation of the components of the movement ecology framework and how much they were studied between 1999 and 2008: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path.
+The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to <span class="math inline">\(&gt;5\%\)</span> of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had <span class="math inline">\(&lt;5\%\)</span> of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in <a href="R/man_framework_stack_plot_1999_2008.R">this downloadable code</a>.
+</center>
+<p><br /></p>
+</div>
+</div>
+<div id="tracking-devices" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Tracking devices</h2>
+<p>We grouped tracking devices in 11 categories. These categories were meant to be
+as monophyletic as possible, and so broad categories had to be defined. Also,
+use of one technology does not rule out the use of another technology. E.g.
+radio + GPS is frequently used, and marine studies frequently have an array of
+sensors on them that may combine multiple technologies. These categories are:</p>
+<ol style="list-style-type: decimal">
+<li>Light loggers: Any technology that records light levels and derives locations based on the timing of twilight events.</li>
+<li>Satellite: Any tag that collects location via, and sends data to, satellites, so that data can be accessed remotely. Frequently, the ARGOS system.<br />
+</li>
+<li>Radio telemetry: Any technology that infers location based on radio telemetry (VHF/UHF frequency). Sometimes it is used in addition to either light logger or GPS technology, though this distinction cannot be readily inferred using our methodology.</li>
+<li>Video/camera: Any data that records movement or location via photos or video. Either camera traps with known locations and the capture of the individual implies the location, or recording observations where the movement across the screen is the movement being collected (tracking spiders on a grid).<br />
+</li>
+<li>Acoustic: Any technology that uses sound to infer location, either in a similar way to radio telemetry or in an acoustic array where animal vocalizations are recorded and the location of sensors in the array are used to obtain an animal location.<br />
+</li>
+<li>Pressure: Any technology that records pressure readings (frequently in the water), and these changes infer vertical movement, such as through a water column.</li>
+<li>Accelerometer: Any technology that is placed on a subject and measures the acceleration of the tag, and this delta infers movement.</li>
+<li>Body conditions: Any technology that uses body condition sensors to collect data on the subject that may be associated with a movement or lack thereof, such as temperature and heart rate.<br />
+</li>
+<li>GPS: Any technology that uses Global Position System satellites to calculate the location of an object. Can be handheld GPS devices, or animal-borne tags.<br />
+</li>
+<li>Radar: Any technology that uses “radio detection and ranging” devices to track objects. Can be large weather arrays or tracking radars.<br />
+</li>
+<li>Encounter: Any analog tracking method where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category was difficult to capture in our study due to a lack of specific phrases that can be used.</li>
+</ol>
+<p>Their use was assessed with a dictionary approach. The dictionary can be downloaded <a href="Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv">here</a>.</p>
+<p>To assess how well the dictionary identified the types of devices in the papers, a quality control procedure was established. For each aspect, a random sample
+of 100 papers was selected, and a coauthor who did not lead the construction of
+the dictionary was randomly selected to check if in those papers the categories
+of the dictionary were correctly identified (i.e. accuracy). The accuracy
+was 84%.</p>
+<p>To assess if we were identifying animal-borne GPS rather than hand-held GPS, we took a sample of 100
+papers already associated to GPS according to our dictionary. 83 referred to GPS
+tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordinates in general, or General Practitioners).</p>
+<div id="output" class="section level3" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Output</h3>
+<center>
+<p><img src="posts/moveco-images/devices_ts_all_low.png" style="width:100.0%" /></p>
+Proportion of papers of each year using each type of
+device. <a href="R/man_data_trend_plot.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+</div>
+</div>
+<div id="software" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Software</h2>
+<p>Here we also used a dictionary approach. We used expert opinion to compile all
+known software used in movement ecology. The 33 software in our list were 1) R,
+2) Python, 3) SPSS, 4) Matlab, 5) SAS, 6) MARK (program Mark and not R package
+unmarked), 7) Java, 8) C (if researchers wrote C code themselves; i.e some
+tracking Radars for pre-processing), 9) Fortran, 10) WinBUGS, 11) Agent-Analyst,
+12) BASTrack, 13) QGIS, 14) GRASS, 15) Microsoft Excel, 16) Noldus observer,
+17) fragstats, 18) postgis (we separated postGIS from the database category
+because its high spatial analytical capabilities), 19) databases (any relational
+database, likely for data management and summarizing necessarily for analyitical
+use), 20) e-surge, 21) m-surge, 22) u-care, 23) Genstat,
+24) Biotas, 25) Statview, 26) Primer-e, 27) PAST, 28) STATA, 29) Statistica,
+30) UCINET, 31) Mathcad, 32) Vicon, and 33) GME (geospatial modeling environment).
+The dictionary with the terms used can be downloaded <a href="Data/Dictionary/csv-updated-versions/Dictionaries-Software.csv">here</a>.</p>
+<p>For quality control, we examined a random sample of 50 papers. The accuracy
+was 88%.</p>
+<div id="output-1" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Output</h3>
+<center>
+<p><img src="posts/moveco-images/software_ts_all_low.png" style="width:100.0%" /></p>
+Proportion of papers of each year using each software. <a href="R/man_software_trend_plot.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+</div>
+</div>
+<div id="statistical-methods" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Statistical methods</h2>
+<p>Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in 204 terms; <a href="Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv">click here to download the corresponding file</a>.</p>
+<p>We classified statistical methods into Spatial, Time-series, Movement, Spatiotemporal, Social, and Generic. Their definitions are below:</p>
+<ol style="list-style-type: decimal">
+<li>Spatial: spatial statistical methods (e.g. geostatistics)</li>
+<li>Time-series: time series methods (e.g. functional data analysis)</li>
+<li>Movement: statistical method used for the study of movement (e.g. behavioral change point analysis)</li>
+<li>Spatiotemporal: spatiotemporal but not movement methods (e.g. spatiotemporal geostatistics)</li>
+<li>Social: statistical methods that are not exclusively for movement, but that characterize or model social processes (e.g. social networks)</li>
+<li>Generic: generic statistical methods that could be used in any type of study, that are not inherently spatial, temporal or social (e.g. a regression analysis)</li>
+</ol>
+<p>Terms related to hypothesis tests were first considered but ultimately removed; we considered that the tendency of papers to present p-values could be biasing researchers towards the use of hypothesis tests, thus creating a bias towards general methods.</p>
+<p>For quality control, we examined a random sample of 50 papers. The accuracy
+was 84%.</p>
+<div id="outputs-2" class="section level3" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Outputs</h3>
+<center>
+<p><img src="posts/moveco-images/method_ts_low.png" style="width:100.0%" /></p>
+Proportion of papers of each year using each type of methods. <a href="R/man_method_trend_plot.R">The code for the plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+<table>
+<thead>
+<tr class="header">
+<th>generic</th>
+<th>Movement</th>
+<th>spatial</th>
+<th>time-series</th>
+<th>social</th>
+<th>spatiotemporal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>67.8%</td>
+<td>32.6%</td>
+<td>18.9%</td>
+<td>16.5%</td>
+<td>3.3%</td>
+<td>0.3%</td>
+</tr>
+</tbody>
+</table>
+<p>Table. Percentage of papers using each type of statistical method. The code for this table can be downloaded <a href="R/man_method_trend_plot.R">here</a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>trigram</th>
+<th>n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>linear mixed models</td>
+<td>231</td>
+</tr>
+<tr class="even">
+<td>linear mixed effects</td>
+<td>229</td>
+</tr>
+<tr class="odd">
+<td>generalized linear mixed</td>
+<td>202</td>
+</tr>
+<tr class="even">
+<td>mixed effects models</td>
+<td>202</td>
+</tr>
+<tr class="odd">
+<td>linear mixed model</td>
+<td>188</td>
+</tr>
+<tr class="even">
+<td>markov chain monte</td>
+<td>180</td>
+</tr>
+<tr class="odd">
+<td>chain monte carlo</td>
+<td>178</td>
+</tr>
+<tr class="even">
+<td>akaike’s information criterion</td>
+<td>174</td>
+</tr>
+<tr class="odd">
+<td>akaike information criterion</td>
+<td>162</td>
+</tr>
+<tr class="even">
+<td>minimum convex polygon</td>
+<td>158</td>
+</tr>
+<tr class="odd">
+<td>information criterion aic</td>
+<td>146</td>
+</tr>
+<tr class="even">
+<td>monte carlo mcmc</td>
+<td>133</td>
+</tr>
+<tr class="odd">
+<td>correlated random walk</td>
+<td>129</td>
+</tr>
+<tr class="even">
+<td>mixed effects model</td>
+<td>117</td>
+</tr>
+<tr class="odd">
+<td>hidden markov model</td>
+<td>116</td>
+</tr>
+</tbody>
+</table>
+<p>Table. Most common statistical trigrams in M&amp;M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to <a href="R/trigrams.R">this downloadable code</a>.</p>
+<p>*The code to process the dictionaries of the framework, tracking devices, software, statistical methods, and taxonomy is <a href="R/02-Dictionary_Analysis.R">downloadable here</a>.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Blei2003" class="csl-entry">
+Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. <span>“Latent <span>Dirichlet</span> <span>Allocation</span>.”</span> <em>Journal of Machine Learning Research</em> 3 (Jan): 993–1022. <a href="http://jmlr.csail.mit.edu/papers/v3/blei03a.html">http://jmlr.csail.mit.edu/papers/v3/blei03a.html</a>.
+</div>
+<div id="ref-Chang2009" class="csl-entry">
+Chang, Jonathan, Sean Gerrish, Chong Wang, Jordan L Boyd-Graber, and David M Blei. 2009. <span>“Reading Tea Leaves: How Humans Interpret Topic Models.”</span> In <em>Advances in Neural Information Processing Systems</em>, 288–96.
+</div>
+<div id="ref-Waal2008" class="csl-entry">
+De Waal, Alta, and Etienne Barnard. 2008. <span>“Evaluating Topic Models with Stability.”</span> In, 5221:79–84. Nineteenth Annual Symposium of the Pattern Recognition Association of South Africa (PRASA 2008).
+</div>
+<div id="ref-Griffiths2004" class="csl-entry">
+Griffiths, Thomas L., and Mark Steyvers. 2004. <span>“Finding Scientific Topics.”</span> <em>Proceedings of the National Academy of Sciences</em> 101 (suppl 1): 5228–35. <a href="https://doi.org/10.1073/pnas.0307752101">https://doi.org/10.1073/pnas.0307752101</a>.
+</div>
+<div id="ref-Grun2011" class="csl-entry">
+Grün, Bettina, and Kurt Hornik. 2011. <span>“<span class="nocase">topicmodels</span>: An <span>R</span> Package for Fitting Topic Models.”</span> <em>Journal of Statistical Software</em> 40 (13): 1–30. <a href="https://doi.org/10.18637/jss.v040.i13">https://doi.org/10.18637/jss.v040.i13</a>.
+</div>
+<div id="ref-Holyoak2008" class="csl-entry">
+Holyoak, Marcel, Renato Casagrandi, Ran Nathan, Eloy Revilla, and Orr Spiegel. 2008. <span>“<span class="nocase">Trends and missing parts in the study of movement ecology.</span>”</span> <em>Proceedings of the National Academy of Sciences of the United States of America</em> 105 (49): 19060–65. <a href="https://doi.org/10.1073/pnas.0800483105">https://doi.org/10.1073/pnas.0800483105</a>.
+</div>
+<div id="ref-Ingason2008" class="csl-entry">
+Ingason, A. K., S. Helgadóttir, H. Loftsson, and E. Rögnvaldsson. 2008. <span>“A Mixed Method Lemmatization Algorithm Using a Hierarchy of Linguistic Identities (HOLI).”</span> <em>Advances in Natural Language Processing</em> 5221: 205–16. <a href="https://doi.org/10.1007/978-3-540-85287-2_20">https://doi.org/10.1007/978-3-540-85287-2_20</a>.
+</div>
+<div id="ref-Nathan2008" class="csl-entry">
+Nathan, R, W M Getz, E Revilla, M Holyoak, R Kadmon, D Saltz, and P E Smouse. 2008. <span>“<span class="nocase">A movement ecology paradigm for unifying organismal movement research</span>.”</span> <em>PNAS</em> 105 (49): 19052–59.
+</div>
+<div id="ref-Rtextstem" class="csl-entry">
+Rinker, Tyler W. 2018. <em><span class="nocase">textstem</span>: Tools for Stemming and Lemmatizing Text</em>. Buffalo, New York. <a href="http://github.com/trinker/textstem">http://github.com/trinker/textstem</a>.
+</div>
+<div id="ref-Silge2016" class="csl-entry">
+Silge, Julia, and David Robinson. 2016. <span>“Tidytext: Text Mining and Analysis Using Tidy Data Principles in r.”</span> <em>JOSS</em> 1 (3). <a href="https://doi.org/10.21105/joss.00037">https://doi.org/10.21105/joss.00037</a>.
+</div>
+<div id="ref-Wainwright2008" class="csl-entry">
+Wainwright, Martin J., and Michael I. Jordan. 2008. <span>“Graphical <span>Models</span>, <span>Exponential</span> <span>Families</span>, and <span>Variational</span> <span>Inference</span>.”</span> <em>Foundations and Trends® in Machine Learning</em> 1 (1–2): 1–305. <a href="https://doi.org/10.1561/2200000001">https://doi.org/10.1561/2200000001</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-collection-and-processing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="survey-about-movement-ecology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

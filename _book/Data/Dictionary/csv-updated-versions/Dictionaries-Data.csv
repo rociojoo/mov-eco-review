@@ -1,0 +1,24 @@
+light loggers,satellite,radio,video,acoustic,pressure,accelerometer,Body-conditions,GPS,radar,Encounter
+light logger,^argos$,radio transmit,animal-borne video,acoustic telemet.*,time-depth recorder,acceleromet.*,heart rate monitor,GPS,radar!radar chart!doppler radar launch monitor,banding
+light-level geolocat.*,satellite tag,%VHF%,bird-borne cam,acoustic tracking,pressure sensor,activity sensor,body temperature sensor,global positioning system,,resighting
+light-based geolocat.*,satellite-tagged,%UHF%,video cam,acoustic sensor,time depth recorder,activity tracker,,,,colorband
+geolocator-immersion loggers,satellite telemetry,radiotelemet,animal-borne camera,acoustic tag,,fitness tracker,,,,mark resighting
+immersion logg,satellite tracking,radio-telemet,video record,acoustic monitor.*,,,,,,capture mark recapture
+global location sensor,satellite collar,radio telemet,video-record,acoustic receiver,,,,,,capture-mark-recapture
+GLS logg,satellite archival tag,radiocollar,videotap,acoustic array,,,,,,^pit tag
+,%PSAT%,radio collar,security cam,acoustic transduce.*,,,,,,^ear tag
+,%SPLASH tag%,radiotrack,camcorder,Vemco Positioning System,,,,,,mark recapture
+,%PTT%,radio track,camera trap,hydrophone,,,,,,Mark-recapture
+,pop up satellite archival tag,motus,camera-trap,,,,,,,Pit-tag
+,pop-up satellite archival tag,proximity sensor,photograph,,,,,,,behaviour obse.*
+,,rfid,infrared camera,,,,,,,behavior obse.*
+,,Radio-collar,flir,,,,,,,
+,,Radio-tag,infrared radiometer,,,,,,,
+,,,trail camera,,,,,,,
+,,,game camera,,,,,,,
+,,,dslr,,,,,,,
+,,,photograph,,,,,,,
+,,,time lapse,,,,,,,
+,,,time-lapse,,,,,,,
+,,,^gopro$,,,,,,,
+,,,Vicon Nexus Motion Tracking System,,,,,,,

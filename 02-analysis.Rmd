@@ -308,7 +308,7 @@ of humans:
 ```
 In cases where words may be suffixes of larger words, we used
 regular expression notation to exact match words, e.g 'man' must match only the
-word 'man' and not 'human' or 'postman'. We excluded words that could have an
+word 'man' and not 'manually'. We excluded words that could have an
 ambiguous meaning: "passenger" may appear in papers that mention passenger
 pigeons; "driver" may be used to refer to a causing factor.
 
@@ -487,7 +487,7 @@ Proportion of papers of each year using each software. [The code for plot can be
 
 ## Statistical methods
 
-Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in 204 terms; [click here to download the corresponding file](Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv). 
+Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in 188 terms; [click here to download the corresponding file](Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv). 
 
 We classified statistical methods into Spatial, Time-series, Movement, Spatiotemporal, Social, and Generic. Their definitions are below:
 
