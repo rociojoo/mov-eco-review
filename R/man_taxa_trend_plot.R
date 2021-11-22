@@ -8,7 +8,7 @@ library(paletteer)
 source("./R/expectation_functions.R")
 
 # Arguments
-path <- "./Data/ProcessedQueries/References/"
+path <- "./Data/"
 path.plots <- "./Rocio/Plots/"
 path_processed_dictionaries <- "./Data/Dictionary/Papers-Term/"
 path_dictionary_info <- "./Data/Dictionary/"
