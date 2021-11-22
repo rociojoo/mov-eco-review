@@ -414,6 +414,28 @@ The size of each component box is proportional to the percentage of papers (in p
 </center>
 <br /> 
 
+
+<center>
+![](posts/moveco-images/components_ts.png){width=70%}
+
+Proportion of papers in each year focusing on each component of the MEF.
+		A study can focus on more than one component, hence the proportions for each year can sum up to more than one.
+  [The code for plot can be downloaded here](R/man_frame_trend_plot.R).
+</center>
+<br /> 
+
+
+<center>
+![](posts/moveco-images/Barplots_frame_taxa.png){width=70%}
+
+Proportion of papers studying each taxonomic class for each component of the MEF.
+		Papers associated to several components were accounted for in several frames.
+  [The code for plot can be downloaded here](R/man_frame_taxa_barplot.R).
+</center>
+<br /> 
+
+
+
 ## Tracking devices
 
 We grouped tracking devices in 11 categories. These categories were meant to be
@@ -425,14 +447,17 @@ sensors on them that may combine multiple technologies. These categories are:
 1. Light loggers: Any technology that records light levels and derives locations based on the timing of twilight events.
 2. Satellite: Any tag that collects location via, and sends data to, satellites, so that data can be accessed remotely. Frequently, the ARGOS system.  
 3. Radio telemetry: Any technology that infers location based on radio telemetry (VHF/UHF frequency). Sometimes it is used in addition to either light logger or GPS technology, though this distinction cannot be readily inferred using our methodology.
-4. Video/camera:  Any data that records movement or location via photos or video. Either camera traps with known locations and the capture of the individual implies the location, or recording observations where the movement across the screen is the movement being collected (tracking spiders on a grid).  
-5. Acoustic:  Any technology that uses sound to infer location, either in a similar way to radio telemetry or in an acoustic array where animal vocalizations are recorded and the location of sensors in the array are used to obtain an animal location.  
-6. Pressure: Any technology that records pressure readings (frequently in the water), and these changes infer vertical movement, such as through a water column.
-7. Accelerometer: Any technology that is placed on a subject and measures the acceleration of the tag, and this delta infers movement.
-8. Body conditions: Any technology that uses body condition sensors to collect data on the subject that may be associated with a movement or lack thereof, such as temperature and heart rate.  
-9. GPS: Any technology that uses Global Position System satellites to calculate the location of an object. Can be handheld GPS devices, or animal-borne tags.  
-10. Radar: Any technology that uses "radio detection and ranging" devices to track objects. Can be large weather arrays or tracking radars.  
-11. Encounter: Any analog tracking method where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category was difficult to capture in our study due to a lack of specific phrases that can be used.  
+4. Camera:  They include any device that records location/presence via photos
+or video; mainly camera traps with known locations where the capture of the 
+individual implies the location.  
+5. Video:  They include any device that records movement via video.   
+6. Acoustic:  Any technology that uses sound to infer location, either in a similar way to radio telemetry or in an acoustic array where animal vocalizations are recorded and the location of sensors in the array are used to obtain an animal location.  
+7. Pressure: Any technology that records pressure readings (frequently in the water), and these changes infer vertical movement, such as through a water column.
+8. Accelerometer: Any technology that is placed on a subject and measures the acceleration of the tag, and this delta infers movement.
+9. Body conditions: Any technology that uses body condition sensors to collect data on the subject that may be associated with a movement or lack thereof, such as temperature and heart rate.  
+10. GPS: Any technology that uses Global Position System satellites to calculate the location of an object. Can be handheld GPS devices, or animal-borne tags.  
+11. Radar: Any technology that uses "radio detection and ranging" devices to track objects. Can be large weather arrays or tracking radars.  
+12. Encounter: Any analog tracking method where the user must capture the subject and place a marker on the subject. The recapturing/resighting of the subject infers the movement. This category was difficult to capture in our study due to a lack of specific phrases that can be used.  
 
 Their use was assessed with a dictionary approach. The dictionary can be downloaded [here](Data/Dictionary/csv-updated-versions/Dictionaries-Data.csv). 
 
@@ -450,10 +475,11 @@ tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordina
 ### Output
 
 <center>
-![](posts/moveco-images/devices_ts_all_low.png){width=100%}
+![](posts/moveco-images/devices_ts_5.png){width=100%}
 
-Proportion of papers of each year using each type of
-device. [The code for plot can be downloaded here](R/man_data_trend_plot.R).
+Proportion of papers in each year using the five most commonly used tracking devices.
+	A study can use more than one device, hence the proportions for each year can sum up to more than one.
+	[The code for plot can be downloaded here](R/man_data_trend_plot.R).
 </center>
 <br /> 
 
@@ -481,9 +507,10 @@ was 88%.
 
 
 <center>
-![](posts/moveco-images/software_ts_all_low.png){width=100%}
+![](posts/moveco-images/software_ts_5.png){width=100%}
 
-Proportion of papers of each year using each software. [The code for plot can be downloaded here](R/man_software_trend_plot.R).
+Proportion of papers in each year using the five most commonly used software.
+	A study can use more than one software, hence the proportions for each year can sum up to more than one. [The code for plot can be downloaded here](R/man_software_trend_plot.R).
 </center>
 <br /> 
 
@@ -509,9 +536,10 @@ was 84%.
 
 
 <center>
-![](posts/moveco-images/method_ts_low.png){width=100%}
+![](posts/moveco-images/methods_ts_5.png){width=100%}
 
-Proportion of papers of each year using each type of methods. [The code for the plot can be downloaded here](R/man_method_trend_plot.R). 
+Proportion of papers in each year mentioning each type of statistical method.
+		A study can use more than one type of method, hence the proportions for each year can sum up to more than one. [The code for the plot can be downloaded here](R/man_method_trend_plot.R). 
 </center>
 <br /> 
 

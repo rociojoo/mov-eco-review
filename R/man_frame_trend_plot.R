@@ -1,5 +1,5 @@
 #############################
-# Making device plots
+# Making category line plots
 #############################
 
 library(tidyverse)
@@ -19,25 +19,38 @@ data_decade <- papers %>%
 
 ######## Category #############
 
-dictionary <- "Data"
-corrected_df <- expectation_functions(dictionary, data_all = data_decade, num_cat=5, ini_cat=1,
+dictionary <- "Framework"
+corrected_df_all <- expectation_functions(dictionary, data_all = data_decade, num_cat=NULL, ini_cat=1,
   paper_cat_out=FALSE, filter_lines=FALSE, suffix=NULL,
   path_processed_dictionaries)
 
-values_prop <- sort(unique(corrected_df$prop_papers))
+corrected_df_all <- corrected_df_all %>% 
+  mutate(category = as.factor(case_when(
+    category == "External.factors" ~ "External factors",
+    category == "Internal.state.factors" ~ "Internal state",
+    category == "Motion.process" ~ "Motion",
+    category == "Navigation.process" ~ 'Navigation'
+  )))
+
+values_prop <- sort(unique(corrected_df_all$prop_papers))
 values_breaks <- seq(from=0,to=max(values_prop)+0.1,by=0.1)
-values_year <- seq(from=min(corrected_df$year), to=max(corrected_df$year),by=1)
+values_year <- seq(from=min(corrected_df_all$year), to=max(corrected_df_all$year),by=1)
 
-device_colors <- paletteer_d("colorblindr::OkabeIto") %>%
+comp_colors <- paletteer_d("colorblindr::OkabeIto") %>%
   as.vector()
-names(device_colors) <- unique(corrected_df$category)
-device_color_palette_current <- device_colors[unique(corrected_df$category)]
+comp_labels <- levels(corrected_df_all$category) 
+names(comp_colors) <- comp_labels
+comp_color_palette_current <- comp_colors[unique(corrected_df_all$category)]
 
-ggplot(data  = corrected_df, mapping = aes(x = year, y = prop_papers, color = category, fill = category)) +
+##############################
+# Plotting
+##############################
+
+ggplot(data  = corrected_df_all, mapping = aes(x = year, y = prop_papers, color = category, fill = category)) +
   geom_line(size=1.5, linetype = 3) +
   geom_point(size = 5.5) +
-  scale_color_manual(name="Device",values = device_color_palette_current) +
-  scale_fill_manual(name="Device",values = device_color_palette_current) +
+  scale_color_manual(name="Component",values = comp_color_palette_current) +
+  scale_fill_manual(name="Component",values = comp_color_palette_current) +
   scale_x_continuous(breaks = values_year) +
   scale_y_continuous(breaks = values_breaks) +
   theme_bw()+xlab("") + ylab("Proportion of articles in a year") +
@@ -47,3 +60,5 @@ ggplot(data  = corrected_df, mapping = aes(x = year, y = prop_papers, color = ca
         axis.title.x = element_text(margin = margin(t=10)),
         legend.key.size = unit(2,"line"),
         legend.title=element_text(size=16))
+
+

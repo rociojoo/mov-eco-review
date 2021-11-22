@@ -633,12 +633,15 @@ downloaded <a href="R/taxonomy_analysis.R">here</a>.</p>
 <h3><span class="header-section-number">3.2.1</span> Outputs</h3>
 <center>
 <p><img src="posts/moveco-images/species_ts_5.png" style="width:70.0%" /></p>
-More species have been studied in the last years. <a href="R/02-stacked_species_plots.R">The code for plot can be downloaded here</a>.
+Number of species studied in each year for the five classes with most studied species.
+More species have been studied in the last years. <a href="R/02-species_plots.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 <center>
-<p><img src="posts/moveco-images/taxonomy_ts_all_low.png" style="width:70.0%" /></p>
-Proportion of papers in each year studying each taxonomical group. <a href="R/man_taxa_trend_plot.R">The code for plot can be downloaded here</a>.
+<p><img src="posts/moveco-images/taxonomy_ts_5.png" style="width:70.0%" /></p>
+Proportion of papers in each year studying each of the five most commonly studied taxonomic groups.
+A paper can study several taxonomic groups, hence the proportions for each year can sum up to more than one.
+<a href="R/man_taxa_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 <center>
@@ -721,6 +724,20 @@ Representation of the components of the movement ecology framework and how much 
 The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to <span class="math inline">\(&gt;5\%\)</span> of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had <span class="math inline">\(&lt;5\%\)</span> of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in <a href="R/man_framework_stack_plot_1999_2008.R">this downloadable code</a>.
 </center>
 <p><br /></p>
+<center>
+<p><img src="posts/moveco-images/components_ts.png" style="width:70.0%" /></p>
+Proportion of papers in each year focusing on each component of the MEF.
+A study can focus on more than one component, hence the proportions for each year can sum up to more than one.
+<a href="R/man_frame_trend_plot.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/Barplots_frame_taxa.png" style="width:70.0%" /></p>
+Proportion of papers studying each taxonomic class for each component of the MEF.
+Papers associated to several components were accounted for in several frames.
+<a href="R/man_frame_taxa_barplot.R">The code for plot can be downloaded here</a>.
+</center>
+<p><br /></p>
 </div>
 </div>
 <div id="tracking-devices" class="section level2" number="3.4">
@@ -735,7 +752,11 @@ sensors on them that may combine multiple technologies. These categories are:</p
 <li>Satellite: Any tag that collects location via, and sends data to, satellites, so that data can be accessed remotely. Frequently, the ARGOS system.<br />
 </li>
 <li>Radio telemetry: Any technology that infers location based on radio telemetry (VHF/UHF frequency). Sometimes it is used in addition to either light logger or GPS technology, though this distinction cannot be readily inferred using our methodology.</li>
-<li>Video/camera: Any data that records movement or location via photos or video. Either camera traps with known locations and the capture of the individual implies the location, or recording observations where the movement across the screen is the movement being collected (tracking spiders on a grid).<br />
+<li>Camera: They include any device that records location/presence via photos
+or video; mainly camera traps with known locations where the capture of the
+individual implies the location.<br />
+</li>
+<li>Video: They include any device that records movement via video.<br />
 </li>
 <li>Acoustic: Any technology that uses sound to infer location, either in a similar way to radio telemetry or in an acoustic array where animal vocalizations are recorded and the location of sensors in the array are used to obtain an animal location.<br />
 </li>
@@ -761,9 +782,10 @@ tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordin
 <div id="output" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Output</h3>
 <center>
-<p><img src="posts/moveco-images/devices_ts_all_low.png" style="width:100.0%" /></p>
-Proportion of papers of each year using each type of
-device. <a href="R/man_data_trend_plot.R">The code for plot can be downloaded here</a>.
+<p><img src="posts/moveco-images/devices_ts_5.png" style="width:100.0%" /></p>
+Proportion of papers in each year using the five most commonly used tracking devices.
+A study can use more than one device, hence the proportions for each year can sum up to more than one.
+<a href="R/man_data_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 </div>
@@ -788,8 +810,9 @@ was 88%.</p>
 <div id="output-1" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Output</h3>
 <center>
-<p><img src="posts/moveco-images/software_ts_all_low.png" style="width:100.0%" /></p>
-Proportion of papers of each year using each software. <a href="R/man_software_trend_plot.R">The code for plot can be downloaded here</a>.
+<p><img src="posts/moveco-images/software_ts_5.png" style="width:100.0%" /></p>
+Proportion of papers in each year using the five most commonly used software.
+A study can use more than one software, hence the proportions for each year can sum up to more than one. <a href="R/man_software_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 </div>
@@ -812,8 +835,9 @@ was 84%.</p>
 <div id="outputs-2" class="section level3" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Outputs</h3>
 <center>
-<p><img src="posts/moveco-images/method_ts_low.png" style="width:100.0%" /></p>
-Proportion of papers of each year using each type of methods. <a href="R/man_method_trend_plot.R">The code for the plot can be downloaded here</a>.
+<p><img src="posts/moveco-images/methods_ts_5.png" style="width:100.0%" /></p>
+Proportion of papers in each year mentioning each type of statistical method.
+A study can use more than one type of method, hence the proportions for each year can sum up to more than one. <a href="R/man_method_trend_plot.R">The code for the plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 <table>

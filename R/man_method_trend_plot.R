@@ -1,9 +1,9 @@
 library(tidyverse)
-library(RColorBrewer)
+library(cowplot)
+library(paletteer)
 
 # Arguments
-path <- "./Data/ProcessedQueries/References/"
-# path.plots <- "./Rocio/Plots/"
+path <- "./Data/"
 path_processed_dictionaries <- "./Data/Dictionary/Papers-Term/"
 path_dictionary_info <- "./Data/Dictionary/"
 
@@ -89,89 +89,28 @@ df_plot_prop <- joined_df_prop_year %>% gather(key = subcategory, value = prop_p
 
 plot_df <- df_plot_prop
 head(plot_df)
-plot_df$subcategory <- rep(c('Generic','Spatial','Movement','Time-series','Social','Spatial-temporal'), each = 10)
+plot_df$subcategory <- rep(c('Generic','Spatial','Movement','TimeSeries','Social','Spatiotemporal'), each = 10)
 
-# Run a quick linear model to measure which trend lines are positive or negative
-# we'll reference this when we choose our colors
-here <- by(plot_df, plot_df$subcategory, function(x)
-  lm(x$prop_papers ~ x$year)$coefficients[2]
-)
-plot_df$subcategory <- factor(plot_df$subcategory, levels= names(sort(here)))
-# Create a grouping variable based on this value
+values_prop <- sort(unique(plot_df$prop_papers))
+values_breaks <- seq(from=0,to=max(values_prop)+0.1,by=0.1)
+values_year <- seq(from=min(plot_df$year), to=max(plot_df$year),by=1)
 
-grouping <- data.frame(subcategory = c(names(here)[here<=0.003 & here>=(-0.003)],names(here)[here<(-0.003)],names(here)[here>0.003]))
-grouping$group <- seq_along(grouping$subcategory)
+methods_colors <- paletteer_d("colorblindr::OkabeIto") %>%
+  as.vector()
+names(methods_colors) <- snakecase::to_upper_camel_case(names(table_sub))
+methods_color_palette_current <- methods_colors[unique(plot_df$subcategory)]
 
-plot_df <- merge(plot_df,grouping, by='subcategory')
-
-# Now to make our aesthetic features which will be added with scale_*_manual()
-# Colors
-# Make a color ramp where the amount of 'grays' will determine the highlighted categories
-Tol_muted <- c('#88CCEE', '#44AA99', '#117733', '#332288', '#DDCC77', '#999933','#CC6677', '#882255', '#AA4499', '#DDDDDD')
-
-#Okabe_Ito <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
-colorz <- Tol_muted[1:(length(here)) %% (length(Tol_muted))]
-# change problematic colors to gray60
-# gray 60 "#7f7f7f"
-# black "#000000"
-names(colorz) <- names(sort(here))
-colorz
-colorz[6] <- "#7f7f7f"
-
-
-# line types
-# just need to spread linetypes out enough so that the color and alpha can help distinguish as well
-# manual 5 = dash, 3 = dotted, 1 = solid
-linetypez <- c(5,3,3,3,3,1)
-# or random
-# linetypez <- rep(1:6,times=ceiling(length(levels(plot_df$Topic))/6))
-# linetypez <- linetypez[seq_along(levels(plot_df$Topic))]
-names(linetypez) <- names(sort(here))
-
-# alpha
-# Changing alpha will help to make the important categories pop.
-# Create a gradient of alphas from 1 -> .2 -> so none trend lines are grayed out.
-nz <- length(here)
-# automatically
-#alphaz <- c((1*nz/2):(.2*nz/2)/nz*2,(.2*nz/2):(1*nz/2)/nz*2,ifelse(nz%%2==0,NULL,1))
-# or manually
-
-alphaz <- c(1,.7,.4,.4,.4,1)
-names(alphaz) <- names(sort(here))
-
-# line width
-sizez <-  c(2,1,1,1,1,2)
-#names(sizez) <- names(here)
-sizez
-sizez <- rep(sizez, each = 10)
-sizez
-# You have to include color, linetype, and alpha in the mapping even if youre going to override it anyway.
-
-
-p <- ggplot(
-  data  = plot_df) +
-  geom_line(size=1.5, 
-            mapping = aes(x = year, y = prop_papers, color = subcategory, group = group, linetype = subcategory, alpha = subcategory)
-  ) +
-  scale_color_manual(name='Methods',values = colorz) +
-  scale_linetype_manual(name='Methods',values = linetypez) +
-  scale_alpha_manual(name='Methods',values = alphaz)+
-  theme_classic()+xlab("") + ylab("Proportion of articles in a year") +
-  theme(axis.text.x = element_text(angle = 15, hjust = 1,size=16),axis.text.y = element_text(size=16),
-        legend.position = "none", legend.justification = "right",legend.text=element_text(size=15),
+ggplot(data  = plot_df, mapping = aes(x = year, y = prop_papers, color = subcategory, fill = subcategory)) +
+  geom_line(size=1.5, linetype = 3) +
+  geom_point(size = 5.5) +
+  scale_color_manual(name="Method",values = methods_color_palette_current) +
+  scale_fill_manual(name="Method",values = methods_color_palette_current) +
+  scale_x_continuous(breaks = values_year) +
+  scale_y_continuous(breaks = values_breaks) +
+  theme_bw()+xlab("") + ylab("Proportion of articles in a year") +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5,size=16),axis.text.y = element_text(size=16),
+        legend.position = "bottom", legend.justification = "right",legend.text=element_text(size=15),
         axis.title.y = element_text(margin = margin(r=10),size=17), 
         axis.title.x = element_text(margin = margin(t=10)),
         legend.key.size = unit(2,"line"),
         legend.title=element_text(size=16))
-
-start_pos <- plot_df %>% group_by(subcategory) %>% summarise(y = last(prop_papers)) %>% mutate(x = 2018)
-start_pos$colorz <- colorz
-start_pos
-
-start_pos$x_new <- start_pos$x + 0.1
-start_pos$y_new <- start_pos$y + c(0,0,0,0,0,0)
-p + geom_text(data = start_pos, aes(x =x_new ,y=y_new, label = subcategory), color=colorz,hjust=0,size=5)+
-  coord_cartesian(xlim = c(2009, 2018),clip = 'off') + 
-  theme(plot.margin = unit(c(1,10,1,1), "lines"))
-
-# ggsave("Manuscript/Images/method_ts1.png", width=12,height=8)
