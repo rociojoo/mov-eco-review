@@ -426,7 +426,7 @@ Proportion of papers in each year focusing on each component of the MEF.
 
 
 <center>
-![](posts/moveco-images/Barplots_frame_taxa.png){width=70%}
+![](posts/moveco-images/Barplots_frame_taxa.png){width=100%}
 
 Proportion of papers studying each taxonomic class for each component of the MEF.
 		Papers associated to several components were accounted for in several frames.
