@@ -331,17 +331,20 @@ downloaded [here](R/taxonomy_analysis.R).
   
 
 <center>
-![](posts/moveco-images/species_year_stacked_low.png){width=70%}
+![](posts/moveco-images/species_ts_5.png){width=70%}
 
-More species have been studied in the last years. [The code for plot can be downloaded here](R/02-stacked_species_plots.R).
+Number of species studied in each year for the five classes with most studied species.
+More species have been studied in the last years. [The code for plot can be downloaded here](R/02-species_plots.R).
 </center>
 <br /> 
 
 
 <center>
-![](posts/moveco-images/taxonomy_ts_all_low.png){width=70%}
+![](posts/moveco-images/taxonomy_ts_5.png){width=70%}
 
-Proportion of papers in each year studying each taxonomical group. [The code for plot can be downloaded here](R/man_taxa_trend_plot.R).
+Proportion of papers in each year studying each of the five most commonly studied taxonomic groups.
+  A paper can study several taxonomic groups, hence the proportions for each year can sum up to more than one.
+  [The code for plot can be downloaded here](R/man_taxa_trend_plot.R).
 </center>
 <br /> 
 
@@ -487,8 +490,7 @@ Proportion of papers of each year using each software. [The code for plot can be
 
 ## Statistical methods
 
-Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in 188 terms; [click here to download the corresponding file](Data/Dictionary/csv-updated-versions/Dictionaries-Methods.csv). 
-
+Within our dictionary approach, we first used expert opinion to compile all known statistical methods (and terms used for them) that could have been used in movement ecology, resulting in 188 terms; [click here to download the corresponding file](Data/Dictionary/Methods-Classification.csv). 
 We classified statistical methods into Spatial, Time-series, Movement, Spatiotemporal, Social, and Generic. Their definitions are below:
 
 1. Spatial: spatial statistical methods (e.g. geostatistics)

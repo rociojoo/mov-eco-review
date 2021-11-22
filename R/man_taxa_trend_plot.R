@@ -3,7 +3,8 @@
 #############################
 
 library(tidyverse)
-# library(topicmodels) #install in ubuntu libgsl-dev and gsl-bin
+library(cowplot)
+library(paletteer)
 source("./R/expectation_functions.R")
 
 # Arguments
@@ -20,13 +21,20 @@ data_decade <- papers %>%
 ######## Category #############
 
 dictionary <- "Taxonomy"
-corrected_df <- expectation_functions(dictionary, data_all = data_decade, num_cat=NULL, ini_cat=1,
+corrected_df <- expectation_functions(dictionary, data_all = data_decade, num_cat=5, ini_cat=1,
   paper_cat_out=FALSE, filter_lines=FALSE, suffix=NULL,
   path_processed_dictionaries)
 
 values_prop <- sort(unique(corrected_df$prop_papers))
 values_breaks <- seq(from=0,to=max(values_prop)+0.1,by=0.1)
 values_year <- seq(from=min(corrected_df$year), to=max(corrected_df$year),by=1)
+
+taxa_colors <- paletteer_d("colorblindr::OkabeIto") %>%
+  as.vector()
+taxo_labels <- levels(taxo_plot$Taxon) 
+taxo_labels <- taxo_labels[!taxo_labels %in% c("others", "Mollusks")]
+names(taxa_colors) <- taxo_labels
+
 
 ##############################
 # Plotting
