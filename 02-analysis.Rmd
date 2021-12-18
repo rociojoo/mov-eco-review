@@ -20,6 +20,8 @@ aspect of the analysis are detailed in the following table.
 ## Topic analysis
 
 
+This section was removed from the most recent version of the manuscript.
+
 <center>
 ![](posts/moveco-images/Topics_low.png){width=70%}
 
