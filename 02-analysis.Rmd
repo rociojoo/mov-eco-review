@@ -1,6 +1,41 @@
 
 # Data analysis {#analyses}
 
+A total of 8007 results (papers) from 2009-2018 were obtained. 
+The proportion of animal and human movement papers from the total number of 
+scientific papers extracted from WoS was higher in the last years (Table and 
+Figures below; download the code to reproduce them [here](R/02-wordcloud_plot.R)).
+
+<center>
+|Year|Movement articles|All articles| Proportion movement/all ($10^{-4}$) |
+|---:|---:|---:|---:|
+|2009|485|1139611| 4.25|
+|2010|479|1186928| 4.03|
+|2011|564|1262956| 4.47|
+|2012|666|1323677| 5.03|
+|2013|791|1398009| 5.66|
+|2014|878|1438134| 6.11|
+|2015|978|1709898| 5.72|
+|2016|937|1775745| 5.28|
+|2017|1073|1838351| 5.84|
+|2018|1156|1928507| 5.99|
+Number of articles in movement ecology of animals and human mobility,
+and articles in scientific literature in general, published from 2009 to
+2018 according to the Web of Science. Proportion movement/all refers to the 
+proportion of articles in that studied movement.
+</center>
+<br />
+
+<center>
+![](posts/moveco-images/pubprop_ts.png){width=70%}
+
+Proportion of scientific articles extracted from WoS that were about 
+animal or human movement for each year between 2009 and 2018. The solid line and
+grey area represent the fitted local polynomial regression (estimates and error bounds, respectively).
+</center>
+<br />
+
+
 Several dimensions of the mov-eco literature were analyzed: research **topics**,
 **taxonomical** groups studied, components of the movement ecology **framework**
 studied, tracking **devices** used, **software** tools used, and statistical
@@ -9,13 +44,14 @@ keywords, abstract or material and methods (M&M). The sections used for each
 aspect of the analysis are detailed in the following table.
 
 |Dimension|Title|Keywords|Abstract|M&M|
-|--- |--- |--- |--- |--- |
+|--- |:---:|:---:|:---:|:---:|
 |Topics|||X||
 |Taxonomy|X|X|X||
 |Framework|X|X|X||
 |Devices|X|X|X|X|
 |Software|X|X|X|X|
 |Methods|X|X|X|X|
+
 
 ## Topic analysis
 

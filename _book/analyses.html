@@ -24,7 +24,7 @@
 <meta name="author" content="Rocío Joo, Simona Picardi, Matthew E. Boone, Thomas A. Clay, Samantha C. Patrick, Vilma S. Romero-Romero and Mathieu Basille" />
 
 
-<meta name="date" content="2021-12-17" />
+<meta name="date" content="2021-12-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,6 +237,96 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="analyses" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Data analysis</h1>
+<p>A total of 8007 results (papers) from 2009-2018 were obtained.
+The proportion of animal and human movement papers from the total number of
+scientific papers extracted from WoS was higher in the last years (Table and
+Figures below; download the code to reproduce them <a href="R/02-wordcloud_plot.R">here</a>).</p>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Year</th>
+<th align="right">Movement articles</th>
+<th align="right">All articles</th>
+<th align="right">Proportion movement/all (<span class="math inline">\(10^{-4}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2009</td>
+<td align="right">485</td>
+<td align="right">1139611</td>
+<td align="right">4.25</td>
+</tr>
+<tr class="even">
+<td align="right">2010</td>
+<td align="right">479</td>
+<td align="right">1186928</td>
+<td align="right">4.03</td>
+</tr>
+<tr class="odd">
+<td align="right">2011</td>
+<td align="right">564</td>
+<td align="right">1262956</td>
+<td align="right">4.47</td>
+</tr>
+<tr class="even">
+<td align="right">2012</td>
+<td align="right">666</td>
+<td align="right">1323677</td>
+<td align="right">5.03</td>
+</tr>
+<tr class="odd">
+<td align="right">2013</td>
+<td align="right">791</td>
+<td align="right">1398009</td>
+<td align="right">5.66</td>
+</tr>
+<tr class="even">
+<td align="right">2014</td>
+<td align="right">878</td>
+<td align="right">1438134</td>
+<td align="right">6.11</td>
+</tr>
+<tr class="odd">
+<td align="right">2015</td>
+<td align="right">978</td>
+<td align="right">1709898</td>
+<td align="right">5.72</td>
+</tr>
+<tr class="even">
+<td align="right">2016</td>
+<td align="right">937</td>
+<td align="right">1775745</td>
+<td align="right">5.28</td>
+</tr>
+<tr class="odd">
+<td align="right">2017</td>
+<td align="right">1073</td>
+<td align="right">1838351</td>
+<td align="right">5.84</td>
+</tr>
+<tr class="even">
+<td align="right">2018</td>
+<td align="right">1156</td>
+<td align="right">1928507</td>
+<td align="right">5.99</td>
+</tr>
+</tbody>
+</table>
+Number of articles in movement ecology of animals and human mobility,
+and articles in scientific literature in general, published from 2009 to
+2018 according to the Web of Science. Proportion movement/all refers to the
+proportion of articles in that studied movement.
+</center>
+<p><br /></p>
+<center>
+<p><img src="posts/moveco-images/pubprop_ts.png" style="width:70.0%" /></p>
+Proportion of scientific articles extracted from WoS that were about
+animal or human movement for each year between 2009 and 2018. The solid line and
+grey area represent the fitted local polynomial regression (estimates and error bounds, respectively).
+</center>
+<p><br /></p>
 <p>Several dimensions of the mov-eco literature were analyzed: research <strong>topics</strong>,
 <strong>taxonomical</strong> groups studied, components of the movement ecology <strong>framework</strong>
 studied, tracking <strong>devices</strong> used, <strong>software</strong> tools used, and statistical
@@ -247,54 +337,54 @@ aspect of the analysis are detailed in the following table.</p>
 <thead>
 <tr class="header">
 <th>Dimension</th>
-<th>Title</th>
-<th>Keywords</th>
-<th>Abstract</th>
-<th>M&amp;M</th>
+<th align="center">Title</th>
+<th align="center">Keywords</th>
+<th align="center">Abstract</th>
+<th align="center">M&amp;M</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Topics</td>
-<td></td>
-<td></td>
-<td>X</td>
-<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">X</td>
+<td align="center"></td>
 </tr>
 <tr class="even">
 <td>Taxonomy</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td></td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center"></td>
 </tr>
 <tr class="odd">
 <td>Framework</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td></td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center"></td>
 </tr>
 <tr class="even">
 <td>Devices</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 <tr class="odd">
 <td>Software</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 <tr class="even">
 <td>Methods</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 </tbody>
 </table>
