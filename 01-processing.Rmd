@@ -10,7 +10,7 @@
 
 ![](posts/moveco-images/keywords_low.png){width=50%}
 
-Workflow to identify movement ecology papers.
+Fig. 2.1. Workflow to identify movement ecology papers.
 </center>
 
 <br />
@@ -135,7 +135,7 @@ not able to get papers that were not in WoS, which depends on WoS agreements.
 
 ![](posts/moveco-images/downloadpapers.png){width=40%}
 
-Downloading movement ecology papers.
+Fig. 2.2. Downloading movement ecology papers.
 </center>
 
 <br />
@@ -159,7 +159,7 @@ The codes to download papers can be downloaded clicking on this
 
 ![](posts/moveco-images/MatMet_low.png){width=75%}
 
-Summary of procedure to extract Material and Methods section from each paper.
+Fig. 2.3. Summary of procedure to extract Material and Methods section from each paper.
 </center>
 
 <br />
