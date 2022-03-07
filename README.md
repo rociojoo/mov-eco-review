@@ -1,4 +1,4 @@
-# Repository for "Recent trends in Movement Ecology: a quantitative review of tools, topics and research gaps"
+# Repository for "Recent trends in movement ecology of animals and human mobility"
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4024707.svg)](https://doi.org/10.5281/zenodo.4024707)
 
