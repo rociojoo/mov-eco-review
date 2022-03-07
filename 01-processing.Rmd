@@ -8,7 +8,7 @@
 
 <center>
 
-![](posts/moveco-images/keywords_low.png){width=50%}
+![](posts/moveco-images/keywordsIIlow.png){width=50%}
 
 Fig. 2.1. Workflow to identify movement ecology papers.
 </center>
