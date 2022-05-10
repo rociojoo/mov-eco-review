@@ -26,15 +26,6 @@ proportion of articles in that studied movement.
 </center>
 <br />
 
-<center>
-![](posts/moveco-images/pubprop_ts.png){width=70%}
-
-Fig. 3.1. Proportion of scientific articles extracted from WoS that were about 
-animal or human movement for each year between 2009 and 2018. The solid line and
-grey area represent the fitted local polynomial regression (estimates and error bounds, respectively).
-</center>
-<br />
-
 
 Several dimensions of the mov-eco literature were analyzed: research **topics**,
 **taxonomical** groups studied, components of the movement ecology **framework**
