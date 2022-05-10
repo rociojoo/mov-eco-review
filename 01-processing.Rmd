@@ -8,9 +8,8 @@
 
 <center>
 
-![](posts/moveco-images/keywordsIIlow.png){width=50%}
+![Fig. 2.1. Workflow to identify movement papers.](posts/moveco-images/keywordsIIlow.png "Graphical representation of the algorithm to identify movement papers. First, define KEYWORDS for Web of Science and search. Get results on N papers. Then do quality control, consisting of selecting a random sample n (n = 100) from N, reading the abstracts, determining if they are from movement studies and computing a precision metric. If precision is greater than 0.8 and N is greater than 5000, we stop. Else, we edit keywords and do it all over again."){width=50%}
 
-Fig. 2.1. Workflow to identify movement ecology papers.
 </center>
 
 <br />
@@ -133,9 +132,8 @@ not able to get papers that were not in WoS, which depends on WoS agreements.
 
 <center>
 
-![](posts/moveco-images/downloadpapers.png){width=40%}
+![Fig. 2.2. Downloading movement ecology papers.](posts/moveco-images/downloadpapers.png "Graphical representation of the workflow to download whole manuscripts. We feed DOIs to the fulltext R package. Download access is subjected to Text and Data Mining agreements with publishers. So from N papers, N_1 papers are downloaded. Some of them are downloaded in xlm format and some others as pdfs."){width=40%}
 
-Fig. 2.2. Downloading movement ecology papers.
 </center>
 
 <br />
@@ -157,9 +155,8 @@ The codes to download papers can be downloaded clicking on this
 
 <!-- knitr::include_graphics("posts/moveco-images/MatMet.png"", out.width=33%) -->
 
-![](posts/moveco-images/MatMet_low.png){width=75%}
+![Fig. 2.3. Summary of procedure to extract Material and Methods section from each paper.](posts/moveco-images/MatMet_low.png "Graphical representation of the workflow to extract the methods section of a paper. If it is in xml format, we use the xml2 R package, load the file in R, identify which type of journal group (we classified xml file structure in 3 journal groups) it corresponds to from the file name, then use children-parent relationships from the group to extract body text and identify sections. We then look for a subsection title containing the words 'method', 'model', 'case study', and 'data', in that order. If the subsection exists, we extract the text. If it's pdf, then we use the tm R package, load the file in R, identify which type of journal group (we classified pdf file structure in 7 journal groups) it corresponds to from the file name, then reconstruct the text as a one-column body text by identifying column and page breaks using group-specific rules. We then identify the first line of the methods section as containing 'MaterialandMethods', 'METHODS', 'StatisticalAnalys', or other expressions. If this first line exists, then we identify the end of the methods section as containing 'RESULTS', 'APPLICATION', 'Discussion', or other expressions. If the end exists, we extract the text between first and end."){width=75%}
 
-Fig. 2.3. Summary of procedure to extract Material and Methods section from each paper.
 </center>
 
 <br />
@@ -184,13 +181,12 @@ institutions we accessed them from.
 
 <!-- knitr::include_graphics("posts/moveco-images/MatMet.png"", out.width=33%) -->
 
-![](posts/moveco-images/journals.png){width=75%}
-
-Fig. 2.4. Number of articles about movement ecology of animals and human
+![Fig. 2.4. Number of articles about movement ecology of animals and human
 		mobility identified by our algorithm and per journal. In blue, the number
 		of articles that were downloaded and a methods section was identified. 
 		In yellow, the number of articles that were not downloaded. Only the journals
-		with more than 20 identified articles are shown in the graphs.
+		with more than 20 identified articles are shown in the graphs.](posts/moveco-images/journals.png "Stacked bar plots of the number of movement articles identified by our algorithm and per journal, showing the number of articles that were downloaded (in blue) and how many of those had an identified (and extracted) methods section. Plos one had the number of articles (around 800) and almost all of them had an identified methods section. No other pattern can be seen from this plot."){width=75%}
+
 </center>
 
 <br />

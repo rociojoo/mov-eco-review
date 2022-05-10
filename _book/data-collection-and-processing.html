@@ -240,8 +240,10 @@ div.csl-indent {
 <div id="identification-of-movement-ecology-mov-eco-papers" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Identification of movement ecology (mov-eco) papers</h2>
 <center>
-<p><img src="posts/moveco-images/keywordsIIlow.png" style="width:50.0%" /></p>
-Fig. 2.1. Workflow to identify movement ecology papers.
+<div class="figure">
+<img src="posts/moveco-images/keywordsIIlow.png" title="Graphical representation of the algorithm to identify movement papers. First, define KEYWORDS for Web of Science and search. Get results on N papers. Then do quality control, consisting of selecting a random sample n (n = 100) from N, reading the abstracts, determining if they are from movement studies and computing a precision metric. If precision is greater than 0.8 and N is greater than 5000, we stop. Else, we edit keywords and do it all over again." style="width:50.0%" alt="" />
+<p class="caption">Fig. 2.1. Workflow to identify movement papers.</p>
+</div>
 </center>
 <p><br /></p>
 <div id="what-is-a-movement-ecology-paper" class="section level3" number="2.1.1">
@@ -358,8 +360,10 @@ sensitivity) statistic.</p></li>
 <div id="downloading-whole-manuscripts" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Downloading whole manuscripts</h2>
 <center>
-<p><img src="posts/moveco-images/downloadpapers.png" style="width:40.0%" /></p>
-Fig. 2.2. Downloading movement ecology papers.
+<div class="figure">
+<img src="posts/moveco-images/downloadpapers.png" title="Graphical representation of the workflow to download whole manuscripts. We feed DOIs to the fulltext R package. Download access is subjected to Text and Data Mining agreements with publishers. So from N papers, N_1 papers are downloaded. Some of them are downloaded in xlm format and some others as pdfs." style="width:40.0%" alt="" />
+<p class="caption">Fig. 2.2. Downloading movement ecology papers.</p>
+</div>
 </center>
 <p><br /></p>
 <p>We used the <em>fulltext</em> package (<span class="citation"><a href="#ref-Rfulltext" role="doc-biblioref">Chamberlain</a> (<a href="#ref-Rfulltext" role="doc-biblioref">2019</a>)</span>) in R, using Elsevier,
@@ -375,8 +379,10 @@ The codes to download papers can be downloaded clicking on this
 <h2><span class="header-section-number">2.3</span> Extracting the Material and Methods (M&amp;M) sections</h2>
 <center>
 <!-- knitr::include_graphics("posts/moveco-images/MatMet.png"", out.width=33%) -->
-<p><img src="posts/moveco-images/MatMet_low.png" style="width:75.0%" /></p>
-Fig. 2.3. Summary of procedure to extract Material and Methods section from each paper.
+<div class="figure">
+<img src="posts/moveco-images/MatMet_low.png" title="Graphical representation of the workflow to extract the methods section of a paper. If it is in xml format, we use the xml2 R package, load the file in R, identify which type of journal group (we classified xml file structure in 3 journal groups) it corresponds to from the file name, then use children-parent relationships from the group to extract body text and identify sections. We then look for a subsection title containing the words &#39;method&#39;, &#39;model&#39;, &#39;case study&#39;, and &#39;data&#39;, in that order. If the subsection exists, we extract the text. If it&#39;s pdf, then we use the tm R package, load the file in R, identify which type of journal group (we classified pdf file structure in 7 journal groups) it corresponds to from the file name, then reconstruct the text as a one-column body text by identifying column and page breaks using group-specific rules. We then identify the first line of the methods section as containing &#39;MaterialandMethods&#39;, &#39;METHODS&#39;, &#39;StatisticalAnalys&#39;, or other expressions. If this first line exists, then we identify the end of the methods section as containing &#39;RESULTS&#39;, &#39;APPLICATION&#39;, &#39;Discussion&#39;, or other expressions. If the end exists, we extract the text between first and end." style="width:75.0%" alt="" />
+<p class="caption">Fig. 2.3. Summary of procedure to extract Material and Methods section from each paper.</p>
+</div>
 </center>
 <p><br /></p>
 <p>For some analyses (section <a href="analyses.html#analyses">3</a>), we needed the Material and methods
@@ -395,12 +401,14 @@ data from the publishers and data &amp; text mining agreements with the
 institutions we accessed them from.</p>
 <center>
 <!-- knitr::include_graphics("posts/moveco-images/MatMet.png"", out.width=33%) -->
-<p><img src="posts/moveco-images/journals.png" style="width:75.0%" /></p>
-Fig. 2.4. Number of articles about movement ecology of animals and human
+<div class="figure">
+<img src="posts/moveco-images/journals.png" title="Stacked bar plots of the number of movement articles identified by our algorithm and per journal, showing the number of articles that were downloaded (in blue) and how many of those had an identified (and extracted) methods section. Plos one had the number of articles (around 800) and almost all of them had an identified methods section. No other pattern can be seen from this plot." style="width:75.0%" alt="" />
+<p class="caption">Fig. 2.4. Number of articles about movement ecology of animals and human
 mobility identified by our algorithm and per journal. In blue, the number
 of articles that were downloaded and a methods section was identified.
 In yellow, the number of articles that were not downloaded. Only the journals
-with more than 20 identified articles are shown in the graphs.
+with more than 20 identified articles are shown in the graphs.</p>
+</div>
 </center>
 <p><br /></p>
 <!-- Wickham, Hadley, James Hester, and Jeroen Ooms. 2018. Xml2: Parse Xml. https://CRAN.R-project.org/package=xml2. -->
