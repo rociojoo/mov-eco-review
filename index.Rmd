@@ -15,7 +15,7 @@ description: "Quantitative review of the last decade of movement ecology (from 2
 # Introduction
 
 <center>
-![](posts/moveco-images/mov-logo.png){width=40%}
+![ ](posts/moveco-images/mov-logo.png "Representation of a bird flying over a trajectory (series of points, each one characterized by location and time). Below there is a moving boat. On the right, the words MOV ECO."){width=40%}
 </center>
 
 This is the companion website for the manuscript “Recent trends in movement ecology of animals and human mobility”,
@@ -53,7 +53,7 @@ A version of this manuscript is available as an [arXiv pre-print](https://arxiv.
 
 <center>
 
-![](posts/moveco-images/wordcloud_abstracts_low.png){width=50%}
+![ ](posts/moveco-images/wordcloud_abstracts_low.png "Word cloud with the most frequent words in movement abstracts. The most important ones are movement, behavior, study, individuals, time, data, animal, habitat, species, area, pattern, activity, result, model, species, more or less in that order."){width=50%}
 
 </center>
 
