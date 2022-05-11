@@ -7,7 +7,7 @@ library(tidyverse)
 source("./R/expectation_functions.R")
 
 # Arguments
-path <- "./Data/ProcessedQueries/References/"
+path <- "./Data/"
 path.plots <- "./Rocio/Plots/"
 
 # Summarizing
@@ -23,9 +23,9 @@ papers <- read.csv(file = paste0(path,"cleaned_papers_all_years_simple.csv"),str
 data_decade <- papers %>% 
   filter(pubyear > 2008 & pubyear < 2019)
 
-topic_labels <- c("Social interactions and dispersal","Movement models","Habitat selection","Detection and data","Home ranges",
+topic_labels <- c("Dispersal","Movement models","Habitat selection","Detection and data","Home ranges",
                   "Aquatic systems","Foraging in marine megafauna","Biomechanics","Acoustic telemetry",
-                  "Experimental designs","Activity budgets","Avian migration","Sports","Human activity patterns","Breeding ecology")
+                  "Experimental designs","Activity budgets","Migration","Sports","Human activity patterns","Breeding ecology")
 
 # Now choose dictionary
 dictionary <- "Taxonomy" # "Humans"
@@ -69,30 +69,36 @@ color_pallete <- c('#88CCEE', '#44AA99', '#117733', '#332288', '#DDCC77', '#9999
 
 # # Reorder if youd like
 plot_df$Taxon <-  factor(plot_df$Taxon,
-                         levels = names(sort(tapply(plot_df$Total,plot_df$Taxon, sum),decreasing=T)))
+                         levels = names(sort(tapply(plot_df$Total,plot_df$Taxon, sum),decreasing=F)))
 topic_labels
 plot_df$topic_labels <- factor(plot_df$topic_labels, levels = topic_labels)
+plot_df$toto <- 1
+plot_df$toto <- as.factor(plot_df$toto)
 
 # make a dataframe of the n's for each group to add later
 ann_text <- plot_df %>% group_by(topic_labels) %>% 
   summarise(n = sum(Total)) %>% 
-  mutate(Taxon = 'Amphibians', total_prop = 0.8)
+  mutate(Taxon = 'Amphibians', total_prop = 0.8) %>% 
+  mutate(toto = 1)
 
 ggplot(data=plot_df, aes(x=Taxon, y=total_prop, fill=Taxon)) +
   geom_bar(stat="identity", position=position_dodge()) +
-  scale_fill_manual(values = color_pallete) +
+  coord_flip() +  
+  scale_fill_manual(values = rev(color_pallete), guide = guide_legend(reverse = TRUE)) +  
   facet_wrap(facets = vars(topic_labels)) +
   geom_text(data = ann_text,label = paste0('(n = ',ann_text$n,')'), size = 5) +
   theme_bw() + 
-  theme(axis.title.y = element_text(size=20),
+  theme(axis.title.y = element_blank(),
         axis.text.y = element_text(size=16),
         axis.title.x = element_blank(),
-        axis.text.x = element_blank(),
-        axis.ticks.x = element_blank(),
+        axis.text.x = element_text(size = 16),
+        # axis.ticks.x = element_blank(),
         strip.text = element_text(size = 16),
-        legend.title=element_text(size=16),
-        legend.text = element_text(size = 16)) + 
+        legend.position = "none") +
+  # legend.title=element_text(size=16),
+  # legend.text = element_text(size = 16)) + 
   ylab('Total proportion of papers within a topic') 
+
 
 ggsave(filename=paste0(path.plots,"Barplots_topics_taxa.pdf"), height=10,width=16)
 # ggsave('Manuscript/Images/Barplots_topics_taxa1.png', width=12,height=10)

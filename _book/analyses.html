@@ -320,13 +320,6 @@ and articles in scientific literature in general, published from 2009 to
 proportion of articles in that studied movement.
 </center>
 <p><br /></p>
-<center>
-<p><img src="posts/moveco-images/pubprop_ts.png" style="width:70.0%" /></p>
-Fig. 3.1. Proportion of scientific articles extracted from WoS that were about
-animal or human movement for each year between 2009 and 2018. The solid line and
-grey area represent the fitted local polynomial regression (estimates and error bounds, respectively).
-</center>
-<p><br /></p>
 <p>Several dimensions of the mov-eco literature were analyzed: research <strong>topics</strong>,
 <strong>taxonomical</strong> groups studied, components of the movement ecology <strong>framework</strong>
 studied, tracking <strong>devices</strong> used, <strong>software</strong> tools used, and statistical
@@ -392,8 +385,10 @@ aspect of the analysis are detailed in the following table.</p>
 <div id="topic-analysis" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Topic analysis</h2>
 <center>
-<p><img src="posts/moveco-images/Topics_low.png" style="width:70.0%" /></p>
-Fig. 3.2. Stages of topic analysis.
+<div class="figure">
+<img src="posts/moveco-images/Topics_low.png" title="Graphical representation of the workflow for topic analysis. First, abstract preprocessing: removing stop words and numbers, converting British words to American English, lemmatizing, filtering out words only appearing once in the corpus. Then, we obtain the word frequency per abstract. With that, we fit Latent Dirichlet Allocation models. From the beta output of the model we obtain a word cloud per topic with word area propotional to beta (to interpret topics). From the gamma output we obtain: sample of abstracts most strongly related to each topic (to interpret topics), sum of gamma for each topic (to obtain ranking of topic prevalence), word clouds of abstracts (to check for consistency), and heatmap of gamma per document and topic (to check for consistency)." style="width:70.0%" alt="" />
+<p class="caption">Fig. 3.2. Stages of topic analysis.</p>
+</div>
 </center>
 <p><br /></p>
 <p>The topics were not defined a priori.
@@ -434,16 +429,20 @@ Hence, we decided to fix the number of topics to 15, as a
 reasonable value that would not be too large than we could not interpret them,
 or too small that the topics were too general.</p>
 <center>
-<p><img src="posts/moveco-images/TopicModeling.png" style="width:80.0%" /></p>
-Fig. 3.3. Schematic representation of the links between words, documents and topics.
+<div class="figure">
+<img src="posts/moveco-images/TopicModeling.png" title="Schematic representation of the links between words, documents and topics, with an example from a genetics text. The document contains a mixture of topics associated differently to each word. For instance, one topic would be more related to &#39;gene&#39;, &#39;dna&#39;, &#39;genetic&#39;, while a second topic would be related to &#39;life&#39;, &#39;evolve&#39;, &#39;organism&#39;. A third topic would be more related to &#39;brain&#39;, &#39;neuron&#39;, &#39;nerve&#39;, and a fourth topic more related to &#39;data&#39;, &#39;number&#39;, &#39;computer&#39;." style="width:80.0%" alt="" />
+<p class="caption">Fig. 3.3. Schematic representation of the links between words, documents and topics.
 Each document is a mixture of topics. Each topic is modeled as a distribution of words.
 Each word comes out of one of these topics.
-Source of the image: Blei, D.M. 2012. Probabilistic topic models. Communications of the ACM, 55(4), 77-84.
+Source of the image: Blei, D.M. 2012. Probabilistic topic models. Communications of the ACM, 55(4), 77-84.</p>
+</div>
 </center>
 <p><br /></p>
 <center>
-<p><img src="posts/moveco-images/LDA.png" style="width:80.0%" /></p>
-Fig. 3.4. Schematic representation of the Latent Dirichlet model described above.
+<div class="figure">
+<img src="posts/moveco-images/LDA.png" title="The figure describes the relationships between the parameters in a Latent Dirichlet model. Mainly, Each topic can be characterized by a multinomial distribution of words with parameter beta, drawn from a Dirichlet distribution with parameter gamma. Each document d is composed by a mixture of topics, drawn from a multinomial distribution with parameter theta, which is drawn from a Dirichlet distribution with parameter alpha. For each word w in document d, a hidden topic z is selected from the multinomial distribution with parameter theta. From the selected topic z, a word is selected based on the multinomial distribution with parameter beta." style="width:80.0%" alt="" />
+<p class="caption">Fig. 3.4. Schematic representation of the Latent Dirichlet model described above.</p>
+</div>
 </center>
 <p><br /></p>
 </div>
@@ -480,7 +479,7 @@ a topic. They were used to interpret and label each topic, and to create
 wordclouds for each topic, where the area occupied by each word was proportional
 to its <span class="math inline">\(\hat{\beta}\)</span> value.</p>
 <center>
-<p><img src="posts/moveco-images/wordcloud_topics_15_low.png" style="width:100.0%" /></p>
+<p><img src="posts/moveco-images/wordcloud_topics_15_low.png" title="Word clouds of each topic based on beta values. The area occupied by each word in each wordcloud is proportional to beta. In topic 1, the largest words are individual, behavior, movement, dispersal, population. In topic 2, model, data, movement, time, estimate, method. In topic 3, habitat, movement, landscape, selection. In topic 4, animal, data, behavior, study. In topic 5, range, home, movement, site, size, population, individual, kilometer. In topic 6, movement, fish, habitat, tag, shark. In topic 7, forage, prey, behavior, dive, seal. In topic 8, speed, behavior, animal, movement, swim, body. In topic 9, fish, behavior, tag, river, acoustic. In topic 10, behavior, human, signal, sensor, activity, motion. In topic 11, activity, behavior, time, temperature, day. In topic 12, bird, migration, flight, migratory, wind. In topic 13, player, distance, play, speed, train. In topic 14, female, male, sex, activity, behavior, sex, age. In topic 15, turtle, whale, nest, behavior, breed, adult." style="width:100.0%" /></p>
 Fig. 3.5. Wordclouds of each topic based on <span class="math inline">\(\hat{\beta}\)</span> values.
 Download the codes for the plot <a href="R/02-wordcloud_plot.R">here</a>.
 </center>
@@ -490,31 +489,31 @@ we obtained a <a href="Data/Topics/sample_validation_top_Ntopics_15_method_VEM_I
 download)</a> of
 the 5 most associated abstracts to each topic, to aid the interpretation of the
 topics.</p>
-<p>Based on these outputs, the topics were interpreted as: 1) Social interactions
-and dispersal, 2) Movement models, 3) Habitat selection, 4) Detection and
+<p>Based on these outputs, the topics were interpreted as: 1) Dispersal,
+2) Movement models, 3) Habitat selection, 4) Detection and
 data, 5) Home ranges, 6) Aquatic systems, 7) Foraging in marine megafauna,
 8) Biomechanics, 9) Acoustic telemetry, 10) Experimental designs, 11) Activity
-budgets, 12) Avian migration, 13) Sports, 14) Human activity patterns,
-15) Breeding ecology. For an extended description of these topics, see the main text of the manuscript.</p>
-<p>The sum of <span class="math inline">\(\gamma\)</span> values for each topic (<span class="math inline">\(\sum_d E(\theta_d | z_k)\)</span> for each <span class="math inline">\(k\)</span>) served as proxies of the
+budgets, 12) Migration, 13) Sports, 14) Human activity patterns,
+15) Breeding ecology. For an extended description of these topics, see the main text of the manuscript.
+The sum of <span class="math inline">\(\gamma\)</span> values for each topic (<span class="math inline">\(\sum_d E(\theta_d | z_k)\)</span> for each <span class="math inline">\(k\)</span>) served as proxies of the
 “prevalence” of the topic relative to all other topics and were used to rank
 them.</p>
-<center>
-<p><img src="posts/moveco-images/SumGammas_labels_low.png" style="width:50.0%" /></p>
-Fig. 3.6. Measure of prevalence of each topic.
-Download the codes for the plot <a href="R/02-prevalence_topic_barplot.R">here</a>.
-</center>
-<p><br /></p>
-<center>
-<p><img src="posts/moveco-images/TopicsGamma_ts1_low.png" style="width:100.0%" /></p>
-Fig. 3.7. Time series of the relative prevalence of each topic every year.
-The code can be downloaded from <a href="R/man_topics_trend_plot.R">here</a>.
-</center>
-<p><br /></p>
+<!-- <center> -->
+<!-- ![ ](posts/moveco-images/SumGammas_labels_low.png "Bar plots showing a ranking of prevalence of the topics. The (descending) order is: Dispersal, ){width=50%} -->
+<!-- Fig. 3.6. Measure of prevalence of each topic.  -->
+<!-- Download the codes for the plot [here](R/02-prevalence_topic_barplot.R). -->
+<!-- </center> -->
+<!-- <br /> -->
+<!-- <center> -->
+<!-- ![](posts/moveco-images/TopicsGamma_ts1_low.png){width=100%} -->
+<!-- Fig. 3.7. Time series of the relative prevalence of each topic every year.  -->
+<!-- The code can be downloaded from [here](R/man_topics_trend_plot.R). -->
+<!-- </center> -->
+<!-- <br /> -->
 <p>A heatmap of the <span class="math inline">\(\gamma\)</span> values also showed that most papers were evidently more associated to one topic and few were split into several topics.</p>
 <center>
-<p><img src="posts/moveco-images/heatmap_low.png" style="width:100.0%" /></p>
-Fig. 3.8. Heatmap of <span class="math inline">\(\gamma\)</span> values per abstract and topic.
+<p><img src="posts/moveco-images/heatmap_low.png" title="Heatmap of gamma values per abstract and topic. Most papers have high gammas for a few topics." style="width:100.0%" /></p>
+Fig. 3.6. Heatmap of <span class="math inline">\(\gamma\)</span> values per abstract and topic.
 The corresponding code can be downloaded clicking <a href="R/02-heatmap_plot.R">here</a>.
 </center>
 <p><br /></p>
@@ -544,8 +543,8 @@ words were the same, and the words that differ provided complementary
 information to interpret the topics and understand to which types of abstracts
 they were strongly associated to.</p>
 <center>
-<p><img src="posts/moveco-images/wordcloud_topics_15_abstracts_low.png" style="width:100.0%" /></p>
-Fig. 3.9. Wordclouds of each topic based on most strongly associated abstracts.
+<p><img src="posts/moveco-images/wordcloud_topics_15_abstracts_low.png" title="Word clouds of each topic based on most strongly associated abstracts. The area occupied by each word in each wordcloud is proportional to beta. In topic 1, the largest words are individual, behavior, movement, dispersal, population. In topic 2, model, data, movement, time. In topic 3, habitat, movement, road, selection. In topic 4, data, animal, behavior, study. In topic 5, range, home, movement, winter, breed, size, kilometer. In topic 6, movement, fish, shark, habitat, tag. In topic 7, forage, behavior, prey, dive, seal. In topic 8, speed, behavior, animal, movement, body. In topic 9, fish, behavior, river, migration. In topic 10, behavior, activity, human, time. In topic 11, activity, time, movement, behavior, day, pattern, speed. In topic 12, bird, flight, wind, migration. In topic 13, player, distance, study, match. In topic 14, activity, physical, time, sedentary. In topic 15, turtle, nest, whale." style="width:100.0%" /></p>
+Fig. 3.7. Wordclouds of each topic based on most strongly associated abstracts.
 The code for this plot can be downloaded clicking <a href="R/02-wordcloud_plot_II.R">here</a>.
 </center>
 <p><br /></p>
@@ -724,21 +723,21 @@ downloaded <a href="R/taxonomy_analysis.R">here</a>.</p>
 <div id="outputs" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Outputs</h3>
 <center>
-<p><img src="posts/moveco-images/species_ts_5.png" style="width:70.0%" /></p>
-Fig. 3.10. Number of species studied in each year for the five classes with most studied species.
+<p><img src="posts/moveco-images/species_ts_5.png" title="Number of species studied in each year for the five classes with most studied species (fish, mammals, birds, reptiles, and amphibians, in that order). More species have been studied in the last years in general." style="width:70.0%" /></p>
+Fig. 3.8. Number of species studied in each year for the five classes with most studied species.
 More species have been studied in the last years. <a href="R/02-species_plots.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 <center>
-<p><img src="posts/moveco-images/taxonomy_ts_5.png" style="width:70.0%" /></p>
-Fig. 3.11. Proportion of papers in each year studying each of the five most commonly studied taxonomic groups.
+<p><img src="posts/moveco-images/taxonomy_ts_5.png" title="Proportion of papers in each year studying each of the five most commonly studied taxonomic groups. The years are in the x-axis, the proportion of papers in each year in the y-axis, and dots of different colors (one per class) correspond to the value of proportion for each year. In all years from 2009 to 2018, mammals (orange) were the most studied group, followed by fish, birds, humans, and insects. Only from 2012 there were more studies concerning humans than those of insects." style="width:70.0%" /></p>
+Fig. 3.9. Proportion of papers in each year studying each of the five most commonly studied taxonomic groups.
 A paper can study several taxonomic groups, hence the proportions for each year can sum up to more than one.
 <a href="R/man_taxa_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 <center>
-<p><img src="posts/moveco-images/Barplots_topics_taxa_low.png" style="width:100.0%" /></p>
-Fig. 3.12. For each topic, relative frequencies of papers studying each taxonomical group. Only papers with more than 50% of association to each topic are used for this graph. <a href="R/man_taxa_topic_barplot.R">The code for plot can be downloaded here</a>.
+<p><img src="posts/moveco-images/Barplots_flip_topics_taxa.png" title="Bar plots of proportion of papers studying each taxonomical group for each topic. Regarding dispersal (n = 345 papers), the most studied groups were mammals, human and amphibians. For movement models (n = 200), they were mainly mammals and humans. In habitat selection (n = 535), most studies pertained mammals. In detection and data (n = 134), also a majority of mammals. In home ranges (n = 233), it was mostly birds, followed by mammals. In aquatic systems (n = 384), an overwhelming majority of fish. In foraging in marine megafauna (n = 323), it was mostly birds, followed by mammals. In biomechanics (n = 268), insects, fish and mammals were the most studied groups. In acoustic telemetry (n = 290), fish were the most studied, followed by mammals. In experimental designs (n = 227), humans and mammals were the most studied groups. In activity budgets (n = 191), mammals were the most studied, followed by fish. In migration (n = 146), birds were the most studied group. In sports (n = 122), almost all studied involved humans. In human activity patterns (n = 106), it was humans, followed by mammals. In breeding ecology (n = 159), it was mostly reptiles, followed by mammals, birds, and fish." style="width:100.0%" /></p>
+Fig. 3.10. For each topic, relative frequencies of papers studying each taxonomical group. Only papers with more than 50% of association to each topic are used for this graph. <a href="R/man_taxa_topic_barplot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 </div>
@@ -805,27 +804,207 @@ was 91%.</p>
 information on the framework was gathered) that use terms related to each
 component.</p>
 <center>
-<p><img src="posts/moveco-images/MovEcoDesign-V_low.png" style="width:75.0%" /></p>
-Fig. 3.13. Representation of the components of the movement ecology framework and how much they were studied in the last decade: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path.
+<p><img src="posts/moveco-images/MovEcoDesign-V_low.png" title="Representation of the components of the movement ecology framework and how much they were studied in the 2009-2018 decade: external factors, internal state, motion and navigation capacities, represented by boxes. The size of each component box is proportional to the percentage of papers tackling them irrespectful of whether they are only about this component or in combination with another one. The latter (i.e. combination) is specified through the segments that join the boxes to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively. The width of the segment is proportional to the percentage of papers that studied that combination (or single component). All of these combinations are better described in the following table." style="width:75.0%" /></p>
+Fig. 3.11. Representation of the components of the movement ecology framework and how much they were studied in the last decade: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path.
 The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to <span class="math inline">\(&gt;5\%\)</span> of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had <span class="math inline">\(&lt;5\%\)</span> of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in <a href="R/man_framework_stack_plot.R">this downloadable code</a>.
 </center>
 <p><br /></p>
+<table style="width:100%;">
+<colgroup>
+<col width="25%" />
+<col width="29%" />
+<col width="21%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">External</th>
+<th align="center">Internal</th>
+<th align="center">Motion</th>
+<th align="center">Navigation</th>
+<th align="center">2009-2018 Count</th>
+<th align="center">2009-2018 Percentage</th>
+<th align="center">1999-2008 Count</th>
+<th align="center">1999-2008 Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">2371</td>
+<td align="center">33.3</td>
+<td align="center">418</td>
+<td align="center">33.8</td>
+</tr>
+<tr class="even">
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">1768</td>
+<td align="center">24.8</td>
+<td align="center">287</td>
+<td align="center">23.2</td>
+</tr>
+<tr class="odd">
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">663</td>
+<td align="center">9.3</td>
+<td align="center">96</td>
+<td align="center">7.8</td>
+</tr>
+<tr class="even">
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">485</td>
+<td align="center">6.8</td>
+<td align="center">104</td>
+<td align="center">8.4</td>
+</tr>
+<tr class="odd">
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">424</td>
+<td align="center">6.0</td>
+<td align="center">69</td>
+<td align="center">5.6</td>
+</tr>
+<tr class="even">
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">383</td>
+<td align="center">5.4</td>
+<td align="center">56</td>
+<td align="center">4.5</td>
+</tr>
+<tr class="odd">
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">373</td>
+<td align="center">5.2</td>
+<td align="center">63</td>
+<td align="center">5.1</td>
+</tr>
+<tr class="even">
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">176</td>
+<td align="center">2.5</td>
+<td align="center">44</td>
+<td align="center">3.6</td>
+</tr>
+<tr class="odd">
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">136</td>
+<td align="center">1.9</td>
+<td align="center">15</td>
+<td align="center">1.2</td>
+</tr>
+<tr class="even">
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">83</td>
+<td align="center">1.2</td>
+<td align="center">23</td>
+<td align="center">1.9</td>
+</tr>
+<tr class="odd">
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">73</td>
+<td align="center">1.0</td>
+<td align="center">12</td>
+<td align="center">1.0</td>
+</tr>
+<tr class="even">
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">50</td>
+<td align="center">0.7</td>
+<td align="center">16</td>
+<td align="center">1.3</td>
+</tr>
+<tr class="odd">
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">49</td>
+<td align="center">0.7</td>
+<td align="center">15</td>
+<td align="center">1.2</td>
+</tr>
+<tr class="even">
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">45</td>
+<td align="center">0.6</td>
+<td align="center">11</td>
+<td align="center">0.9</td>
+</tr>
+<tr class="odd">
+<td align="center">-</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">41</td>
+<td align="center">0.6</td>
+<td align="center">8</td>
+<td align="center">0.6</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3.5. Number and percentage of articles in movement ecology of animals and
+human mobility studying each combination of components of the Movement
+Ecology Framework for the decades 2009-2018 and 1999-2008. In each row, an X
+in the column indicates the studied component.</p>
 <center>
-<p><img src="posts/moveco-images/MovEcoDesign-V-1999-2008_low.png" style="width:75.0%" /></p>
-Fig. 3.14. Representation of the components of the movement ecology framework and how much they were studied between 1999 and 2008: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path.
+<p><img src="posts/moveco-images/MovEcoDesign-V-1999-2008_low.png" title="Representation of the components of the movement ecology framework and how much they were studied in the 1999-2008 decade: external factors, internal state, motion and navigation capacities, represented by boxes. The size of each component box is proportional to the percentage of papers tackling them irrespectful of whether they are only about this component or in combination with another one. The latter (i.e. combination) is specified through the segments that join the boxes to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively. The width of the segment is proportional to the percentage of papers that studied that combination (or single component). All of these combinations are better described in the table above." style="width:75.0%" /></p>
+Fig. 3.12. Representation of the components of the movement ecology framework and how much they were studied between 1999 and 2008: external factors, internal state, motion and navigation capacities, whose interactions result in the observed movement path.
 The size of each component box is proportional to the percentage of papers (in parentheses) tackling them irrespectful of whether they are only about this component or in combination with another one. The latter is specified through the segments that join the components to the observed movement path. One fill color corresponds to papers that only studied one component, while two or more colors correspond to papers that tackled two or three components, respectively (the ones from those colors). The width of the segment is proportional to the percentage of papers that studied that combination (or single component). Only combinations corresponding to <span class="math inline">\(&gt;5\%\)</span> of papers are shown; e.g. combinations involving navigation and papers studying navigation on its own had <span class="math inline">\(&lt;5\%\)</span> of papers each therefore they are not shown in the graph. This graph was made using Inkscape. The percentages in it and an alternative graphical representation of them can be found in <a href="R/man_framework_stack_plot_1999_2008.R">this downloadable code</a>.
 </center>
 <p><br /></p>
 <center>
-<p><img src="posts/moveco-images/components_ts.png" style="width:70.0%" /></p>
-Fig. 3.15. Proportion of papers in each year focusing on each component of the MEF.
+<p><img src="posts/moveco-images/components_ts.png" title="Proportion of papers in each year focusing on each component of the MEF. The years are in the x-axis, the proportion of papers in each year in the y-axis, and dots of different colors (one per component) correspond to the value of proportion for each year. In all years from 2009 to 2018, external factors (orange) were the most studied component, followed by internal state, motion, and navigation." style="width:70.0%" /></p>
+Fig. 3.13. Proportion of papers in each year focusing on each component of the MEF.
 A study can focus on more than one component, hence the proportions for each year can sum up to more than one.
 <a href="R/man_frame_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
 <center>
-<p><img src="posts/moveco-images/Barplots_frame_taxa.png" style="width:100.0%" /></p>
-Fig. 3.16. Proportion of papers studying each taxonomic class for each component of the MEF.
+<p><img src="posts/moveco-images/Barplots_frame_taxa.png" title="Bar plots of the proportion of papers studying each taxonomical group for each component of the MEF. The number of papers where taxonomical groups were identified by our algorithm for each component are indicated in the figure: 4113 for external factors, 2487 for internal state, 1308 for motion, and 421 for navigation. In all components, mammals were the most studied. For external factors, fish and birds were the second and third most studied groups, respectively. For internal state, they were birds and fish, in that order. For motion, fish and humans. And for navigation, fish and insects, followed closely by birds." style="width:100.0%" /></p>
+Fig. 3.14. Proportion of papers studying each taxonomic class for each component of the MEF.
 Papers associated to several components were accounted for in several frames.
 <a href="R/man_frame_taxa_barplot.R">The code for plot can be downloaded here</a>.
 </center>
@@ -874,8 +1053,8 @@ tags, 12 were hand held, and 5 were neither tag nor hand-held (e.g. GPS coordin
 <div id="output" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Output</h3>
 <center>
-<p><img src="posts/moveco-images/devices_ts_5.png" style="width:100.0%" /></p>
-Fig. 3.17. Proportion of papers in each year using the five most commonly used tracking devices.
+<p><img src="posts/moveco-images/devices_ts_5.png" title="Proportion of papers in each year using the five most commonly used tracking devices. The years are in the x-axis, the proportion of papers in each year in the y-axis, and dots of different colors (one per device) correspond to the value of proportion for each year. GPS (orange) showed an increasing trend and was the most used device in movement papers in all years. Radio telemetry (skyblue), showed a decreasing trend, and started in 2009 with the same proportion of studies as GPS, and ended in 2018 in third place, belowe accelerometer (green). In contrast, accelerometer was in fifth position in 2009 and increased its popularity over the years. Acoustic telemetry (yellow) and satellite technology (blue) were tied in fourth place in 2018." style="width:100.0%" /></p>
+Fig. 3.15. Proportion of papers in each year using the five most commonly used tracking devices.
 A study can use more than one device, hence the proportions for each year can sum up to more than one.
 <a href="R/man_data_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
@@ -902,8 +1081,8 @@ was 88%.</p>
 <div id="output-1" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Output</h3>
 <center>
-<p><img src="posts/moveco-images/software_ts_5.png" style="width:100.0%" /></p>
-Fig. 3.18. Proportion of papers in each year using the five most commonly used software.
+<p><img src="posts/moveco-images/software_ts_5.png" title="Proportion of papers in each year using the five most commonly used software. The years are in the x-axis, the proportion of papers in each year in the y-axis, and dots of different colors (one per software) correspond to the value of proportion for each year. R (orange) showed an increasing trend, starting at the last position of the five in 2009, and ending in first place in 2018 (with 0.7 of studies using it). The other four software showed decreasing trends over the years. ArcGIS (skyblue), SPSS (yellow), Matlab (green), and SAS (blue), ended up in second, third, fourth, and fifth positions, respectively, in 2018." style="width:100.0%" /></p>
+Fig. 3.16. Proportion of papers in each year using the five most commonly used software.
 A study can use more than one software, hence the proportions for each year can sum up to more than one. <a href="R/man_software_trend_plot.R">The code for plot can be downloaded here</a>.
 </center>
 <p><br /></p>
@@ -927,8 +1106,8 @@ was 84%.</p>
 <div id="outputs-2" class="section level3" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Outputs</h3>
 <center>
-<p><img src="posts/moveco-images/methods_ts_5.png" style="width:100.0%" /></p>
-Fig. 3.19. Proportion of papers in each year mentioning each type of statistical method.
+<p><img src="posts/moveco-images/methods_ts_5.png" title="Proportion of papers in each year mentioning each type of statistical method. The years are in the x-axis, the proportion of papers in each year in the y-axis, and dots of different colors (one per type of method) correspond to the value of proportion for each year. Generic methods (orange) were the most popular throughout 2009-2018, while movement (skyblue), spatial (green), time series (yellow), social (blue), and spatiotemporal (dark orange), remained in second, third, fourth, fifth, and sixth position, respectively, throughout the decade." style="width:100.0%" /></p>
+Fig. 3.17. Proportion of papers in each year mentioning each type of statistical method.
 A study can use more than one type of method, hence the proportions for each year can sum up to more than one. <a href="R/man_method_trend_plot.R">The code for the plot can be downloaded here</a>.
 </center>
 <p><br /></p>
@@ -954,7 +1133,7 @@ A study can use more than one type of method, hence the proportions for each yea
 </tr>
 </tbody>
 </table>
-<p>Table 3.5. Percentage of papers using each type of statistical method. The code for this table can be downloaded <a href="R/man_method_trend_plot.R">here</a>.</p>
+<p>Table 3.6. Percentage of papers using each type of statistical method. The code for this table can be downloaded <a href="R/man_method_trend_plot.R">here</a>.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1025,7 +1204,7 @@ A study can use more than one type of method, hence the proportions for each yea
 </tr>
 </tbody>
 </table>
-<p>Table 3.6. Most common statistical trigrams in M&amp;M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to <a href="R/trigrams.R">this downloadable code</a>.</p>
+<p>Table 3.7. Most common statistical trigrams in M&amp;M sections of papers (with more than 100 mentions in papers). To reconstruct this table, readers can refer to <a href="R/trigrams.R">this downloadable code</a>.</p>
 <p>*The code to process the dictionaries of the framework, tracking devices, software, statistical methods, and taxonomy is <a href="R/02-Dictionary_Analysis.R">downloadable here</a>.</p>
 
 </div>
