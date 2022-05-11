@@ -67,7 +67,7 @@ p1 <- ggplot(data = data_question_1, mapping = aes(x = Q3)) +
 ```
 
 
-```{r years-moveco, echo=FALSE, message=F, eval=TRUE, include=TRUE}
+```{r years-moveco, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.alt = "Histogram of the years in research of all participants (left), and histogram of the years working on movement (right). Both histograms are skewed to the right.", fig.cap = " "}
 data_question_2 <- data %>% 
   select(Q4) %>% 
   filter(!is.na(Q4))
@@ -143,7 +143,7 @@ p3 <- ggplot(data=df1) + geom_col(aes(x=component, y=value,fill=response)) + ggt
 # show(p3)
 ```
 
-```{r moveco-frame past, echo=FALSE, message=F, eval=TRUE, include=TRUE,fig.width = 10}
+```{r moveco-frame past, echo=FALSE, message=F, eval=TRUE, include=TRUE,fig.width = 10, fig.alt = "Horizontal stacked bar plots of the participants opinion on how much the community is focusing on each MEF component (left), and on how much focus there is compared to ten years ago (right). Results described in the text above."}
 data_question_8 <- data[,grep("Q10", colnames(data))]
 # data_question_3 <- data_question_3 %>% filter(!is.na(Q5))
 # boxplot(data_question_2)
@@ -192,7 +192,7 @@ multiplot(p3,p8,cols=2)
 We asked the participants which taxa they considered to be studied the most in movement ecology, and to select up to 3 taxa. The number of votes per taxon are shown in the graph below. Birds and then mammals were indicated as the most studied.
 
 
-```{r taxa, echo=FALSE, message=F, eval=TRUE, include=TRUE}
+```{r taxa, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.alt = "Horizontal bar plot of the participants vote on which taxonomical group they considered to be the most studied in movement ecology. In decreasing order of votes: Aves, Mammalia, Sharks and Rays, Bony-fish, Homo Sapiens, Arthropoda, Reptilia, and Amphibia."}
 data_question_4 <- data[,grep("Q6", colnames(data))]
 
 categories <- c("Mammalia (excluding Human)", "Aves", "Reptilia (excluding Aves)", "Arthropoda", "Homo Sapiens", 
@@ -232,7 +232,7 @@ We asked the participants the following questions:
 * Which tracking devices do you think are used less often now compared to 10 years ago? (up to 3)
 
 
-```{r device, echo=FALSE, message=F, eval=TRUE, include=TRUE}
+```{r device, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.alt = "Horizontal bar plots indicating participants' votes on which devices are the most used. In decreasing order of votes: GPS, satellite tags, radio tags, encounter, light loggers, acoustic telemetry, accelerometer, data storage tags, and images."}
 data_question_5 <- data[,grep("Q7", colnames(data))]
 
 categories <- c("Light Loggers (e.g. GLS)", "Satellite Tags (e.g. ARGOS, PSAT, PTT, etc.)", "Radio tags (VHF or UHF based)", "GPS", "Images (Video and static)", "Acoustic telemetry", "Accelerometer", "Encounter (e.g capture mark recapture, banding, direct observation)", "data storage tags") # ONE OTHER
@@ -287,7 +287,7 @@ coord_flip() +
 ```
 
 
-```{r device less, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.width=10}
+```{r device less, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.width=10, fig.alt = "Left: horizontal bar plots indicating participants' votes on which devices are more used now compared to ten years ago. In decreasing order of votes: accelerometer, gps, acoustic telemetry, satellite tags, light loggers, images, data storage tags, encounter, radio tags. Right: horizontal bar plots indicating participants' votes on which devices are less used now compared to ten years ago. In decreasing order of votes: radio tags, encounter, satellite tags, light loggers, acoustic telemetry, images, none, and gps."}
 data_question_10 <- data[,grep("Q12", colnames(data))]
 
 categories <- c("Light Loggers (e.g. GLS)", "Satellite Tags (e.g. ARGOS, PSAT, PTT, etc.)", "Radio tags (VHF or UHF based)", "GPS", "Images (Video and static)", "Acoustic telemetry", "Accelerometer", "Encounter (e.g capture mark recapture, banding, direct observation)", "Other (describe)") # ONE OTHER
@@ -331,7 +331,7 @@ We asked the participants the following questions:
 
 * For movement analysis, which software do you think are used less often now compared to 10 years ago? (up to 3)
 
-```{r software, echo=FALSE, message=F, eval=TRUE, include=TRUE}
+```{r software, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.alt = "Horizontal bar plots indicating participants' votes on which software are the most used. In decreasing order of votes: R, ArcGIS, QGIS, Python, Matlab, RDBMs."}
 data_question_6 <- data[,grep("Q8", colnames(data))]
 
 categories <- c("R", "Python", "ArcGIS", "Matlab", "SAS", "SPSS", "Relational databases (RDBMs)", "QGIS") # NO OTHER
@@ -385,7 +385,7 @@ coord_flip() +
 ```
 
 
-```{r software less, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.width=10}
+```{r software less, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.width=10, fig.alt = "Left: horizontal bar plots indicating participants' votes on which software are more used now compared to ten years ago. In decreasing order of votes: R, QGIS, Python, Matlab, ArcGIS, RDBMs. Right: horizontal bar plots indicating participants' votes on which software are less used now compared to ten years ago. In decreasing order of votes: Matlab, ArcGIS, SPSS, SAS, RDBMs, Python."}
 data_question_12 <- unlist(data[,grep("Q14", colnames(data))])
 
 data_question_12 <- data_question_12[!is.na(data_question_12)]
@@ -442,7 +442,7 @@ We asked the participants the following questions:
 There are many analytical tools applied/developed in movement ecology. To keep it simple, we provided the participants with 9 (arbitrarily selected) options: generalized linear models (GLMs) and generalized additive models (GAMs), machine learning, model selection criteria, multivariate exploratory methods, net squared displacement (NSD), spatial point processes, state-space and Hidden Markov models (SSMs and HMMs, respectively), step and resource selection functions (SSFs and RSFs, respectively), and test statistics and p-values. We provided an "Other" option for researchers to indicate methods that would not be within the 9 other options. In the end, the "Other" option was poorly used.
 
 
-```{r methods, echo=FALSE, message=F, eval=TRUE, include=TRUE}
+```{r methods, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.alt = "Horizontal bar plots indicating participants' votes on which statistical/mathematical methods are the most used. In decreasing order of votes: SSF and RSF, SSM and HMM, GLMs and GAMs, model selection, tests, NSD, spatial point, multivariate, other, and machine learning."}
 data_question_7 <- data[,grep("Q9", colnames(data))]
 
 categories <- c("Net squared displacement", "Test statistics and p-values", "Model selection criteria (e.g AIC)", 
@@ -502,7 +502,7 @@ coord_flip() +
 ```
 
 
-```{r methods less, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.width=10}
+```{r methods less, echo=FALSE, message=F, eval=TRUE, include=TRUE, fig.width=10, fig.alt = "Left: horizontal bar plots indicating participants' votes on which statistical/mathematical methods are more used now compared to ten years ago. In decreasing order of votes: SSM and HMM, machine learning, SSF and RSF, model selection, multivariate, spatial point, GLMs and GAMs, NSD, and other. Right: horizontal bar plots indicating participants' votes on which statistical/mathematical methods are less used now compared to ten years ago. In decreasing order of votes: tests, NSD, multivariate, spatial point, SSF and RSF, model selection, other, and GLMs and GAMs."}
 data_question_14 <- data[,grep("Q16", colnames(data))]
 
 categories <- c("Net squared displacement", "Test statistics and p-values", "Model selection criteria (e.g AIC)", 
